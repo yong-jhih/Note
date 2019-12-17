@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>Form properties/attributes 屬性
+        <ul>accept-charset="":提交表單字型
+            <ol>
+                <li>ASCII</li>
+                <li>ANSI</li>
+                <li>8859-1</li>
+                <li>UTF-8(default)</li>
+            </ol>
+        </ul>
+        <ul>action="url":提交表單至</ul>
+        <ul>enctype="":提交資料編碼(此屬性只適用於 method="post")
+            <ol>
+                <li>application/x-www-form-urlencoded(default):將所有字元編碼(例如空白字元轉成+ 特殊字元轉成 ASCII HEX values)</li>
+                <li>multipart/form-data:不會進行編碼，適用於檔案上傳</li>
+                <li>text/plain:只針對空白字元編碼</li>
+            </ol>
+        </ul>
+        <ul>method="":表單資料處理方式
+            <ol>
+                <li>post:儲存表單資料至($_POST)</li>
+                <li>get(default):儲存表單資料至($_GET)</li>
+            </ol>
+        </ul>
+        <ul>name="":表單名稱(英文唯一)</ul>
+        <ul>target="":
+            <ol>
+                <li>_blank:另開視窗</li>
+                <li>_self(default):同視窗切換</li>
+                <li>_parent:</li>
+                <li>_top</li>
+                <li>framename</li>
+            </ol>
+        </ul>
+        <ul>autocomplete="":used in input types=text,search,url,tel,email,password,datepickers,range,color.
+            <ol>
+                <li>on(default)</li>
+                <li>off</li>
+            </ol>
+        </ul>
+        <ul>novalidate:不對表單內容進行驗證</ul>
+    </table>
+</body>
+
+</html>
