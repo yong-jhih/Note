@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Input Tag</title>
+    <style>
+        li{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>Input properties/attributes 屬性
+            <ul>align="":指定圖片提交按鈕的對齊方式
+                <ol>
+                    <li>left</li>
+                    <li>center</li>
+                    <li>right</li>
+                    <input type="image" align="left">content<br>
+                    <hr>
+                    <input type="image" align="center">content<br>
+                    <hr>
+                    <input type="image" align="right">content<br>
+                    <hr>
+                    content<input type="image" align="left"><br>
+                    <hr>
+                    content<input type="image" align="center"><br>
+                    <hr>
+                    content<input type="image" align="right"><br>
+                </ol>
+            </ul>
+            <ul>checked:將選擇鈕或核取方塊預設為已選取狀態<input type="checkbox">a.<input type="checkbox">b.<input type="checkbox">c.
+            </ul>
+            <ul>disabled:取消表單欄位 使表單無法被接受或提交 <input type="text" disabled></ul>
+            <ul>maxlength="n":指定單行文字方塊 密碼欄位 叟尋欄位等表單欄位的最大字元數 <input type="text" maxlength="4"></ul>
+            <ul>name="":指定表單欄位名稱(限英文唯一)</ul>
+            <ul>notab:不允許使用者使用tab鍵的方式移至表單 <input type="text" notab></ul>
+            <ul>readonly:不允許使用者變更表單內容 <input type="text" readonly value="123"></ul>
+            <ul>size="n":指定使用者在畫面上可以看到的字元數 <input type="text" size="15"></ul>
+            <ul>src="url":指定圖片提交按鈕位址(type="imgage"時) <input type="image" src="#"></ul>
+            <ul>value="":指定表單欄位內容預設值 <input type="text" value="123"></ul>
+            <ul>placeholder="":表單欄位內預設提示文字 焦點移至表單輸入時提示文字消失 <input type="text" placeholder="123"></ul>
+            <ul>usemap:指定瀏覽器端影像地圖所在的檔案位置及名稱</ul>
+            <ul>require:必須填寫內容項目 否則不予以提交 <input type="text" required></ul>
+            <ul>multiple:允許使用者輸入逗號分隔 提交多個內容 <input type="text" multiple></ul>
+            <ul>pattern="":指定欄位內容格式(正規表示法ex. type="tel" pattern="[0-9]{4}(\-[0-9]{6})")</ul>
+            <ul>autocomplete="":used in input types=text,search,url,tel,email,password,datepickers,range,color.
+                <ol>
+                    <li>on(default)</li>
+                    <li>off</li>
+                </ol>
+            </ul>
+            <ul>autofocus:載入網頁時 焦點移至表單欄位 <input type="text" autofocus></ul>
+            <ul>list:可與 datalist 標籤元素搭配 讓使用者從預先輸入的清單中選擇資料或其他</ul>
+            <ul>type="":可以根據內容自動進行驗證
+                <ol>
+                    <li><input type="text"> text(default):單行文字方塊</li>
+                    <li><input type="password"> password:密碼</li>
+                    <li><input type="radio" name="test">a.<input type="radio" name="test">b.<input type="radio" name="test">c. radio:選擇鈕</li>
+                    <li><input type="checkbox" name="testbox">a.<input type="checkbox" name="testbox">b.<input type="checkbox" name="testbox">c. checkbox:核取方塊</li>
+                    <li><input type="submit"> submit:提交按鈕</li>
+                    <li><input type="reset"> reset":重新輸入按鈕</li>
+                    <li><input type="file"> file:上傳檔案</li>
+                    <li><input type="image"> image:圖片提交按鈕</li>
+                    <li><input type="hidden"> hidden:隱藏欄位</li>
+                    <li><input type="button"> button:一般按鈕</li>
+                    <li><input type="email"> email:電子郵件</li>
+                    <li><input type="url"> url:網址</li>
+                    <li><input type="search"> search:搜尋內容</li>
+                    <li><input type="tel"> tel:電話</li>
+                    <li><input type="number"> number:數字</li>
+                    <li><input type="range"> range:指定範圍數字</li>
+                    <li><input type="color"> color:色彩</li>
+                    <li><input type="date"> date:日期</li>
+                    <li><input type="time"> time:時間</li>
+                    <li><input type="datetime"> datetime:UTC標準時間</li>
+                    <li><input type="month"> month:月</li>
+                    <li><input type="week"> week:周</li>
+                    <li><input type="datetime-local"> datetime-local:本地日期時間</li>
+                </ol>
+            </ul>
+            <ul></ul>
+        </table>
+    </form>
+
+</body>
+
+</html>
