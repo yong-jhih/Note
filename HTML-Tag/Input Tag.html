@@ -73,7 +73,7 @@
                     <li><input type="search"> search:搜尋內容</li>
                     <li><input type="tel"> tel:電話</li>
                     <li><input type="number"> number:數字</li>
-                    <li><input type="range"> range:指定範圍數字</li>
+                    <li><input type="range" value="25" id="rangNum" onmouseup="pullBar()"> range:指定範圍數字(default 0~100) max="" min=""</li>
                     <li><input type="color"> color:色彩</li>
                     <li><input type="date"> date:日期</li>
                     <li><input type="time"> time:時間</li>
@@ -86,6 +86,13 @@
             <ul></ul>
         </table>
     </form>
+    <script>
+        let range = 0 ;
+        function pullBar(){
+            range = document.getElementById("rangNum").value;
+            console.log(range);
+        }
+    </script>
 
 </body>
 
