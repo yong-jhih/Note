@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .gallery {
+            display: flex;
+            /* // 設定為 flex container */
+            padding: 5px;
+            flex-wrap: wrap;
+            /* // 不強制單行，子元素超過 100% 則折行 */
+        }
+
+        .img-container {
+            width: 200px;
+             /* // 最小 200px */
+            margin: 5px;
+            flex-grow: 1;
+             /* // 平分寬度 */
+        }
+
+        img {
+            width: 100%;
+        }
+
+        body {
+            color: #fff;
+            background: #333;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        img {
+            display: block;
+        }
+
+        a {
+            color: #fff;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <div class="img-container">
+            <img src="jeremiah-wilson-1.jpg" />
+        </div>
+        <div class="img-container">
+            <img src="jeremiah-wilson-2.jpg" />
+        </div>
+        <div class="img-container">
+            <img src="jeremiah-wilson-3.jpg" />
+        </div>
+        <div class="img-container">
+            <img src="jeremiah-wilson-4.jpg" />
+        </div>
+        <div class="img-container">
+            <img src="jeremiah-wilson-5.jpg" />
+        </div>
+    </div>
+
+    <p>Forked from <a href="http://codepen.io/dudleystorey/pen/Kgofa">http://codepen.io/dudleystorey/pen/Kgofa</a></p>
+
+</body>
+
+</html>

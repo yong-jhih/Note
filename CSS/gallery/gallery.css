@@ -1,0 +1,37 @@
+.gallery {
+    display: flex;
+    /* // 設定為 flex container */
+    padding: 5px;
+    flex-wrap: wrap;
+    /* // 不強制單行，子元素超過 100% 則折行 */
+}
+
+.img-container {
+    width: 200px;
+     /* // 最小 200px */
+    margin: 5px;
+    flex-grow: 1;
+     /* // 平分寬度 */
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    color: #fff;
+    background: #333;
+}
+
+p {
+    margin: 10px;
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: #fff;
+    line-height: 1.5;
+}
