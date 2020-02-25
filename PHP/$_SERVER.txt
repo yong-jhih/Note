@@ -1,0 +1,22 @@
+Description
+	$_SERVER is an array containing information such as headers, paths, and script locations.
+	The entries in this array are created by the web server.
+
+$_SERVER['HTTP_REFERER'] : 用來取得前一頁面的網址
+	可作用於(前一頁的操作)
+		<a src="#"></a>
+		<form action="#" method="POST"></form>
+	不可作用於
+		於網址列直接輸入URL
+		任何情況下的自動導頁如
+			in JavaScript : window.location.href="url";
+	   		in PHP : header('location:url');
+	   		in HTML : <meta http-equiv="refresh" content="3;url='url'">
+
+取得當前網址
+	假設我們的網址是 http://www.wibibi.com/test.php?tid=222
+		$_SERVER['HTTP_HOST'] 顯示 www.wibibi.com
+		$_SERVER['REQUEST_URI'] 顯示 /test.php?tid=222
+		$_SERVER['PHP_SELF'] 顯示 /test.php
+		$_SERVER['QUERY_STRING'] 顯示 tid=222
+		$URL='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; 組合目前的網址
