@@ -1,0 +1,146 @@
+註解符號:
+    // 單行註解
+    /* */ 多行註解
+
+引號的使用
+    ' ' 單引號,沒有任何意義,不經任何處理直接拿過來;
+    " " 雙引號,PHP動態處理然後輸出,一般用於變量.
+
+變量形態:
+    boolean 真偽值(false/true)
+    string 字串(數字\漢字\等等)
+    integer 整數(1、2、3、4、5、0、-1、-2、等等)
+    double 浮點數（小數點）
+    array 數組
+    object 對象
+
+可以用的方法有
+gettype($mix):返回型別字串(string,integer,double,array,object)
+settype($mix,$typename):設定該變數型別("boolean" or "bool","integer" or "int","float" or "double","string","array","object","null")
+
+常用符號
+    \" 雙引號
+    \\ 反斜線
+    \n 換行
+    \r 送出
+    \t 跳位(TAB)
+
+運算符號
+    + 加法運算 - 減法運算
+    * 乘法運算 / 除法運算
+    % 取余數 ++ 累加
+    -- 累減1 . 把字串相加
+
+設定運算
+    = 把右邊的值代入左邊
+    += 把右邊的值加到左邊
+    -= 把右邊的值減到左邊
+    *= 把左邊的值乘以右邊
+    /= 把左邊的值除以右邊
+    .= 把右邊的字串加到左邊
+
+位員運算
+    & 且
+    | 或
+    ^ 互斥(xor)
+    << 向左移位
+    >> 向右移位
+    ~ 取1的補數
+
+邏輯運算
+    < 小於
+    > 大於
+    <= 小於等於
+    >= 大於等於
+    != 不等於
+    && 而且
+    || 或者
+    ! 不
+
+其他運算符號
+    $ 變量符號
+    & 變量的指標(加在變量前)
+    @ 不顯示錯誤信息(加在函數前)
+    -> 對象的方法或者屬性
+    => 數組的元素值
+    ? : 三元運算子
+
+基本方法
+
+1.php轉換字符串為大小寫！
+
+strtolower(); 把字符轉小寫
+strtoupper(); 把字符轉大寫
+
+2.PHP加密字符串(大小寫均可)
+
+md5();加密
+sha1();加密
+
+3.關於引號
+
+一、單引號是原樣輸出
+二、雙引號是內容解釋進行輸出
+三、反單引號是執行一個命令，如`pwd`。
+四、“\”作用於轉譯字符，如“\n”為換行！
+
+4.函數:htmlspecialchars()
+本函數將特殊字符轉成 HTML 的字符串格式 ( &....; )。最常用到的場合可能就是處理客戶留言的留言版了。
+
+& (和) 轉成 &
+" (雙引號) 轉成 "
+< (小於) 轉成 &lt;
+> (大於) 轉成 &gt;
+
+此函數只轉換上面的特殊字符，並不會全部轉換成 HTML 所定的 ASCII 轉換。
+
+5.批量輸出HTML內容！
+echo <<< EOT
+HTML輸出內容。。。//這裏註釋照樣輸出！
+EOT;
+
+Print <<<EOT
+HTML輸出內容。。。//這裏註釋照樣輸出！
+EOT;
+(註意：內部包含變量用“{變量}”)
+
+6.判斷文件是否存在並且輸出內容
+<?php
+$FileName="File.TXT";
+if (File_Exists($FileName)){
+Echo "<xmp>".File_Get_Contents($FileName)."</xmp>";
+}else
+{
+Echo"no";
+}
+?>
+
+7.卸載變量unset;
+unset($var);
+unset($var,$var1);
+8.is_int;
+檢測變量是否是整數;
+9.is_null;
+檢測變量是否為 NULL ;
+10.is_string
+檢測變量是否是字符串
+11.is_real;
+is_float() 的別名
+12.isset
+檢測變量是否設置
+13.is_bool
+檢測變量是否是布爾型
+14.is_array
+檢測變量是否是數組
+15.is_object
+檢測變量是否是一個對象
+16.SubStr.
+SUBSTR(String,Start,SelectNum)
+echo substr(‘abcdef‘, 1); // bcdef
+echo substr(‘abcdef‘, 1, 3); // bcd
+echo substr(‘abcdef‘, 0, 4); // abcd
+echo substr(‘abcdef‘, 0, 8); // abcdef
+echo substr(‘abcdef‘, -1, 1); // f
+17.Nb2br
+echo nl2br("foo isn‘t\n bar");
+把轉義的換行變成 HTML的<BR />

@@ -1,0 +1,52 @@
+主要用於網頁的內容說明，以利自己或別人(搜索引擎)使用，另外也可以製造出一些自動翻頁等特殊效果。
+http-equiv或NAME屬性，必須配合content屬性使用，兩者也可互替使用。
+後設語法標籤(META description tag)的用法隨各搜索引擎設定有所不同。
+有無Meta標籤，並不影響網頁正常顯示，其最大目的在於提供網頁各種資訊及產生特殊效果。
+
+一、顯示及排列中文
+    <META http-equiv="Content-Type" content="text/html; charset=big5">
+        Content-Type==>文件內容格式
+        ;==>CONTENT內要作的每件事" "，分別以分號區隔
+        text/html==>純文字/超文字
+        charset==>字元組為中文繁體大五碼，如用iso-2022-jp是指日文
+
+    使用 meta content-type 告知搜尋引擎使用 utf8 編碼
+    (html5 建議改用 <META charset=UTF-8"> 即可)
+    使用 meta content-language 告知搜尋引擎網頁屬於中文網站
+    <meta http-equiv="content-language" content="zh-tw">
+    相關 ZH 編碼有，台灣繁體 ZH-tw、香港繁體 ZH-hk、中國簡體 ZH-cn、新加坡簡體 ZH-sg
+
+二、讓搜索引擎容易找到您
+    <META NAME="KeyWords" CONTENT="HTML教學'發信教學'SEO教學'交換連結">
+    <META NAME="KeyWords" CONTENT="css'HomePage'html'linux'seo">
+    說明：網頁內文關鍵字，可使用中、英文均可
+
+三、關於網站的內容描述
+    <META NAME="Description" CONTENT="這是一個學習網頁製作的地方">
+    說明：Description==>內容的主要描述
+
+四、這個網頁的作者是誰
+    <META NAME="Author" CONTENT="Pet">
+    說明：標註本網頁作者姓名等資料
+
+五、這個網頁何時完成
+    <META NAME="Creation-Date" CONTENT="01-jan-2013 20:00:00">
+    說明：
+    Creation-Date==>創作日期
+    01-jan-2013 20:00:00==>詳細日期時間
+
+六、網頁作者的網址與信箱
+    <link rev="made" href="mailto:Pet@yahoo.com.tw">
+    <link rev="made" href="http://www.yahoo.com.tw">
+    說明：網頁作者信箱或網址陳述
+    rev==>正向關聯
+    made=>網頁製造者
+    href==>您的信箱或網址
+
+七、使網頁能自動導頁
+    <META HTTP-EQUIV="refresh" CONTENT="15; url=http://www.yahoo.com.tw">
+    說明：
+    refresh==>更新或重整
+    15==>15秒後執行下一動作
+    ;==>CONTENT內要作的每件事" "，分別以分號區隔
+    url=http://www.yahoo.com.tw==>指定轉換到此網頁
