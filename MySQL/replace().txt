@@ -1,0 +1,11 @@
+MySQL REPLACE() replaces all the occurrences of a substring within a string.  --w3resource
+
+Syntax:
+    REPLACE(str, find_string, replace_with)
+    str:A string.
+    find_string:A string which is present one or more times within the string str.
+    replace_with:A string which will replace every time it finds find_string within str.
+
+MySQL 的 replace 語法，批次替換資料庫內容
+    UPDATE `TABLE名` SET `欄位名` = REPLACE(`欄位名`, '要被取代的欄位值', '取代後的欄位值') WHERE `欄位名` LIKE '%欄位值%';
+    UPDATE `options` SET `title` = REPLACE(`title`, 'ssorc.tw', 'SSORC.TW') WHERE `title` LIKE '%ssorc.tw%';

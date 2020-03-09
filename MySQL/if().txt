@@ -1,0 +1,8 @@
+MySQL IF() takes three expressions and if the first expression is true, not zero and not NULL, it returns the second expression. Otherwise, it returns the third expression.  --w3resource
+
+Syntax:
+    IF(expression ,expr_true, expr_false);
+    expression:An expression.
+    expr_true:Returns when the condition is TRUE.	a string when expr_true is a string, a floating-point value when expr _true is a floating-point value and an integer when expr _true is an integer.
+    expr_false:Returns when the condition is FALSE.	a string when expr_false is a string, a floating-point value when expr _false is a floating-point value and an integer when expr _false is an integer.
+

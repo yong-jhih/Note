@@ -1,0 +1,5 @@
+MySQL NOT IN() makes sure that the expression proceeded does not have any of the values present in the arguments.  --w3resource
+
+Syntax:
+    expr NOT IN (value,...)
+
