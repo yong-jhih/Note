@@ -1,4 +1,4 @@
-MySQL REPLACE() replaces all the occurrences of a substring within a string.  --w3resource
+MySQL REPLACE() replaces all the occurrences of a substring within a string.    --w3resource
 
 Syntax:
     REPLACE(str, find_string, replace_with)
