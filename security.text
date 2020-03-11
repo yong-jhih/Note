@@ -87,28 +87,23 @@ return $data;
 $_GET     && SafeFilter($_GET);
 $_POST    && SafeFilter($_POST);
 $_COOKIE  && SafeFilter($_COOKIE);
-function SafeFilter (&$arr) 
+function SafeFilter(&$arr)
 {
-$ra=Array('/([\x00-\x08,\x0b-\x0c,\x0e-\x19])/','/script/','/javascript/','/vbscript/','/expression/','/applet/','/meta/','/xml/','/blink/','/link/','/style/','/embed/','/object/','/frame/','/layer/','/title/','/bgsound/','/base/','/onload/','/onunload/','/onchange/','/onsubmit/','/onreset/','/onselect/','/onblur/','/onfocus/','/onabort/','/onkeydown/','/onkeypress/','/onkeyup/','/onclick/','/ondblclick/','/onmousedown/','/onmousemove/','/onmouseout/','/onmouseover/','/onmouseup/','/onunload/');
-if (is_array($arr))
-{
-foreach ($arr as $key => $value) 
-{
-if (!is_array($value))
-{
-if (!get_magic_quotes_gpc())             //不對magic_quotes_gpc轉義過的字元使用addslashes(),避免雙重轉義。
-{
-$value  = addslashes($value);           //給單引號（'）、雙引號（"）、反斜線（\）與 NUL（NULL 字元）加上反斜線轉義
-}
-$value       = preg_replace($ra,'',$value);     //刪除非列印字元，粗暴式過濾xss可疑字串
-$arr[$key]     = htmlentities(strip_tags($value)); //去除 HTML 和 PHP 標記並轉換為 HTML 實體
-}
-else
-{
-SafeFilter($arr[$key]);
-}
-}
-}
+   $ra = array('/([\x00-\x08,\x0b-\x0c,\x0e-\x19])/', '/script/', '/javascript/', '/vbscript/', '/expression/', '/applet/', '/meta/', '/xml/', '/blink/', '/link/', '/style/', '/embed/', '/object/', '/frame/', '/layer/', '/title/', '/bgsound/', '/base/', '/onload/', '/onunload/', '/onchange/', '/onsubmit/', '/onreset/', '/onselect/', '/onblur/', '/onfocus/', '/onabort/', '/onkeydown/', '/onkeypress/', '/onkeyup/', '/onclick/', '/ondblclick/', '/onmousedown/', '/onmousemove/', '/onmouseout/', '/onmouseover/', '/onmouseup/', '/onunload/');
+   if (is_array($arr)) {
+      foreach ($arr as $key => $value) {
+         if (!is_array($value)) {
+            if (!get_magic_quotes_gpc())             //不對magic_quotes_gpc轉義過的字元使用addslashes(),避免雙重轉義。
+            {
+               $value  = addslashes($value);           //給單引號（'）、雙引號（"）、反斜線（\）與 NUL（NULL 字元）加上反斜線轉義
+            }
+            $value       = preg_replace($ra, '', $value);     //刪除非列印字元，粗暴式過濾xss可疑字串
+            $arr[$key]     = htmlentities(strip_tags($value)); //去除 HTML 和 PHP 標記並轉換為 HTML 實體
+         } else {
+            SafeFilter($arr[$key]);
+         }
+      }
+   }
 }
 ?>
 
