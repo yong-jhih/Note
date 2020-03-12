@@ -1,0 +1,35 @@
+=> 是数组成员访问符号
+
+-> 是对象成员访问符号
+
+比如：
+
+$array = array("site map"=>"map.php"); //定义了一个数组，包含一个数组成员：键名为site map，值为map.php
+
+$this->$name = $value
+
+$this 在php语言里是个特定的变量，它代表了类本身，->是访问其类成员的操作符，$this->$name = $value，这句代码意思是：将当前类的name变量的值设置为 $value.
+
+在php中数组默认键名是整数，也可以自己定义任意字符键名（最好是有实际意义）。如：
+$css=array('style'=>'0'，‘color’=>‘green‘)， 则$css['style']=='0'，$css['color']=='green'。 简单的说‘=>’就是定义数组键名让它指向数组末一个元素， 跟指针很相似。 =============================================================================== $are->areaid=$areas['parentid']=get_area_id($channelid, $provinces[$pid]); 其意义是：调用get_area_id($channelid, $provinces[$pid]); 获得地区id然后将其赋值给$areas['parentid']，最后将$areas['parentid']的值赋给$are->areaid 其中的多个“=”相连只是为了方便而已还可以连写更多， 其实也可以这样写： $areas['parentid']=get_area_id($channelid, $provinces[$pid]); $are->areaid=$areas['parentid']；
+$this->connect();//对象调用类的函数
+
+$this->Database//对象调用类的成员 ================================================================================
+@mysql_num_rows($res)中的@会忽略后面的表达式的错误
+================================================================================
+php中有的变量或函数前面会加上“&”表示引用一个变量
+function change(&$number) { return $number+1; } $n = 3; change($n); echo $n; // $n = 4
+
+
+============================================================================================== php中的::表示类的静态调用 比如有个名为 class myclass{ function myclass_one(){ echo 'php code enter'; } } myclass::myclass_one(); 结果为:php code enter.
+ 
+ 
+$file = File::update(); 是静态的调用File类的update()方法。 用这个书写格式可以减少代码，省去了new File;等繁琐输入
+===================================================================================
+php中 %$a%
+应该是出现 sql语句中
+如果是 那么他就是 模糊查找的意思
+比如
+$a = '张';
+$sql = "SELECT * FROM `user` WHERE `username` LIKE '%".$a."%'";
+那么 所有username字段里面含有 张 字的就都会被查询出来。
