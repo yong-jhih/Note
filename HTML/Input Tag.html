@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <form>
+    <form action="value.php" method="POST">
         <table>Input properties/attributes 屬性
             <ul>align="":指定圖片提交按鈕的對齊方式
                 <ol>
@@ -33,6 +33,13 @@
                     content<input type="image" align="right"><br>
                 </ol>
             </ul>
+            <ul>
+                <select name="test" id="test">
+                    <option value="a">a</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                </select>
+            </ul>
             <ul>checked:將選擇鈕或核取方塊預設為已選取狀態<input type="checkbox">a.<input type="checkbox">b.<input type="checkbox">c.
             </ul>
             <ul>disabled:取消表單欄位 使表單無法被接受或提交 <input type="text" disabled></ul>
@@ -41,7 +48,6 @@
             <ul>notab:不允許使用者使用tab鍵的方式移至表單 <input type="text" notab></ul>
             <ul>readonly:不允許使用者變更表單內容 <input type="text" readonly value="123"></ul>
             <ul>size="n":指定使用者在畫面上可以看到的字元數 <input type="text" size="15"></ul>
-            <ul>src="url":指定圖片提交按鈕位址(type="imgage"時) <input type="image" src="#"></ul>
             <ul>value="":指定表單欄位內容預設值 <input type="text" value="123"></ul>
             <ul>placeholder="":表單欄位內預設提示文字 焦點移至表單輸入時提示文字消失 <input type="text" placeholder="123"></ul>
             <ul>usemap:指定瀏覽器端影像地圖所在的檔案位置及名稱</ul>
@@ -65,7 +71,7 @@
                     <li><input type="submit"> submit:提交按鈕</li>
                     <li><input type="reset"> reset":重新輸入按鈕</li>
                     <li><input type="file"> file:上傳檔案</li>
-                    <li><input type="image"> image:圖片提交按鈕</li>
+                    <li><input type="image" src="#"> image:圖片提交按鈕 額外傳送點擊圖案的座標 左上為0 向右向下為正</li>
                     <li><input type="hidden"> hidden:隱藏欄位</li>
                     <li><input type="button"> button:一般按鈕</li>
                     <li><input type="email"> email:電子郵件</li>
@@ -85,6 +91,7 @@
             </ul>
             <ul></ul>
         </table>
+        <input type="submit">
     </form>
     <script>
         let range = 0 ;
