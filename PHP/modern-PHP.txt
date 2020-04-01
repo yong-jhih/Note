@@ -1,0 +1,27 @@
+CH1
+
+Vagrant
+Ansible  Chef  Puppet
+Composer
+PSR
+PHPUnit
+PHP FastCGI
+nginx  Appache
+Hack
+HipHop Virtual Machine(HHVM,JIT)
+
+
+CH2
+https://github.com/codeguy/modern-php
+
+Symfony框架中的symfony/httpfoundation
+https://github.com/symfony/HttpFoundation/Response.php
+
+
+命名空間
+<?php
+    namespace Test ;
+
+子命名空間
+<?php
+    namespace Test\son ;
