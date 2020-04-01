@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>bootstrap grid</title>
+
+    <!-- Bootstrap 所需 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p><a href="https://getbootstrap.com/docs/4.3/layout/grid/" target="_blank">bootstrap gird說明</a></p>
+    <p><a href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_grid_ex5&stacked=h"
+            target="_blank">w3c練習</a></p>
+    <p><a href="http://shoelace.io/" target="_blank">線上拉版面</a></p>
+
+
+    <!-- 1. 比較 container 和 container-fuild 的不同 -->
+    <!-- https://getbootstrap.com/docs/4.3/layout/overview/#containers -->
+    <div class="container-fuild h-100">
+        <!-- 2. 設定在大螢幕(col-lg-*)的時候，畫面12等份
+                中屏幕(col-md-*)的時候，畫面1行6等份 -->
+        <div class="row h-100">
+            <div class="col-lg-1 col-md-2">1</div>
+            <div class="col-lg-1 col-md-2">2</div>
+            <div class="col-lg-1 col-md-2">3</div>
+            <div class="col-lg-1 col-md-2">4</div>
+            <div class="col-lg-1 col-md-2">5</div>
+            <div class="col-lg-1 col-md-2">6</div>
+
+            <div class="col-lg-1 col-md-2">7</div>
+            <div class="col-lg-1 col-md-2">8</div>
+            <div class="col-lg-1 col-md-2">9</div>
+            <div class="col-lg-1 col-md-2">10</div>
+            <div class="col-lg-1 col-md-2">11</div>
+            <div class="col-lg-1 col-md-2">12</div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap 所需 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+
+    <script>
+        let colorList = ['FF9E80', 'FFD180', 'FFE57F', 'F4FF81', 'CCFF90', 'B9F6CA',
+            '84FFFF', '80D8FF', '82B1FF', '8C9EFF', 'B388FF', 'EA80FC'
+        ]
+        // let index = 0;
+
+        // 3. 透過 jQuery 設定上面袋子的背景顏色
+        $(".col-lg-1").each(function (index) {
+            $(this).css("background-color", "#" + colorList[index]);
+        });
+
+        // 4. 將袋子撐大
+
+        // 5. 透過設定觀察  align-items-center  &  align-self-start
+    </script>
+
+</body>
+
+</html>

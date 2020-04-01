@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <img id="dog" src="img/doge.gif">
+    <script>
+        var flag; // 紀錄計時器
+        var i = 0; // 角度
+
+        // 幫圖片設定事件，當滑鼠停留(mouseenter)的時候
+        // 持續 (setInterval) 改變圖片的樣式，讓圖片開始旋轉 transform rotateZ(23deg)
+        $("#dog").mouseenter(function () {
+            // 計時器需要啟動
+            flag = setInterval(function () {
+                // 設定圖片的 css 看起來像是在旋轉
+                var temp = "rotateZ(" + i + "deg)";
+                $("#dog").css("transform", temp);
+                i = i + 5 ;
+                console.log(i);
+            }, 100);
+
+            console.log("1");
+        });
+
+
+
+        // 當滑鼠離開圖片，停止旋轉 (clearInterval)
+        $("#dog").mouseleave(function () {
+            // 停止計時器
+            clearInterval(flag);
+            console.log("2");
+        });
+    </script>
+</body>
+
+</html>

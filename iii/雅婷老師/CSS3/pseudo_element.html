@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS</title>
+    <style>
+        #demo::after {
+            content: "::after 在元素後面增加";
+            background-color: chartreuse;
+        }
+
+        /* 1. 透過id 選擇demo元素，並增加 ::before */
+        /* 2. 樣式中 content 可以指定元素內容 */
+        /* 3. 改變一下背景底色，確認範圍 */
+
+        #demo::before {
+            content: "123before";
+            background-color: orange;
+            border: 1px dotted blue;
+        }
+
+        #newsTitle::after {
+            content: ".. 展開閱讀";
+            text-decoration: underline;
+            
+        }
+
+        #newsTitle::first-letter{
+            font-size: 3rem;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 虛擬元素： -->
+    <p><a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">CSS Pseudo-elements</a></p>
+    <p><a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/#pseudo-elements" target="_blank">w3c百科說明</a></p>
+
+    <p id="demo"> == 這裡有一行文字 == </p>
+
+    <p id="newsTitle"> 這是新聞標題 </p>
+
+</body>
+
+</html>

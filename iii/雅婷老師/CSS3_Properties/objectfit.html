@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>object-fit</title>
+    <style type="text/css">
+        img {
+            width: 300px;
+            height: 300px;
+            border-width: 2px;
+            border-color: #FF9933;
+            border-style: solid;
+        }
+
+        #img2 {
+            object-fit: fill;
+        }
+
+        #img3 {
+            object-fit: none;
+        }
+
+        #img4 {
+            object-fit: contain;
+        }
+
+        #img5 {
+            object-fit: cover;
+        }
+        /*試試看，object-fit的四種屬性fill、none、contain、cover*/
+    </style>
+</head>
+
+<body>
+    <img id="img1" src="img/sunny.JPG">
+    <img id="img2" src="img/sunny.JPG">
+    <img id="img3" src="img/sunny.JPG">
+    <img id="img4" src="img/sunny.JPG">
+    <img id="img5" src="img/sunny.JPG">
+</body>
+
+</html>

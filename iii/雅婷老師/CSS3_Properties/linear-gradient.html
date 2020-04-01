@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>linear-gradient</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 100px;
+        }
+
+        /* 有漸層效果的css */
+        /* linear-gradient 預設值是什麼? 怎麼改變漸層方向? 能不能有多種顏色?*/
+        #example1 {
+            background-image: linear-gradient(red, yellow)
+        }
+        #example2 {
+            background-image: linear-gradient(to right,red,yellow);
+        }
+        #example3 {
+            background-image: linear-gradient(to bottom right,red,yellow);
+        }
+        #example4 {
+            background-image: linear-gradient(to bottom right,red,yellow, orange , blue);
+        }
+        #example5 {
+            background-image: radial-gradient(red,yellow, blue);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/css/css3_gradients.asp" target="_blank">css3 linear-gradient</a></p>
+    <p><a href="https://cssgradient.io/" target="_blank">動手玩玩看的小網站</a></p>
+    <hr>
+    <div id="example1">example1(default)</div>
+    <hr>
+    <div id="example2">example2(to right)</div>
+    <hr>
+    <div id="example3">example3(to bottom right)</div>
+    <hr>
+    <div id="example4">example4(multiple color)</div>
+    <hr>
+    <div id="example5" style="height:300px;">example5(radial-gradient)</div>
+    <hr>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery</title>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+</head>
+
+<body>
+    <div>
+        <p>content - 1</p>
+    </div>
+
+    <div>
+        <p>content - 2</p>
+    </div>
+
+    <div>
+        <p>content - 3</p>
+    </div>
+
+    <!-- 1. 設定圖片到左下角 -->
+    <img id="gotop" src="img/gotop.png" style="position: fixed; bottom:20px; right:20px;">
+
+    <script>
+        // 2. 在$(document).ready()後設定
+        // 3. 設定 div 為 inline-block，寬度 30%
+        $(document).ready(function () {
+            $("div").css({
+                "display": "inline-block",
+                "width": "30%",
+                "background-color": "green"
+            });
+
+            // 4. 挑選奇數列，改變背景顏色和設定高度
+            $("div:nth-child(odd)").each(function () {
+                $(this).css("background-color", "yellow");
+                $(this).css("height", $(window).innerHeight() * 2);
+            });
+
+        });
+
+        // 5. 當圖片點選的時候，設定 scrollTop 為 0
+        $("#gotop").click(function(){
+            $("html").animate({
+                scrollTop : 0
+            },1000);
+        });
+    </script>
+</body>
+
+</html>

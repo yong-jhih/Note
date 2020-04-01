@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <!-- 加入網頁圖示 -->
+
+    <!-- 載入bootstrap所需要的css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        /* .modal-title 覆蓋掉原有的樣式，將文字置中 */
+        .modal-title {
+            text-align: center;
+            width: 100%;
+        }
+
+        /* 取消掉原有的藍色邊框，改以其他邊框代替 */
+        input[type]:focus {
+            border-color: springgreen;
+            box-shadow: 0px 0px 5px 1px springgreen;
+        }
+
+        /* .btn-block 的寬度被設定為? */
+        .btn-block {
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- bootstrap 的 modal 樣式：彈出對話框，並且將其餘畫面反灰 -->
+    <!-- 請找到符合彈跳出來後顯示在畫面正中央的樣板，複製到這裡來 -->
+    <p><a href="https://getbootstrap.com/docs/4.0/components/modal/"> bootstrap4 > components > Modal </a></p>
+
+    <!-- bootstrap 的 form 樣式：針對表單畫面進行css的樣式調整 -->
+    <p><a href="https://getbootstrap.com/docs/4.0/components/forms/"> bootstrap4 > components > Forms </a></p>
+
+    <!-- 在 <form> 開始標籤修改為 <form class="needs-validation" novalidate>，說明表單需要驗證 -->
+    <p><a href="https://bootstrap.hexschool.com/docs/4.0/components/forms/#how-it-works">bootstrap4 關於驗證的使用說明</a></p>
+    <p><a href="https://www.w3schools.com/bootstrap4/bootstrap_forms.asp">往下拉，有一段 Form Validation </a></p>
+    <p><a href="https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_form_validation_needs&stacked=h"> Form
+            Validation 範例 </a></p>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- 加入表單 -->
+                    <form class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">ID</label>
+                            <!-- 大寫英文開頭一碼,後面要跟著三碼以上的數值 -->
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="請輸入帳號" pattern="[A-Z]{1}\d{3,}" required>
+                            <!-- 驗證通過 -->
+                            <div class="valid-feedback">
+                                ID輸入OK
+                            </div>
+                            <!-- 驗證不通過 -->
+                            <div class="invalid-feedback">
+                                請輸入ID
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" 
+                            id="exampleInputPassword1" placeholder="請輸入密碼" required>
+                            <!-- 驗證通過 -->
+                            <div class="valid-feedback">
+                                密碼ok
+                            </div>
+                            <!-- 驗證不通過 -->
+                            <div class="invalid-feedback">
+                                請輸入密碼
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">請勾選同意條款</label>
+                        </div>
+
+                        <!-- 請在 bootstrap 官網上搜尋 有哪些 button 樣式，套用後和完成圖的樣式相同 -->
+                        <!-- 請在 bootstrap 官網上搜尋 mr-auto ，並將 mr-auto ml-auto 這兩個class套用到 submit button中-->
+                        <button type="submit" class="btn btn-outline-primary btn-block mr-auto ml-auto">Submit</button>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- 這裡需要加入 bootstrap 的相關 js 檔案 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>

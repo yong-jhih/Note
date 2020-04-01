@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body onkeydown="play(event)" onload="init()" onmousedown="boom()">
+
+    <!-- 遊戲畫布 -->
+    <div id="gameArea">
+        <canvas id="myCanvas" width="500px" height="500px"></canvas>
+    </div>
+
+    <script>
+        // 判斷遊戲是否開始
+        var gameFlag = false;
+        // 計時器
+        var intervalFlag;
+
+        var cvElm, ctx;
+
+        var temp = (Math.PI * 2) / 30;
+        var ballList = [];
+
+        // 線段
+        var line = {
+            x: 250,
+            y: 250,
+            endX: 0,
+            endY: 0,
+            length: 100,
+            angle: 0
+        };
+
+        // 球
+        function Ball(x, y, angle, distance) {
+            this.x = x;
+            this.y = y;
+            this.angle = angle;
+            this.distance = distance;
+        }
+
+
+        // 當畫面載入完畢後執行
+        function init() {
+            // 取得畫布
+            cvElm = document.getElementById("myCanvas");
+            ctx = cvElm.getContext("2d");
+
+            // 設定畫布初始狀態
+            ctx.beginPath();
+            ctx.font = "30px Arial";
+            ctx.fillText("Press Space to Start", 110, 250);
+            ctx.stroke();
+        }
+
+
+        // 判斷遊戲狀態
+        function play(e) {
+
+            if (gameFlag) {
+
+                // 方向鍵
+                switch (e.keyCode) {
+                    case 37:
+                        line.angle = line.angle - temp;
+                        break;
+                    case 39:
+                        line.angle = line.angle + temp;
+                        break;
+                }
+
+                line.endX = line.x + line.length * Math.cos(line.angle);
+                line.endY = line.y + line.length * Math.sin(line.angle);
+
+                if (intervalFlag == null) {
+                    clear();
+                    drawLine();
+                }
+            } else {
+                // 開始遊戲
+                start();
+            }
+        }
+
+        // 開始遊戲
+        function start() {
+
+            // 點選空白鍵，畫出方框開始遊戲
+            gameFlag = true;
+
+            // 畫出線段
+            line.endX = line.x + line.length * Math.cos(line.angle);
+            line.endY = line.y + line.length * Math.sin(line.angle);
+            drawLine();
+        }
+
+        // 點選發射炸彈
+        function boom() {
+            ballList.push(new Ball(line.endX, line.endY, line.angle, 1));
+
+            if (intervalFlag == null) {
+                intervalFlag = setInterval(drawBall, 1000);
+            }
+        }
+
+        // 清除畫面
+        function clear() {
+            ctx.fillStyle = "pink";
+            ctx.fillRect(0, 0, cvElm.width, cvElm.height);
+        }
+
+        // 畫線段
+        function drawLine() {
+            clear();
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.moveTo(line.x, line.y);
+            ctx.lineTo(line.endX, line.endY);
+            ctx.stroke();
+        }
+
+        // 畫球
+        function drawBall() {
+
+            clear();
+            drawLine();
+
+            for (var i = 0; i < ballList.length; i++) {
+                console.log(ballList.toString());
+
+                var x = ballList[i].x + Math.cos(ballList[i].angle) * ballList[i].distance;
+                var y = ballList[i].y + Math.sin(ballList[i].angle) * ballList[i].distance;
+
+                ctx.fillStyle = "white";
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, 2 * Math.PI);
+                ctx.fill();
+
+                ballList[i].distance += 5;
+
+                // 隨意估算的數值，如果畫面上沒有球了，就執行 clearInterval
+                if (ballList[i].distance > 300) {
+                    ballList.shift();
+
+                    if (ballList.length == 0) {
+                        clearInterval(intervalFlag);
+                        intervalFlag = null;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

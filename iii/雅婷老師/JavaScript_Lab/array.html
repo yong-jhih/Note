@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JacaScript - Array</title>
+</head>
+
+<body>
+    <p><a href="http://www.w3schools.com/js/js_arrays.asp">w3c 陣列的說明</a></p>
+    <p><a href="http://www.w3schools.com/js/js_array_methods.asp">w3c 陣列可以使用的方法</a></p>
+
+    <p>陣列使用時機：相同的資料型態（雖然javascript可以不需要相同，但還是盡量避免）</p>
+    <p>具有一致的意義、需要參與同樣的運算</p>
+    <p>陣列就像置物櫃一樣，透過index，可以存放物品，可以取出</p>
+
+    <p><a
+            href="https://stackoverflow.com/questions/931872/what-s-the-difference-between-array-and-while-declaring-a-javascript-ar">補充資料：What’s
+            the difference between “Array()” and “[]” </a></p>
+
+    <p><a
+            href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">陣列的排序補充資料說明</a>
+    </p>
+
+    <script>
+        var weekList = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        // 如果要取得陣列裡面的物件，需要透過index，從0開始
+        console.log(weekList[0]);
+        // 透過length取得陣列有幾個元素
+        console.log(weekList.length);
+
+        // 試試看， 底下三種屬於陣列的函式
+        // 1. 陣列.valueOf()
+        console.log(weekList.values());
+        // 2. 陣列.toString()
+        console.log(weekList.toString());
+        // 3. 陣列.join("#")
+        console.log(weekList.join("#"));
+        // 4. 移除第一個元素
+        weekList.shift();
+        console.log(weekList.join("#"));
+        // 5. 移除最後一個元素
+        weekList.pop();
+        console.log(weekList.join("#"));
+        // 6. 有哪三種方法可以加入元素?
+        weekList.unshift('sunday');
+        console.log(weekList.join("#"));
+
+        weekList[weekList.length] = 'apple';
+
+        // 陣列內放入數值
+        var lotto = [37, 13, 25, 06, 18, 30];
+
+        // 7. 陣列.sort()：從小到大排序
+        lotto.sort();
+        console.log(lotto.join(','));
+
+        // 8. 陣列的排序指定
+        lotto.sort(function (a, b) {
+            return a - b;
+        });
+        console.log("lotto.sort() 要補上function才會成功 ===> " + lotto.valueOf());
+
+        var supperLotto = [34, 3, 13, 18, 1, 29];
+
+        // 9. 陣列.reverse()：必須要先透過 陣列.sort() 從小到大排序後，再透過 陣列.reverse() 反轉，才是大到小排序
+        supperLotto.reverse();
+
+        // 二維的陣列
+        var poker = [];
+        poker[0] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+        // 10. 如果要取得陣列裡面的13，要如何取得?
+        console.log(poker[0][12]);
+        // 11. 二維陣列的長度
+        console.log(poker.length);//1
+        console.log(poker[0].length);//13
+    </script>
+</body>
+
+</html>

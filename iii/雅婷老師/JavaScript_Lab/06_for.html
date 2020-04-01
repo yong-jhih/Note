@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlowControl</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">for</a></p>
+    <pre id="demo">
+        for (statement 1; statement 2; statement 3) {
+            // code block to be executed
+        }
+    </pre>
+    <hr>
+    <!-- 設計三個元素，分別用來顯示九九乘法表、透過雙層迴圈製作的長方形、透過雙層迴圈製作的三角形 -->
+    <script type="text/javascript">
+        // 1. 使用for迴圈，列印出這個月份從1號到目前系統日
+        // var d = new Date();
+        // var today = d.getDate();
+        // for (i = 1; i <= today; i++) {
+        //     console.log(d.getMonth() + 1 + "/" + i);
+        // }
+
+        //2. 使用for迴圈，逐一取得陣列裡面的元素 ==> new Array[]
+        // var weekList = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        // for (var i = 0; i < weekList.length; i++) {
+        //     console.log(weekList[i]);
+        // }
+
+        // 3. 使用 for in，逐一尋覽物件裡面的屬性
+        // function myFunction() {
+        //     var p1 = {
+        //         fname: "John",
+        //         lname: "Doe",
+        //         age: 25
+        //     };
+        //     var text = "";
+        //     var x;
+        //     for (x in p1) {
+        //         text += p1[x] + " ";
+        //     }
+        //     document.getElementById("demo").innerHTML = text;
+        // }
+        // myFunction();
+
+        // 4. 試試看，從1加到10，配合for迴圈，應該要怎麼撰寫
+        // var result = 0;
+        // for (i = 1; i <= 10; i++) {
+        //     result = result + i;
+        // }
+        // alert(result);
+
+        // 6. 試試看，列印九九乘法表 (tab為 "&#9;")
+        // var i = 1;
+        // var j = 1;
+        // for (i = 1; i <= 9; i++) {
+        //     for (j = 1; j <= 9; j++) {
+        //         var list = i + "X" + j + "=" + i * j;
+        //         console.log(list);
+        //     }
+        // }
+
+        // 7. 雙層迴圈 - 長方型星星
+        // **** 
+        // **** 
+        // **** 
+        // **** 
+        // **** 
+        // ****
+        // var stars = '';
+        // for (var j = 0; j < 6; j++) {
+        //     for (var i = 0; i < 4; i++) {
+        //         stars = stars + "*"
+        //     }
+        //     stars = stars + "<br>"
+        // }
+        // document.getElementById('demo').innerHTML = stars;
+
+        // 8. 雙層迴圈 - 三角形
+        // * 
+        // ** 
+        // *** 
+        // **** 
+        // var stars = '';
+        // for (var j = 0; j < 6; j++) {
+        //     for (var i = 0; i < j; i++) {
+        //         stars = stars + "*"
+        //     }
+        //     stars = stars + "<br>"
+        // }
+        // document.getElementById('demo').innerHTML = stars;
+    </script>
+</body>
+
+</html>

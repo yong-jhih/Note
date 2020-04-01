@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/jquery/jquery_animate.asp" target="_blank">jQuery Effects - Animation</a></p>
+    <button id="startMove">startMove</button>
+
+    <img id="kutar" src="img/kutar3.png">
+    <img id="navy" src="img/Navy1.png">
+    <img id="pika" src="img/pika2.png">
+    <img id="smoke" src="img/Smoke2.png">
+    <img id="tara" src="img/tara1.png">
+    <img id="teak" src="img/teak2.png">
+
+    <script>
+        // 1.先讓圖片可以移動
+        // $(document).ready(function () {
+        //     $("#startMove").click(function () {
+        //         $("img").css("position", "relative");
+        //         $("img").css("left", "200px");
+        //         $("img").css("top", "200px");
+        //     });
+        // });
+
+        // 2.讓圖片移動的數值不固定
+        // $(document).ready(function () {
+        //     $("img").css("position", "relative");
+        //     $("#startMove").click(function () {
+        //         // 0 - 199 的數值 0.4819302 * 200 = 52.12397;
+        //         var tempLeft = Math.floor(Math.random() * 200);
+        //         var tempTop = Math.floor(Math.random() * 200);
+        //         $("img").css("left", tempLeft + "px");
+        //         $("img").css("top", tempTop + "px");
+        //     });
+        // });
+
+        // 3.讓圖片有自己的亂數設定 .each()
+        // $(document).ready(function () {
+        //     $("img").css("position", "relative");
+        //     // 按鈕點選後
+        //     $("#startMove").click(function () {
+        //         $("img").each(function () {
+        //             $(this).css("left", Math.floor(Math.random() * 200) + "px");
+        //             $(this).css("top", Math.floor(Math.random() * 200) + "px");
+        //         });
+        //     });
+        // });
+
+        // 4.讓圖片有滑動的效果
+        // $(document).ready(function () {
+        //     $("img").css("position", "relative");
+        //     // 按鈕點選後
+        //     $("#startMove").click(function () {
+        //         $("img").each(function () {
+        //             $(this).animate({
+        //                 left: Math.floor(Math.random() * 200) + "px",
+        //                 top: Math.floor(Math.random() * 200) + "px"
+        //             }, 1000);
+        //         });
+        //     });
+        // });
+
+        // 5.讓圖片自己動起來吧
+        $(document).ready(function () {
+            $("img").css("position", "relative");
+            // 按鈕點選後
+            $("#startMove").click(function () {
+                setInterval(move, 1000);
+            });
+
+            function move() {
+                $("img").each(function () {
+                    $(this).animate({
+                        left: Math.floor(Math.random() * 200) + "px",
+                        top: Math.floor(Math.random() * 200) + "px"
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

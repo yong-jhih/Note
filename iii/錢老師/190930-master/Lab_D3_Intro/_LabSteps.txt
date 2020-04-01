@@ -1,0 +1,174 @@
+Lab: D3.js 入門練習（一）
+
+
+<Note> 本練習步驟，參考改作源於 D3.js 官網首頁:
+https://d3js.org/#introduction
+
+
+1.  新建一個 HTML 文件，檔名: lab.html，內容如下: (本檔案引用了 D3.js)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3 Lab</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <style>
+            body {
+                background-color: darkorange;
+                font-size: 1.25em;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Paragraph A</p>
+        <p>Paragraph B</p>
+        <p>Paragraph C</p>
+        <p>Paragraph D</p>
+        <p>Paragraph E</p>
+
+        <script>
+        
+
+
+        </script>
+        
+    </body>
+</html>
+
+
+
+
+2.  以 D3.js 設定樣式內容
+
+
+2.1 貼入下列程式到 <script>...</script> 程式區塊:
+    (這段程式採用 JavaScript 傳統的寫法)
+
+            var paragraphs = document.getElementsByTagName("p");
+            for (var i = 0; i < paragraphs.length; i++) {
+                var paragraph = paragraphs.item(i);
+                paragraph.style.setProperty("color", "white", null);
+            }
+
+            
+2.2 存檔後，在瀏覽器觀看效果。
+    <Note> 各個段落的字體顏色為白色。
+    
+    
+2.3 將上述四行程式去掉，換成下列這行:
+            d3.selectAll("p").style("color", "white");
+
+    
+2.4 另外，採用類似手法，將網頁的背景改成灰色:
+            d3.select("body").style("background-color", "gray");
+
+
+2.5 存檔後，在瀏覽器觀看效果。
+    <Note> 怪不得有人說 D3.js 是 SVG 界的 jQuery
+
+
+2.6 請查一下 selectAll() 與 select() 的差別。
+
+
+
+
+3   體驗 D3.js 的資料繫結功能
+
+
+3.1 繼續貼入下列程式
+
+            var p = d3.selectAll("p")
+                .data([4, 8, 15, 16, 23, 42])
+                .text(function(d) { 
+                    return d; 
+                });
+
+
+3.2 存檔後，在瀏覽器觀看效果。
+
+    <Note> 原先各段落的內容變成了 4, 8, 15, 16, 23
+    
+    <Note> 請留意畫面並沒有 42 喔!
+    一開始的網頁有五個段落，餵給 .data() 的陣列內含六項資料
+
+
+3.3 繼續加入下列這行:
+
+            p.enter().append("p")
+                .text(function(d) { return d; });
+
+
+3.4 存檔後，在瀏覽器觀看效果。
+
+    <Note> 這次多出了一個段落，內容: 42
+    
+    <Note> 新段落的字體顏色並不是白色，我們稍後會解決這個問題。
+
+
+3.5 繼續加入下列這行:
+
+            p.exit().remove();
+
+
+3.4 請隨意增減餵給 .data() 的陣列內容，例如只有三個數字或七個數字。
+    存檔後，在瀏覽器觀看效果。
+    
+    <Note>
+    不論陣列長度是多少，畫面上的段落數量不多不少就等於陣列長度。
+
+
+4.4 繼續加寫下列程式:
+
+            d3.selectAll("p")
+                .style("color", function(d, i) {
+                    return i % 2 ? "white" : "DarkSlateGray";
+                })
+                .style("font-size", function(d) { 
+                    return d * 2 + "px"; 
+                });
+
+4.5 存檔後，在瀏覽器觀看效果。
+
+
+
+
+5.  動畫效果
+
+
+5.1 繼續加寫下列程式:
+
+            d3.select("body")
+                .style("background-color", "darkorange")
+                .transition()
+                .style("background-color", "black");
+
+5.2 存檔後，在瀏覽器觀看效果。
+
+
+5.3 繼續加寫下列程式:
+            d3.select("body")
+                .style("background-color", "darkorange")
+                .transition()
+                .delay(5000)
+                .duration(3000)
+                .style("background-color", "black");
+
+
+5.4 存檔後，在瀏覽器觀看效果。
+
+
+
+
+6 將本 Lab 稍早前的程式，用一個函式包起來
+    並且立即呼叫執行，像這樣:
+
+(function(d3) {
+
+// 本 Lab 稍早前的程式
+
+})(window.d3);
+
+
+<Note>
+包成一包，有什麼好處呢?
+

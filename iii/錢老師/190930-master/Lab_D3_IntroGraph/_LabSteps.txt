@@ -1,0 +1,205 @@
+Lab: D3.js 入門練習（二） -- 繪圖
+
+
+<Note> 本練習步驟，參考改作源於:
+http://zeroviscosity.com/category/d3-js-step-by-step
+
+
+1.  靜態 SVG 
+
+1.1 新建一個 HTML 文件，檔名: lab.html，內容如下:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Lab</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart">
+        <svg width="300" height="300">
+            <g transform="translate(150,150)">
+                <path d="M9.184850993605149e-15,-150A150,150,0,0,1,142.65847744427302,-46.35254915624214L0,0Z" fill="#393b79"></path>
+                <path d="M142.65847744427302,-46.35254915624214A150,150,0,0,1,142.65847744427307,46.35254915624205L0,0Z" fill="#5254a3"></path>
+                <path d="M142.65847744427307,46.35254915624205A150,150,0,0,1,-142.658477444273,46.35254915624226L0,0Z" fill="#6b6ecf"></path>
+                <path d="M-142.658477444273,46.35254915624226A150,150,0,0,1,-1.6078131593583422e-13,-150L0,0Z" fill="#9c9ede"></path>
+            </g>
+        </svg>
+    </div>
+    <script>
+        (function(d3) {
+            // Lab 程式
+            
+            
+            
+            
+            
+            
+            
+        })(window.d3);
+    </script>
+</body>
+
+</html>
+
+
+
+1.2 存檔後，在瀏覽器觀看效果。
+
+
+1.3 請觀察 id="chart" 的那個 div 的內容架構，概要如下:
+
+    <div id="chart">
+        <svg width="300" height="300">
+            <g transform="translate(150,150)">
+                <path d="..." fill="#393b79"></path>
+                <path d="..." fill="#5254a3"></path>
+                <path d="..." fill="#6b6ecf"></path>
+                <path d="..." fill="#9c9ede"></path>
+            </g>
+        </svg>
+    </div>
+
+
+1.3 id="chart" 的那個 div 的內容全部清除
+
+
+1.2 存檔後，以瀏覽器觀看，確認內容都清空了。
+
+    <Note> 我們接下來會以程式重新定義出一樣的內容。
+
+
+2.  以 D3.js 定義 SVG
+
+
+2.1 找到「// Lab 程式」那段註解，置入下列程式:
+
+            var chartWidth = 300;
+            var chartHeight = 300;
+            var radius = Math.min(chartWidth, chartHeight) / 2;
+
+            var svg = d3.select('#chart')
+                .append('svg')
+                    .attr('width', chartWidth)
+                    .attr('height', chartHeight)
+                .append('g')
+                    .attr('transform', 'translate(' + (chartWidth / 2) + ',' + (chartHeight / 2) + ')');
+
+2.2 閱讀上述程式，對照一下 1.3 原 div 內容:
+
+    <div id="chart">
+        <svg width="300" height="300">
+            <g transform="translate(150,150)">
+                <path d="..." fill="#393b79"></path>
+                <path d="..." fill="#5254a3"></path>
+                <path d="..." fill="#6b6ecf"></path>
+                <path d="..." fill="#9c9ede"></path>
+            </g>
+        </svg>
+    </div>
+
+
+2.3 繼續建立 <g></g> 裡頭的那些 path，程式寫法如下:
+
+            var dataset = [
+                { label: '食', amount: 10000 },
+                { label: '衣', amount: 5000 },
+                { label: '住', amount: 20000 },
+                { label: '行', amount: 15000 }
+            ];
+
+            var arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(radius);
+
+            var pie = d3.pie()
+                .value(function(data) { return data.amount; })
+                .sort(null);
+
+            var colorList = d3.scaleOrdinal(d3.schemeCategory20b);
+            var path = svg.selectAll('path')
+                .data(pie(dataset))
+                .enter()
+                .append('path')
+                .attr('d', arc)
+                .attr('fill', function(d, i) {
+                    return colorList(d.data.label);
+                });
+
+2.4 存檔後，在瀏覽器觀看效果。
+
+    <Note> 
+    請滑鼠右鍵點按圓餅圖 | 檢查，
+    檢視一下以程式產生出來的 SVG
+    
+    <Note> 各區顏色的設定，請參考下列文件:
+    https://github.com/d3/d3-scale/blob/master/README.md#category-scales
+
+
+2.5 研究下列這支範例程式，看看要怎麼使用 arc() ?
+    http://jsfiddle.net/DorjeDuck/wQXCL/10/
+
+
+
+
+3.  將圓餅圖改成甜甜圈型式並且加上圖標說明
+
+3.1 找到下列程式:
+
+            var arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(radius);
+    改成:
+            var arc = d3.arc()
+                .innerRadius(radius - 60)
+                .outerRadius(radius);
+    
+
+3.2 存檔後，在瀏覽器觀看效果。
+
+
+3.3 加入圖標說明:
+
+            var legendRectSize = 18;
+            var legendSpacing = 4;
+            
+            var legend = svg.selectAll('.legend')
+              .data(colorList.domain())
+              .enter()
+              .append('g')
+              .attr('class', 'legend')
+              .attr('transform', function(d, i) {
+                var height = legendRectSize + legendSpacing;
+                var offset =  height * colorList.domain().length / 2;
+                var horz = -2 * legendRectSize;
+                var vert = i * height - offset;
+                return 'translate(' + horz + ',' + vert + ')';
+              });
+              
+            
+            legend.append('rect')
+              .attr('width', legendRectSize)
+              .attr('height', legendRectSize)
+              .style('fill', colorList)
+              .style('stroke', colorList);
+            
+            legend.append('text')
+              .attr('x', legendRectSize + legendSpacing)
+              .attr('y', legendRectSize - legendSpacing)
+              .text(function(d) { return d; });  
+
+
+3.4 存檔後，在瀏覽器觀看效果。
+
+    <Note> 
+    請滑鼠右鍵點按圓餅圖 | 檢查，
+    檢視一下以程式產生出來的 SVG
+

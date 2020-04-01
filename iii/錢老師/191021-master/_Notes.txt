@@ -1,0 +1,10 @@
+1. 使用 Azure 入口網站建立 Azure Database for MySQL 伺服器
+https://docs.microsoft.com/zh-tw/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal
+
+
+2. 在 Linux 上的 App Service 中建立 PHP 應用程式
+https://docs.microsoft.com/zh-tw/azure/app-service/containers/quickstart-php
+
+
+3. 綜合練習: 請試著將 Lab_Employee 佈署到 Azure
+

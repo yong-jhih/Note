@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>head or body</title>
+    <script>
+        function changeBlue() {
+            var p = document.getElementById('pJuly');
+            p.style.fontSize = "2rem";
+            p.style.color = "blue";
+        }
+    </script>
+</head>
+
+<body>
+    <p id="pJuly" onclick="changeBlue()">七月的日本有花火節。</p>
+    <p id="pAugust" onclick="changeBlue()">八月的日本還是在花火節。</p>
+
+    <p>各自點選上方的兩列文字，是否有樣式上的修改，為什麼?</p>
+
+    <script>
+        function changeBlue() {
+            var p = document.getElementById('pAugust');
+            p.style.fontSize = "3rem";
+            p.style.color = "red";
+        }
+    </script>
+</body></html>

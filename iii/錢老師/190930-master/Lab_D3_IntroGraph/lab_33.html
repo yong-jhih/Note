@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Lab</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chart">
+    </div>
+    <script>
+        (function(d3) {
+
+            var chartWidth = 300;
+            var chartHeight = 300;
+            var radius = Math.min(chartWidth, chartHeight) / 2;
+
+            var svg = d3.select('#chart')
+                .append('svg')
+                    .attr('width', chartWidth)
+                    .attr('height', chartHeight)
+                .append('g')
+                    .attr('transform', 'translate(' + (chartWidth / 2) + ',' + (chartHeight / 2) + ')');
+
+
+            var dataset = [
+                { label: '食', amount: 10000 },
+                { label: '衣', amount: 5000 },
+                { label: '住', amount: 20000 },
+                { label: '行', amount: 15000 }
+            ];
+
+
+            var arc = d3.arc()
+                .innerRadius(radius - 60)
+                .outerRadius(radius);
+
+            var pie = d3.pie()
+                .value(function(data) { return data.amount; })
+                .sort(null);
+
+            var colorList = d3.scaleOrdinal(d3.schemeCategory20b);
+            var path = svg.selectAll('path')
+                .data(pie(dataset))
+                .enter()
+                .append('path')
+                .attr('d', arc)
+                .attr('fill', function(d, i) {
+                    return colorList(d.data.label);
+                });
+
+
+            var legendRectSize = 18;
+            var legendSpacing = 4;
+            
+            var legend = svg.selectAll('.legend')
+              .data(colorList.domain())
+              .enter()
+              .append('g')
+              .attr('class', 'legend')
+              .attr('transform', function(d, i) {
+                var height = legendRectSize + legendSpacing;
+                var offset =  height * colorList.domain().length / 2;
+                var horz = -2 * legendRectSize;
+                var vert = i * height - offset;
+                return 'translate(' + horz + ',' + vert + ')';
+              });
+              
+            
+            legend.append('rect')
+              .attr('width', legendRectSize)
+              .attr('height', legendRectSize)
+              .style('fill', colorList)
+              .style('stroke', colorList);
+            
+            legend.append('text')
+              .attr('x', legendRectSize + legendSpacing)
+              .attr('y', legendRectSize - legendSpacing)
+              .text(function(d) { return d; });  
+  
+  
+
+        })(window.d3);
+    </script>
+</body>
+
+</html>

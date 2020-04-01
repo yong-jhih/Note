@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Operator(運算子)</title>
+</head>
+
+<body>
+
+    <p><a href="http://www.w3schools.com/js/js_operators.asp" target="_blank">運算子清單</a></p>
+
+    <script>
+        // 算術類
+        // 1. 取餘數 (%)
+        var a = 10;
+        var b = 3;
+        console.log("1-" + a % b);
+
+        // 比較類
+        // 2. == 和 === 的差異在?
+        var x = 10;
+        var y = "10";
+        var z = 4;
+        console.log(x == y); //true
+        console.log(x === y); //false
+
+        // 邏輯判斷類
+        // 3. 不等於的寫法 (!=)
+        console.log(x != z);//true
+
+        // 4. and (&&) 條件需要同時成立的時候
+        console.log(x > z && a != b);//true
+
+        // 5. or (||) 條件擇一成立
+        console.log(x > z || a == b);//true
+    </script>
+
+</body>
+
+</html>

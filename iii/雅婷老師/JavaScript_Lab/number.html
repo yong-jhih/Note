@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - Number</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_numbers.asp">w3c 數值的說明</a></p>
+    <p><a href="https://www.w3schools.com/js/js_number_methods.asp">w3c 數值的方法</a></p>
+
+    <script>
+        // 底下數值運算後，請透過console.log察看結果
+        var result = 0;
+        
+        // 宣告一個變數 result = 1 + 2
+        
+        // 設定 result = 0.2 + 0.1
+        
+        // w3c 建議透過這樣的方式處理
+        result = (0.2 * 10 + 0.1 * 10) / 10;
+        console.log("result = (0.2 * 10 + 0.1 * 10) / 10  ==> " + result);
+        
+        // 將result重新設定為0.2 + 0.1
+        
+        // 透過number相關的方法重新設定
+        // parseInt() 和 parseFloat() => 通常用於字串轉數值的時候
+
+
+        // 底下的錯誤訊息示範會在往後的程式中經常遇見，請留意
+        var errMsg;
+        console.log("沒有被定義：" + errMsg);
+        errMsg = 7 / "apple";
+        console.log("數值除以字串：" + errMsg);
+        errMsg = 1 / 0;
+        console.log("1 / 0：" + errMsg);
+        errMsg = -1 / 0;
+        console.log("-1 / 0：" + errMsg);
+        errMsg = parseInt("abc32564");;
+        console.log("not a number：" + errMsg);
+
+    </script>
+
+</body>
+
+</html>

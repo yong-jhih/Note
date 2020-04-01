@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - Object</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_object_definition.asp" target="_blank">使用{} create object</a></p>
+    <p><a href="https://www.w3schools.com/js/js_object_constructors.asp" target="_blank">使用function create object</a>
+    </p>
+    <p><a href="https://pjchender.blogspot.com/2016/06/javascriptfunction-constructornew.html" target="_blank">補充資料</a>
+    </p>
+
+    <script>
+        // 使用{} create object
+        // 一個物件是一些屬性的集合，而屬性是鍵與值之間的關聯。
+        var student = {
+            chinese: 100,
+            math: 40,
+            english: 60
+        }
+
+        // 透過屬性取得物件裡面的值
+        console.log(student.chinese); //100
+        console.log(student["math"]); //40
+        // 同樣都是中括弧，底下這行無法執行 student 非陣列
+        console.log(student["0"]); //undefined
+
+
+        // 使用function create object
+        // a. 建議第一個字母為大寫
+        // b. function裡面的this，是一個關鍵字，在物件被誕生時會伴隨著誕生
+        function Person(inputName, inputYear) {
+            this.name = inputName;
+            this.year = inputYear;
+            this.getAge = function () {
+                var d = new Date();
+                var sysYear = d.getFullYear();
+                var result = parseInt(sysYear) - this.year;
+                return result;
+            }
+        }
+        // 新增一個person物件，傳入姓名和出生年
+        var p = new Person('emma', '2000');
+        // 取得姓名，然後列印看看
+        console.log(p.name);
+        // 使用年紀function，然後列印看看
+        console.log(p.getAge());
+    </script>
+
+</body>
+
+</html>

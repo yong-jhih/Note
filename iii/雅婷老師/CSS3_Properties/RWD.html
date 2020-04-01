@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Responsive Web Design </title>
+    <style type="text/css">
+
+        /*隨著裝置(media)畫面(screen)不同，網頁會自動對應不同的css*/
+
+        /* max-width：表示設定數值「小於等於」 */
+        /* min-width：表示設定數值「大於等於」 */
+
+        @media screen and (max-width: 700px) {
+
+            /* 瀏覽器寬度小於或者等於700px，會載入這裡的 CSS。*/
+            body {
+                background-color: red;
+            }
+        }
+
+        @media screen and (min-width: 700px) and (max-width: 1000px) {
+            body {
+                background-color: yellow;
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+
+            /* 瀏覽器寬度 大於或者等於 1000px，會載入這裡的 CSS。*/
+            body {
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="https://www.thinkwithgoogle.com/" target="_blank">響應式網頁</a></p>
+    <p><a href="http://design2u.me/blog/example/mediaquery/index.html" target="_blank">網路參考範例(以顏色區分)</a></p>
+    
+    <br>
+
+    <p><a href="https://blog.hinablue.me/css-media-query-tips/" target="_blank">補充資料：圖解設定的範圍區間</a></p>
+    <p><a href="https://ithelp.ithome.com.tw/articles/10196578"  target="_blank">補充資料：圖解設定的範圍區間</a></p>
+</body>
+
+</html>

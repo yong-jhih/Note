@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - this</title>
+</head>
+
+<body>
+
+    <!-- 1. 在onclick的時候直接使用console.log -->
+    <p id="pID" onclick=" console.log(this)">this 的第一種說明(自己)</p>
+    <br>
+    <hr>
+
+    <!-- 2. 在onclick的時候將this放入 -->
+    <br>
+    <button onclick="test()">this 的第二種說明(window)</button>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <!-- 3. (在物件的function裡面使用this，表示為該物件本身) -->
+    <p>this 的第三種說明</p>
+
+    <script>
+        var strTemp = "a";
+
+        // 3. 撰寫 function btnNumberClick，可以接收兩個參數，並且log下來；請將第一個參數命名為myObj，看看 myObj.id 會提示什麼
+        function btnNumberClick(myObj, str) {
+            console.log(myObj.id);
+            console.log(str);
+        }
+
+        // 4. 撰寫 function test，在function中也宣告一個變數為strTemp，log寫入 this.strTemp
+        function test() {
+            var strTemp = "b";
+            console.log(strTemp);
+            console.log(this.strTemp);
+            console.log(window.strTemp);
+        }
+
+        // 5. 仿照w3c，定義一個person物件，並且擁有function
+        function Person() {
+
+        }
+    </script>
+
+</body>
+
+</html>

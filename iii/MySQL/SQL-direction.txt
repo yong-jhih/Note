@@ -1,0 +1,654 @@
+cd c:\xampp\mysql\bin
+mysql -u root -p
+show databases;
+use class;
+show tables;
+create table tb1 (id int,f1 varchar(10));
+create table tb2 (id int,f1 varchar(10)) engine = InnoDB character set = utf8;
+create table tb3 (id int,f1 varchar(10) character set big5 );
+create table tb4 (id int unsigned zerofill auto_increment, f1 varchar(10));
+create table tb5 (f1 varchar(10) not null,f2 varchar(10) null,f3 varchar(10));
+create table tb6 (f1 varchar(10) not null,f2 varchar(10) default null);desc tb6;
+create table tb7 (f1 varchar(10) not null default 'f1', f2 varchar(1) not null,f3 varchar(10));
+
+insert into tb7 (f3) values ('brad');
+select * from tb7;
+update tb7 set f3='ok' where f1='f1';
+select * from tb7;
+update tb7 set f2 = default  where f1='f1';
+select * from tb7;
+insert into tb7 (f1,f2,f3) values (default, default, default);
+select * from tb7;
+
+create table tb8 (d1 date,d2 datetime,d3 time,d4 timestamp,d5 timestamp not null default '2000-01-01 00:00:00',d6 timestamp not null default current_timestamp);
+desc tb8;
+desc tb8\G
+insert into tb8 (d1) values ('2019-08-19');
+select * from tb8;
+select * from tb8\G
+
+create table db9 (d1 timestamp default '2000-01-01 10:10:10');
+desc tb8\G
+insert into tb8 (d1,d2) values ('0000-00-00 00:00:00',0);
+select * from tb8;
+select * from tb8\G
+create temporary table tb10 (id int,f1 varchar(10));
+**離線後消失
+desc tb10;
+insert into tb10 values (123,'Brad');
+select * from tb10;
+
+** show create table table_name ;
+** 查詢表格創立時所用語法
+
+
+create table tb1 (id int unsigned primary key,twid varchar(10) unique key,email varchar(200) unique key,tel varchar(20));
+desc tb1;
+create table tb2 (id int unsigned,twid varchar(10),email varchar(200),tel varchar(20),primary key (id),unique key (twid,email));
+desc tb2;
+create table tb3 (id int unsigned,twid varchar(10),email varchar(200),tel varchar(20),primary key (id),unique key (twid),unique key (email));
+desc tb3;
+create table tb4 (id int unsigned,twid varchar(10),email varchar(200),tel varchar(20),primary key (id),index (twid, tel));
+desc tb4;
+show create table tb1;
+show create table tb2;
+show create table tb3;
+show create table tb4;
+
+create table tb6 (id int key);
+desc tb6;
+create table tb7 (id int, key (id));
+desc tb7;
+show create table tb7;
+insert into tb7 values (1);
+create table tb9 (id int unique);
+desc tb9;
+create table tb10 (id int, id2 int,key (id),key (id2));
+desc tb10;
+show create table tb10;
+create table tb11 (addr varchar(100),index (addr (6) desc));
+show create table tb11;
+desc tb11;
+create table tb12 (id int,unique (id) using hash);
+desc tb12;
+show tables;
+show indexes from tb1;
+show indexes from tb1\G
+show create table students;
+show indexes from students;
+show indexes from students\G
+alter table tb20 drop primary key;
+show index from tb20\G
+create index idIndex on tb20 (id);
+desc tb20;
+create unique index twidIndex on tb20 (twid);
+desc tb20;
+alter table tb20 add primary key (cname);
+desc tb20;
+alter table tb20 drop primary key;
+desc tb20;
+
+show tables;
+desc tb3;
+insert into tb3 (id) values (1);
+insert into tb3 (id) values (2);
+insert into tb3 (id) values (3);
+select * from tb3;
+insert into tb3 (id,twid) values (4,'1');
+select * from tb3;
+create table tb21 (id int unsigned primary key auto_increment,f1 varchar(10));
+create table tb22 (tb21id int, f1 varchar(10));
+insert into tb21 (f1) values ('aa');
+insert into tb22 values (last_insert_id(),'111'),(last_insert_id(),'222');
+select * from tb21; select * from tb22;
+insert into tb21 (f1) values ('bb');
+select * from tb21; select * from tb22;
+insert into tb21 (f1) values ('cc');
+select * from tb21; select * from tb22;
+delete from tb21 where id = 2;
+select * from tb21; select * from tb22;
+insert into tb21 (f1) values ('dd');
+insert into tb22 values (last_insert_id(),'ok');
+select * from tb21; select * from tb22;
+
+異動自動遞增值
+alert table 表名稱 AUTO_INCREMENT = n;
+foreign key (本表欄位) references 其他表 (欄位)
+
+
+set @var1 = 123 ;set @var2 = 321 ;set @var3 := 100 ;
+select @var1,@var2,@var3;
+
+**select給值
+select @x := 1 ;
+select @x ;
+**
+
+set @pass = 60;
+select cid ,cname,ch,eng,math from students where eng >= @pass;
+select @avg_eng := avg(eng) from students ;
+select @avg_eng;
+select cid ,cname,ch,eng,math from students where eng <= @avg_eng ;
+
+**
+MariaDB [class]> update students set eng=100 where cid = 11 ;
+MariaDB [class]> select @avg_eng;
+即使修改資料此變數值依然不會改變,若要更新需重新給值;
+**
+
+prepare updateEngScore from 'update students set eng = ? where cid = ?';
+select cid ,eng from students where cid = 11;
+set @eng = 57 ;
+set @cid = 11 ;
+execute updateEngScore using @eng , @cid ;
+execute updateEngScore using 100 , 11;
+
+**以上關閉 命令列後皆消失
+
+** 修改結尾符號 為 # ;
+\d #
+\d ;
+**
+
+**編寫程式
+\d #
+create procedure test1() begin select * from students ;  end#
+\d ;
+call test1();
+**另開.sql 存程式
+\d #
+create function fxy(x int,y int)
+returns int 
+begin
+return x+y ;
+end #
+\d ;
+**
+
+MariaDB [class]> \d #
+MariaDB [class]> create function fxy(x int,y int)returns intbeginreturn x+y ;
+end #
+\d ;
+select fxy(10,3);
+\d #
+create function ftest2(score int)returns varchar(10)begin declare ret varchar(10) default 'down'; if score >= 60 then set ret = 'pass'; end if ; return ret ;end #
+\d ;
+
+
+
+show function status;
+show function status\g
+\d #
+
+create function ftest8(n int) returns int
+begin
+    declare i int default 0;
+    declare sum int default 0;
+    myloop: loop
+        set i = i + 1;
+        if i % 2 = 0 then
+            iterate myloop;
+        end if;
+        set sum = sum + i;
+        if i = n then
+            leave myloop;
+        end if;
+    end loop;
+    return sum;
+end #
+\d ;
+
+select ftest8(4);
+\d #
+create function ftest10(n int) returns int
+begin
+    declare i int default 0;
+    declare sum int default 0;
+    myloop: loop
+        set i = i + 1;
+        if i % 2 = 0 then
+            iterate myloop;
+        end if;
+        set sum = sum + i;
+        if i = n then
+            leave myloop;
+        end if;
+    end loop myloop;
+    return sum;
+end #
+\d ;
+select ftest10(4);
+select ftest10(7);
+show databases;
+\d #
+create procedure ptest1()
+begin
+    select * from bk1;
+end #
+\d ;
+
+call ptest1();
+\d #
+create procedure ptest2(in x int)
+begin
+    select x;
+end #
+\d ;
+
+call ptest2(4);
+\d #
+create procedure ptest3(out x int)
+begin
+    select x;
+end #
+\d ;
+
+call ptest3(4);
+call ptest3(@x);
+set @x = 100;
+call ptest3(@x);
+
+-- in, out, inout
+\d #
+create procedure ptest4(out x int)
+begin
+    select count(*) into x from bk1;
+end #
+\d ;
+call ptest4(@num);
+select @num;
+-- in, out, inout
+\d #
+create procedure ptest5(inout x int)
+begin
+    select x;
+end #
+\d ;
+
+set @a = 123;
+call ptest5(@a);
+
+\d #
+create procedure ptest6(inout x int)
+begin
+    select x;
+    select max(ch) into x from bk1;
+end #
+\d ;
+set @score = 0;
+select @score;
+call ptest6(@score);
+select @score;
+select * from bk1;
+select cid,cname,cphone from bk1 where cphone like '092%';
+select count(*) from bk1 where cphone like '092%';
+select count(*) from bk1 where cphone like '091%';
+select count(*) from bk1 where cphone like '090%';
+select count(*) from bk1 where cphone like '093%';
+\d #
+create procedure ptest71(in kw varchar(100), out count int)
+begin
+    select count(*) into count from bk1 where cphone like '092%';
+end #
+\d ;
+call ptest71('a', @x);
+select @x;
+
+\d #
+    select count(*) into count from bk1 where cphone like kw;
+end #
+\d ;
+
+\d #
+create procedure ptest73(in kw varchar(100), out count int)
+begin
+    select count(*) into count from bk1 where cphone like kw COLLATE utf8_unicode_ci;
+end #
+\d ;
+
+call ptest73('092%',@y);
+select @y;
+call ptest73('091%',@y);
+select @y;
+call ptest73('090%',@y);
+select @y;
+\d #
+create procedure ptest74(in kw varchar(100), out count int)
+begin
+    set @key = concat(kw, '%') COLLATE utf8_unicode_ci;
+    select count(*) into count from bk1
+        where cphone like @key;
+end #
+\d ;
+call ptest74('092', @result);
+select @result;
+call ptest74('093', @result);
+select @result;
+call ptest74('091', @result);
+select @result;
+\d #
+create procedure ptest75(in kw varchar(100))
+begin
+    set @key = concat('%', kw, '%') COLLATE utf8_unicode_ci;
+    set @query = 'select cid,cname,cphone from bk1 where cname like ?';
+
+    prepare stmt from @query;
+    execute stmt using @key;
+end #
+\d ;
+call ptest75('簡');
+select cname from bk1;
+call ptest75('林');
+call ptest75('心');
+create table mytable (id int primary key auto_increment,f1 varchar(100));
+desc mytable;
+\d #
+create trigger t1 after insert on mytable for each row
+begin
+    select 'ok1';
+end #
+\d ;
+create table eventlog (id int primary key auto_increment,message varchar(200));
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [class]> desc eventlog;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| message | varchar(200) | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+2 rows in set (0.024 sec)
+
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t1 after insert on mytable for each row
+    -> begin
+    ->     insert into eventlog (message) values
+    ->         (concat("insert new f1 :", new.f1));
+    -> end #
+Query OK, 0 rows affected (0.021 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> insert into mytable (f1) values ('abcdefg');
+Query OK, 1 row affected (0.013 sec)
+
+MariaDB [class]> select * from mytable;
++----+---------+
+| id | f1      |
++----+---------+
+|  1 | abcdefg |
++----+---------+
+1 row in set (0.000 sec)
+
+MariaDB [class]> select * from eventlog;
++----+------------------------+
+| id | message                |
++----+------------------------+
+|  1 | insert new f1 :abcdefg |
++----+------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [class]> create table myevent (id int primary key auto_increment,
+    -> timing varchar(10), action varchar(10), etime datetime,
+    -> log text);
+Query OK, 0 rows affected (0.031 sec)
+
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t2 before insert on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('before','insert',now(),'insert f1: old');
+    -> end #
+Query OK, 0 rows affected (0.021 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t3 after insert on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('after','insert',now(),concat('insert f1: new:', new.f1));
+    -> end #
+Query OK, 0 rows affected (0.026 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> insert into mytable (f1) values ('Hello,World');
+Query OK, 1 row affected (0.014 sec)
+
+MariaDB [class]> select * from myevent;
++----+--------+--------+---------------------+----------------------------+
+| id | timing | action | etime               | log                        |
++----+--------+--------+---------------------+----------------------------+
+|  1 | before | insert | 2019-08-22 11:16:12 | insert f1: old             |
+|  2 | after  | insert | 2019-08-22 11:16:12 | insert f1: new:Hello,World |
++----+--------+--------+---------------------+----------------------------+
+2 rows in set (0.000 sec)
+
+MariaDB [class]> insert into mytable (f1) values ('Hello,WorldV2');
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [class]> select * from myevent;
++----+--------+--------+---------------------+------------------------------+
+| id | timing | action | etime               | log                          |
++----+--------+--------+---------------------+------------------------------+
+|  1 | before | insert | 2019-08-22 11:16:12 | insert f1: old               |
+|  2 | after  | insert | 2019-08-22 11:16:12 | insert f1: new:Hello,World   |
+|  3 | before | insert | 2019-08-22 11:19:53 | insert f1: new:Hello,WorldV2 |
+|  4 | after  | insert | 2019-08-22 11:19:53 | insert f1: new:Hello,WorldV2 |
++----+--------+--------+---------------------+------------------------------+
+4 rows in set (0.000 sec)
+
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t4 before update on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('before','update',now(),concat('update f1: old = ',old.f1));
+    -> end #
+Query OK, 0 rows affected (0.021 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t5 after update on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('after','update',now(),
+    ->         concat('update f1:',old.f1, ' => ', new.f1));
+    -> end #
+Query OK, 0 rows affected (0.016 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> select * from mytable;
++----+---------------+
+| id | f1            |
++----+---------------+
+|  1 | abcdefg       |
+|  2 | Hello,World   |
+|  3 | Hello,WorldV2 |
++----+---------------+
+3 rows in set (0.001 sec)
+
+MariaDB [class]> update mytable set f1 = 'Brad' where id = 1;
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [class]> select * from mytable;
++----+---------------+
+| id | f1            |
++----+---------------+
+|  1 | Brad          |
+|  2 | Hello,World   |
+|  3 | Hello,WorldV2 |
++----+---------------+
+3 rows in set (0.000 sec)
+
+MariaDB [class]> select * from myevent;
++----+--------+--------+---------------------+------------------------------+
+| id | timing | action | etime               | log                          |
++----+--------+--------+---------------------+------------------------------+
+|  1 | before | insert | 2019-08-22 11:16:12 | insert f1: old               |
+|  2 | after  | insert | 2019-08-22 11:16:12 | insert f1: new:Hello,World   |
+|  3 | before | insert | 2019-08-22 11:19:53 | insert f1: new:Hello,WorldV2 |
+|  4 | after  | insert | 2019-08-22 11:19:53 | insert f1: new:Hello,WorldV2 |
+|  5 | before | update | 2019-08-22 11:25:47 | update f1: old = abcdefg     |
+|  6 | after  | update | 2019-08-22 11:25:47 | update f1:abcdefg => Brad    |
++----+--------+--------+---------------------+------------------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [class]> create trigger t6 before delete on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('before','delete',now(),concat('delete:',old.id,':',old.f1));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 4
+MariaDB [class]> end #
+    -> \d ;
+    -> #
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'end' at line 1
+MariaDB [class]> select concat('a','b');
++-----------------+
+| concat('a','b') |
++-----------------+
+| ab              |
++-----------------+
+1 row in set (0.000 sec)
+
+MariaDB [class]> select concat('a',123);
++-----------------+
+| concat('a',123) |
++-----------------+
+| a123            |
++-----------------+
+1 row in set (0.000 sec)
+
+MariaDB [class]> select concat('a',123,'b');
++---------------------+
+| concat('a',123,'b') |
++---------------------+
+| a123b               |
++---------------------+
+1 row in set (0.000 sec)
+
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t6 before delete on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('before','delete',now(),concat('delete:',old.id,':',old.f1));
+    -> end #
+Query OK, 0 rows affected (0.022 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t7 after delete on mytable for each row
+    -> begin
+    ->     insert into myevent (timing,action,etime,log) values
+    ->         ('after','delete',now(),
+    ->         concat('delete:ok'));
+    -> end #
+Query OK, 0 rows affected (0.020 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> select * from mytable;
++----+---------------+
+| id | f1            |
++----+---------------+
+|  1 | Brad          |
+|  2 | Hello,World   |
+|  3 | Hello,WorldV2 |
++----+---------------+
+3 rows in set (0.002 sec)
+
+MariaDB [class]> delete from mytable where id=2;
+Query OK, 1 row affected (0.014 sec)
+
+MariaDB [class]> select * from myevent;
++----+--------+--------+---------------------+------------------------------+
+| id | timing | action | etime               | log                          |
++----+--------+--------+---------------------+------------------------------+
+|  1 | before | insert | 2019-08-22 11:16:12 | insert f1: old               |
+|  2 | after  | insert | 2019-08-22 11:16:12 | insert f1: new:Hello,World   |
+|  3 | before | insert | 2019-08-22 11:19:53 | insert f1: new:Hello,WorldV2 |
+|  4 | after  | insert | 2019-08-22 11:19:53 | insert f1: new:Hello,WorldV2 |
+|  5 | before | update | 2019-08-22 11:25:47 | update f1: old = abcdefg     |
+|  6 | after  | update | 2019-08-22 11:25:47 | update f1:abcdefg => Brad    |
+|  7 | before | delete | 2019-08-22 11:40:06 | delete:2:Hello,World         |
+|  8 | after  | delete | 2019-08-22 11:40:06 | delete:ok                    |
++----+--------+--------+---------------------+------------------------------+
+8 rows in set (0.000 sec)
+
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t8 after update on mytable for each row
+    -> begin
+    ->     update mytable set f1 = 'Brad' where id = new.id;
+    -> end #
+Query OK, 0 rows affected (0.021 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]> select * from mytable;
++----+---------------+
+| id | f1            |
++----+---------------+
+|  1 | Brad          |
+|  3 | Hello,WorldV2 |
++----+---------------+
+2 rows in set (0.002 sec)
+
+MariaDB [class]> update mytable set f1 = 'tony' where id =3;
+ERROR 1442 (HY000): Can't update table 'mytable' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t8 after update on mytable for each row
+    -> begin
+    ->     if old.id = 3 then
+    ->         delete from mytable where f1 = 'Brad';
+    ->     end if;
+    -> end #
+ERROR 1359 (HY000): Trigger 'class.t8' already exists
+MariaDB [class]> \d ;
+MariaDB [class]> \d #
+MariaDB [class]> create trigger t9 after update on mytable for each row
+    -> begin
+    ->     if old.id = 3 then
+    ->         delete from mytable where f1 = 'Brad';
+    ->     end if;
+    -> end #
+Query OK, 0 rows affected (0.020 sec)
+
+MariaDB [class]> \d ;
+MariaDB [class]>
+MariaDB [class]> select * from mytable;
++----+---------------+
+| id | f1            |
++----+---------------+
+|  1 | Brad          |
+|  3 | Hello,WorldV2 |
++----+---------------+
+2 rows in set (0.001 sec)
+
+MariaDB [class]> update mytable set f1='peter' where id=3;
+ERROR 1442 (HY000): Can't update table 'mytable' in stored function/trigger because it is already used by statement which invoked this stored function/trigger
+MariaDB [class]> create table product (id int primary key auto_increment,
+    -> pname varchar(200), cat varchar(100), unique (pname));
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [class]> create table cats (id int primary key auto_increment,
+    -> cat varchar(100), unique (cat));
+Query OK, 0 rows affected (0.033 sec)
+
+MariaDB [class]> desc product;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| pname | varchar(200) | YES  | UNI | NULL    |                |
+| cat   | varchar(100) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+3 rows in set (0.023 sec)
+
+MariaDB [class]> desc cats;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| cat   | varchar(100) | YES  | UNI | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.025 sec)
+
+MariaDB [class]>

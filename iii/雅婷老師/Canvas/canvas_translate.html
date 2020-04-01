@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+
+    <style>
+        #myCanvas {
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rotate" target="_blank">canvas.rotate(angle)</a></p>
+    
+    <!-- 畫布 -->
+    <canvas id="myCanvas" width="500px" height="300px"></canvas>
+
+    <script>
+        // 1. 取得 & 設定畫布
+        var ctx = document.getElementById('myCanvas').getContext('2d');
+        ctx.fillStyle = "pink";
+        ctx.fillRect(0, 0, 50, 100);
+
+        // 2. 藍色 會在畫布上的哪裡?
+        //    translate(250, 0);
+        //    fillRect(0, 0, 50, 100);
+        ctx.save();
+        ctx.fillStyle = "blue";
+        ctx.translate(250, 0);
+        ctx.fillRect(0, 0, 50, 100);
+        ctx.restore();
+
+        // 3. 橘色 會出現在畫布上的在哪裡?
+        //    fillRect(0, 0, 50, 50);
+        ctx.fillStyle = "orange";
+        ctx.fillRect(0, 0, 50, 50);
+
+        // 4. 紅色 會出現在畫布上的在哪裡?
+        //    rotate(45 * Math.PI / 180);
+        //    fillRect(0, 0, 50, 50);
+        ctx.fillStyle = "red";
+        ctx.rotate(45 * Math.PI / 180);
+        ctx.fillRect(0, 0, 50, 50);
+
+        // 5. 綠色 會出現在畫布上的在哪裡?
+        //    rotate(45 * Math.PI / 180);
+        //    fillRect(0, 0, 50, 100);
+        ctx.fillStyle = "green";
+        ctx.rotate(45 * Math.PI / 180);
+        ctx.fillRect(0, 0, 50, 100);
+
+        // 6. 灰色 會出現在畫布上的在哪裡?
+        //    translate(0, 225);
+        //    fillRect(0, 0, 25, 25);
+        ctx.fillStyle = "gray";
+        ctx.translate(0, 225);
+        ctx.fillRect(0, 0, 25, 25);
+
+        // 7. 回到 步驟2 加入 save() & restore()
+        
+    </script>
+</body>
+
+</html>

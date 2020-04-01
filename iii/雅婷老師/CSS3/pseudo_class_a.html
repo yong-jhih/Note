@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>學習清單總整理</title>
+    <style type="text/css">
+        /* 透過<a>標籤，設定字型大小 & 取消底線 */
+        a {
+            font-size: 3rem;
+            text-decoration: none;
+        }
+
+        /* (link) 設定超連結未連結時的顏色 YellowGreen */
+        a:link {
+            color: yellowgreen;
+        }
+
+        /* (visited) 設定超連結已連結過的顏色 LightCoral */
+        a:visited {
+            color: lightcoral;
+        }
+
+        /* (hover) 設定滑鼠移至連結上方時的顏色 LightSkyBlue */
+        a:hover {
+            color: lightskyblue;
+        }
+
+        /* (active) 設定超連結點選連結當下的顏色 black */
+        a:active {
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="navStyle.css">
+
+</head>
+
+<body>
+    <!-- 虛擬類別：元素存在，且元素的樣式會隨使用者操作改變；或元素存在，但無法透過 "simple selectors" 的方法選取的 -->
+    <p><a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">CSS Pseudo-classes</a></p>
+    <p><a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/#pseudo-classes" target="_blank">w3c百科說明</a></p>
+    <p><a href="https://stringpiggy.hpd.io/pseudo-element-pseudo-class-difference/" target="_blank">補充資料</a></p>
+    <!-- <nav> 標籤是導覽列 通常在導覽列裡，我們會放各式 超連結 清單-->
+    <!-- 試試看 -->
+    <!-- 1. 建立一組導覽列：HTML、CSS、JavaScript、SQL、PHP、Bootstrap、jQuery -->
+    <!-- 2. 設定點選項目的時候，會對應到w3c的各項連結 -->
+    <!-- 3. 引用 navStyle.css -->
+    <!-- 4. 對照 navStyle.css 設定網頁元素 -->
+    <nav>
+        <ul class="navBar">
+            <li><a href="https://www.w3schools.com/html/default.asp">HTML</a></li>
+            <li><a href="https://www.w3schools.com/css/default.asp">CSS</a></li>
+            <li><a href="https://www.w3schools.com/js/default.asp">JavaScript</a></li>
+            <li><a href="https://www.w3schools.com/sql/default.asp">SQL</a></li>
+            <li><a href="https://www.w3schools.com/php/default.asp">PHP</a></li>
+            <li><a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">Bootstrap</a></li>
+            <li><a href="https://www.w3schools.com/jquery/default.asp">jQuery</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

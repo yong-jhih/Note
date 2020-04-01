@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- 透過一個css設定，讓袋子往左邊排排站 -->
+    <style>
+        div {
+            float: left;
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 設定袋子，裡面裝一張圖片和一段文字 -->
+    <div>
+        <img src="../../LabHTML/HTML5_Tags/img/op_01.jpg" alt="">
+        <p>魯夫</p>
+    </div>
+    <div>
+        <img src="../../LabHTML/HTML5_Tags/img/op_02.jpg" alt="">
+        <p>索隆</p>
+    </div>
+    <div>
+        <img src="../../LabHTML/HTML5_Tags/img/op_03.jpg" alt="">
+        <p>娜美</p>
+    </div>
+    <div>
+        <img src="../../LabHTML/HTML5_Tags/img/op_04.jpg" alt="">
+        <p>騙人布</p>
+    </div>
+    <div>
+        <img src="../../LabHTML/HTML5_Tags/img/op_05.jpg" alt="">
+        <p>香吉士</p>
+    </div>
+
+    <script>
+        // 先將文字隱藏起來
+        $("p").css("visibility","hidden");
+
+        // 透過on的方式，幫p掛上 mouseenter、mouseleave 事件，改變 p 的 visibility 狀態
+        $("div").on({
+            mouseenter: function () {
+                $(this).find("p").css("visibility", "visible");
+            },
+            mouseleave:function(){
+                $(this).find("p").css("visibility", "hidden");
+            }
+
+            
+        });
+    </script>
+</body>
+
+</html>

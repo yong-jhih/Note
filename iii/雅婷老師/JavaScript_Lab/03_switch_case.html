@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FlowControl</title>
+</head>
+
+<body>
+  <p><a href="https://www.w3schools.com/js/js_switch.asp" target="_blank">switch case</a></p>
+  <pre>
+        switch(expression) {
+          case x:
+            // code block
+            break;
+          case y:
+            // code block
+            break;
+          default:
+            // code block
+        }
+   </pre>
+  <hr>
+  <div>
+    <!-- 請設計一個介面，讓使用者輸入頻道代碼後，網頁可以顯示對應的頻道名稱 -->
+    <p span>請輸入頻道代碼 : <input type="text" name="" id="inputStr"><button onclick="show()">查詢</button></p>
+    <p id="demo">節目名稱</p>
+
+  </div>
+
+  <script>
+    // 透過switch case設定底下對應項目
+    // 20 ==> TLC 旅遊生活頻道
+    // 65 ==> HBO
+    // 66 ==> 東森洋片台
+    // 非上述 ==> 頻道尚未建立
+    function show() {
+      var str = document.getElementById('inputStr').value;
+      var result = '';
+
+      switch (str) {
+        case "20":
+          result = "TLC 旅遊生活頻道";
+          break;
+        case "65":
+          result = "HBO";
+          break;
+        case "66":
+          result = "東森洋片台";
+          break;
+        default:
+          result = "頻道尚未建立";
+          break;
+      }
+      document.getElementById('demo').innerHTML = result;
+
+    }
+  </script>
+</body>
+
+</html>

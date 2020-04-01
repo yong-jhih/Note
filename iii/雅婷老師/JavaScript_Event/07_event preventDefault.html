@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event preventDefault 終止「預設」行為</title>
+</head>
+
+<body>
+
+    <!-- 1. 提供一個可以讓使用者輸入的地方 -->
+    <p>輸入小寫英文</p>
+    <input type="text" onkeypress="LimitLetter(event)">
+
+    <script>
+        function LimitLetter(eve) {
+            console.log(eve.charCode);
+            // 2. 限制使用者只能輸入小寫英文
+            if (!(eve.charCode >= 97 && eve.charCode <= 122)) {
+                alert("只能輸入小寫英文");
+            }
+        }
+        // 3. event.preventDefault();
+        // if (eve.charCode < 97 || 122 <= eve.charCode) {
+        //     alert("只能輸入小寫英文");
+        //     event.preventDefault;
+        // }
+    </script>
+
+</body>
+
+</html>

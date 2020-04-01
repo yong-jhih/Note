@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Dynamic Image Lab</title>
+</head>
+
+<body>
+	<p>...</p>
+	<a id="imgshref" href="http://oakland.athletics.mlb.com/" target="_blank">
+		<img src="images/oak.gif" id="imgs" border="0" />
+	</a>
+	<p>...</p>
+	<div id="debug"></div>
+
+	<script type="text/javascript">
+
+		setImage();//執行setImage()
+
+		function setImage() {
+
+			var img = ["images/chc.gif", "images/chc.gif", "images/sd.gif", "images/was.gif"];
+			var url = ["http://chicago.cubs.mlb.com/", "http://oakland.athletics.mlb.com/", "http://sandiego.padres.mlb.com/","http://washington.nationals.mlb.com/"];
+			// img[0] = "images/chc.gif";	url[0] = "http://chicago.cubs.mlb.com/";
+			// img[1] = "images/oak.gif";	url[1] = "http://oakland.athletics.mlb.com/";
+			// img[2] = "images/sd.gif";	url[2] = "http://sandiego.padres.mlb.com/";
+			// img[3] = "images/was.gif";	url[3] = "http://washington.nationals.mlb.com/";
+			// 為什麼圖片都不會變呢?
+			// var nthTeam = parseInt(Math.random() * img.length);
+			// var iImage = 0;
+			iImage += 1;
+			
+			document.getElementById("imgs").src = img[iImage%4];
+			document.getElementById("imgshref").href = url[iImage%4];
+			// debug.innerText = "321";
+			setTimeout(setImage, 1000);
+		}
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - setInterval</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/jsref/met_win_setinterval.asp">setInterval()</a></p>
+    <p>指定的秒數，做指定的事情</p>
+
+    <!-- 新增兩顆按鈕，分別對應 start() 和 stop()-->
+    <button onclick="start()">開始計時</button>
+    <button onclick="stop()">停止計時</button>
+    <!-- 新增兩個標籤，一個用來顯示按鈕點後的系統時間，一個用來顯示秒數 -->
+    <p id="sysDateTime"></p>
+    <p>累計秒數：<span id="count"></span></p>
+
+    <script>
+        // 這裡宣告兩個變數(因為需要跨function使用) flag & sec，把 sec 初始化為0 
+        var sec = 0;
+        var flag;
+            
+        // function start() 
+        function start() {
+            // setInterval() 會回傳一個數值(旗子)，關閉時會使用到
+            flag = setInterval(timer, 1000);
+            var d = new Date();
+            document.getElementById('sysDateTime').innerHTML = d.toLocaleDateString() + d.toLocaleTimeString();
+        }
+        //function timer()
+        function timer() {
+            // 每一秒鐘更新一次畫面
+            document.getElementById('count').innerHTML = sec;
+            sec = sec + 1;
+        }
+
+        // function stop() 
+        function stop(){
+            clearInterval(flag);
+            sec = 0;
+        }
+        // 使用 clearInterval() 清除計數器
+    </script>
+</body>
+
+</html>

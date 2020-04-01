@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>position</title>
+    <style type="text/css">
+        div {
+            font-size: 20px;
+        }
+
+        div>div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .demo {
+            background-color: #FF9933;
+        }
+
+        #reddiv {
+            background-color: #FF0000;
+        }
+
+        #greendiv {
+            background-color: #00FF00;
+        }
+
+        #bluediv {
+            background-color: #0000FF;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>display：顯示方式 vs position：定位</h3>
+    <p><a href="http://nigelbuckner.com/downloads/handouts/web/pos-explained/index.html" target="_blank">補充資料</a></p>
+    <p><a href="https://www.w3schools.com/charsets/ref_utf_punctuation.asp" target="_blank">在網頁上顯示特殊符號補充</a></p>
+    <hr>
+    <div class="demo">
+        <div id="reddiv">Red</div>
+        <div id="greendiv">Green</div>
+        <div id="bluediv">Blue</div>
+    </div>
+    <hr>
+
+    <h3>display：inline</h3>
+    <div class="demo">
+        <div id="reddiv" style="display: inline">Red</div>
+        <div id="greendiv" style="display: inline">Green</div>
+        <div id="bluediv" style="display: inline">Blue</div>
+    </div>
+    <hr>
+    <h3>display: flex</h3>
+    <div class="demo" style="display: flex;">
+        <div id="reddiv" style="flex: 3;">Red</div>
+        <div id="greendiv" style="flex: 2;">Green</div>
+        <div id="bluediv" style="flex: 1;">Blue</div>
+    </div>
+    <hr>
+    <h3></h3>
+    <div class="demo" style="display: flex;">
+        <div id="reddiv" style="flex: initial;">Red</div>
+        <div id="greendiv" style="flex: auto;">Green</div>
+        <div id="bluediv" style="flex: none;">Blue</div>
+</body>
+
+</html>

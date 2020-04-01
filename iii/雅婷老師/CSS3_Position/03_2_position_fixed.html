@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>position</title>
+    <style type="text/css">
+        .demo {
+            background-color: #FF9933;
+        }
+
+        #reddiv {
+            /* 在這邊設定一張圖片，再加上超連結 https://one-piece.com/special/20th/，就和網頁一樣了! */
+            background-image: url("img/onepiece20th_logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 150px;
+            height: 150px;
+            /* 試試看在這裡，加入哪三個屬性設定，可以模仿網頁上，將圖片固定在右下角? */
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        #greendiv {
+            background-color: #00FF00;
+            width: 150px;
+            height: 300px;
+            display:block;
+            border: 3px dashed red ;
+            position: relative;
+            left: 50%;
+        }
+
+        #bluediv {
+            background-color: #0000FF;
+            width: 300px;
+            height: 700px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>position：fixed<br>
+        fixed 沒有設定 top、bottom、left、right時 <br>
+        "預設" 的位置為 為 扣除【父容器】元素內容
+    </h3>
+
+    <div class="demo">
+        我是demo div的元素內容。<br>
+        試著在 紅色div 修改position的屬性後，加上 top、bottom、left、right 看看有什麼變化吧!!
+
+        <a href="https://one-piece.com/special/20th/" target="_blank">
+            <div id="reddiv">Red</div>
+        </a>
+
+        <div id="greendiv" >Green</div>
+        <div id="bluediv">Blue</div>
+    </div>
+
+</body>
+
+</html>

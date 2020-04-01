@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlowControl</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/Js/js_loop_while.asp" target="_blank">while</a></p>
+    <pre>
+        while (condition) {
+          // code block to be executed
+        }
+    </pre>
+    <script>
+        // 計算從1加到10數值為多少
+        // var i = 1;
+        // var result = 0;
+        // while (i <= 10) {
+        //     console.log(i);
+        //     result = result + i;
+        //     i++;
+        // }
+        // alert(result);
+
+        // 網頁必須輸入通關密碼1234才會停止
+        var t = 1;
+        while (t <= 3) {
+            var pwd = prompt("輸入密碼", "")
+            if (pwd == '1234') {
+                alert('bingo')
+                break;
+            } else {
+                alert('error')
+            }
+            t++;
+        }
+        // var flag = true;
+        // while (flag) {
+        // var pwd = prompt("輸入密碼", "")
+        // if (pwd == '1234') {
+        //     flag = false;}
+    </script>
+</body>
+
+</html>

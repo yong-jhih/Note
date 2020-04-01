@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change HTML Attributes</title>
+</head>
+
+<body>
+    <p>點選圖片變化人物</p>
+    <img id="imgOP" onclick="changeImage()" src="../../LabHTML/HTML5_Tags/img/op_01.jpg">
+
+    <script type="text/javascript">
+        function changeImage() {
+            // 1. 取得網頁中imgOP元素
+            // var pic = document.getElementById('imgOP');
+
+            // 2. 將圖片改為布魯克
+            // pic.src = "../../LabHTML/HTML5_Tags/img/op_02.jpg"
+            
+            // 3. 步驟一和二可以合併寫成
+            document.getElementById('imgOP').src = "../../LabHTML/HTML5_Tags/img/op_02.jpg";
+        }
+    </script>
+</body>
+
+</html>

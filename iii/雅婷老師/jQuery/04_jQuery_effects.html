@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        img {
+            width: 150px;
+        }
+
+        #mainBag {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/jquery/jquery_hide_show.asp" target="_blank">jQuery Effects - Hide and
+            Show</a></p>
+    <p><a href="https://www.w3schools.com/jquery/jquery_fade.asp" target="_blank">jQuery Effects - Fading</a></p>
+    <p><a href="https://www.w3schools.com/jquery/jquery_slide.asp" target="_blank">jQuery Effects - Sliding</a></p>
+    <p><a href="https://www.w3schools.com/jquery/jquery_animate.asp" target="_blank">jQuery Effects - Animation</a></p>
+
+
+    <hr>
+    <button id="toggle">隱藏或者顯示</button>
+    <hr>
+    <button id="hideTop">左上淡出</button>
+    <button id="showTop">左上淡入</button>
+    <hr>
+    <button id="fadeOutTop">原地淡出</button>
+    <button id="fadeInTop">原地淡入</button>
+    <hr>
+    <button id="slideUp">滑行隱藏上方圖片</button>
+    <button id="slideDown">滑行顯示上方圖片</button>
+    <hr>
+    <button id="hiddenButtom">隱藏下方圖片</button>
+    <button id="visibleButtom">顯示下方圖片</button>
+    <hr>
+    <p>請在撰寫直接點選圖片，圖片可以被隱藏起來的事件</p>
+
+    <div id="mainBag">
+        <div id="bagTop">
+            <img id="kutar" src="img/kutar3.png">
+            <img id="navy" src="img/Navy1.png">
+            <img id="pika" src="img/pika2.png">
+        </div>
+        <div id="bagButtom">
+            <img id="smoke" src="img/Smoke2.png">
+            <img id="tara" src="img/tara1.png">
+            <img id="teak" src="img/teak2.png">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            // toggle()
+            $("#toggle").click(function () {
+                $("#mainBag").toggle();
+            });
+
+            // 練習一下 show/ hide，左上淡出/淡入
+            $("#hideTop").click(function () {
+                $("#bagTop").hide("slow");
+            });
+
+            $("#showTop").click(function () {
+                $("#bagTop").show();
+            });
+
+            // 練習一下 fadeIn/ fadeOut，並觀察效果
+            $("#fadeOutTop").click(function () {
+
+            });
+
+            $("#fadeInTop").click(function () {
+
+            });
+
+            // 練習一下 slideUp/ slideDown，並觀察效果
+            $("#slideUp").click(function () {
+
+            });
+            $("#slideDown").click(function () {
+
+            });
+
+            // 透過點選按鈕，將上排圖片顯示/隱藏起來
+            $("#visibleButtom").click(function () {
+
+            });
+
+            $("#hiddenButtom").click(function () {
+
+            });
+
+            // 只要是圖片，點選後，就不見 mainBag
+            $("#mainBag img").click(function () {
+                $(this).css("visibility", "hidden");
+            });
+
+            // 點選上排的圖片，被點選到的圖片不見 ( hide() )
+
+            // 點選下排的圖片，被點選到的圖片不見 ( css的樣式設定 )
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+# 上課環境之軟體安裝
+
+
+1.  安裝 Git
+    https://git-scm.com/
+
+
+2.  安裝 Node.js
+    https://nodejs.org
+
+
+3.  Visual Studio Code
+    https://code.visualstudio.com/
+
+
+4.  在 Visual Studio Code 安裝 Live Server
+    ext install ritwickdey.liveserver
+
+
+5.  下載 MySQL Community Server (GPL)
+    https://dev.mysql.com/downloads/mysql/
+
+    <Note> 安裝程序均按預設值，唯 Authentication Method 改選:
+    「Use Legacy Authentication Method(Retain MySQL 5.x Compatibility)」
+

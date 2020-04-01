@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - String</title>
+</head>
+
+<body>
+    <p><a href="http://www.w3schools.com/js/js_strings.asp">w3c 字串的說明</a></p>
+    <p><a href="http://www.w3schools.com/js/js_string_methods.asp">w3c 字串可以使用的方法</a></p>
+
+    <script>
+        // 字串
+        var str1 = " \"apple\" "; // "apple"
+        var str2 = 'apple';
+        var str3 = ' "apple" '; // "apple"
+        var str4 = " 'apple' "; // 'apple'
+        var str = "Finding a Apple in a String";
+
+        // 0. 字串的長度
+        console.log('0-字串的長度-' + str.length);
+
+        // 1. 用 字串.match() 在字串中找到符合條件
+        var result = str.match('Apple');
+        console.log('1-' + result);
+
+        // 2. 字串.indexOf() 回傳了什麼?
+        var result = str.indexOf('i');
+        console.log('2.indexOf-' + result);
+
+        // 3. 找到字串中最後一次出現的i的函式是什麼?
+        var result = str.lastIndexOf('i')
+        console.log('3.lastIndexOf-' + result);
+
+        // 4. 要怎麼樣截取一段字串?
+        // 底下這個字串
+        // 0911222333 是 手機
+        // 0423456789 是 電話號碼
+        var phones = "09112223330423456789";
+        console.log('4-手機-' + phones.substring(0,10));
+        console.log('4-電話-' + phones.substring(11,20));
+
+        // 5. 字串.split() 把字串分割為陣列
+        var fruits = "apple, bubble, lemon";
+        var ar = fruits.split(',');
+        console.log('5-split-' +ar[2].trim());
+
+        // 6. 字串往左補零
+        var account = "13756"
+        console.log("padStart()：" + account.padStart(10, "0"));
+
+        // 7. 其他擷取字串
+        console.log("=====");
+        var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        console.log("str.substr(0,2)：" + str.substr(0, 2));
+        console.log("str.substring(0,2)：" + str.substring(0, 2));
+        console.log("str.slice(0,2)：" + str.slice(0, 2));
+
+        console.log("=====");
+
+        console.log("str.substr(3,5)：" + str.substr(3, 5));
+        console.log("str.substring(3,5)：" + str.substring(3, 5));
+        console.log("str.slice(3,5)：" + str.slice(3, 5));
+
+        console.log("=====");
+
+        console.log("str.substr(5,3)：" + str.substr(5, 3));
+        console.log("str.substring(5,3)：" + str.substring(5, 3));
+        console.log("str.slice(5,3)：" + str.slice(5, 3));
+
+        console.log("=====");
+
+        console.log("str.substr(3)：" + str.substr(3));
+        console.log("str.substring(3)：" + str.substring(3));
+        console.log("str.slice(3)：" + str.slice(3));
+
+        console.log("=====");
+
+        console.log("str.substr(-5)：" + str.substr(-5));
+        console.log("str.substring(-5)：" + str.substring(-5));
+        console.log("str.slice(-5)：" + str.slice(-5));
+    </script>
+</body>
+
+</html>

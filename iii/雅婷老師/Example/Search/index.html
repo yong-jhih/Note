@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="../icon.png" type="image/gif" sizes="16x16">
+    <title>Search</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font Awesome 提供很多小圖示可以豐富網頁 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- 了解 bootstrap container 和 contain-fluid 差異 -->
+    <p><a href="https://getbootstrap.com/docs/4.0/layout/overview/"> bootstrap4 > layout > overview </a></p>
+    <p><a href="https://getbootstrap.com/docs/4.0/layout/grid/"> bootstrap4 > layout > grid system </a></p>
+
+    <!-- 套用 input-group 元件，讓畫面上出現搜尋方框 -->
+    <p><a href="https://getbootstrap.com/docs/4.0/components/input-group/" target="_blank"> bootstrap4 > components >
+            input-group </a></p>
+
+    <!-- 卡片的瀑布流 -->
+    <p><a href="https://getbootstrap.com/docs/4.1/components/card/#card-columns"> bootstrap4 > components > card </a>
+    </p>
+
+    <div class="container">
+        <!-- 1. 先設定搜尋框：可輸入文字的介面和一顆按鈕 -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="請輸入搜尋文字" aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+
+        <!-- 2. 設定 div，並給予瀑布流的class -->
+        <!-- 可以線上產生一張指定大小的圖片：http://placehold.it/ -->
+        <div class="card-columns">
+            <div class="card">
+                <img class="card-img-top" src="image/Pokemon/001.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">妙蛙種子</h5>
+                    <p class="card-text">這是一些關於妙蛙種子的描述.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script>
+        // 一組定義好的JSON格式，裡面存放神奇寶貝的名稱和對照的圖片檔名
+        var list = '{ "pokemon" : [' +
+            '{ "name":"妙蛙種子" , "imgsrc":"001" },' +
+            '{ "name":"妙蛙草" , "imgsrc":"002" },' +
+            '{ "name":"妙蛙花" , "imgsrc":"003" },' +
+            '{ "name":"小火龍" , "imgsrc":"004" },' +
+            '{ "name":"火恐龍" , "imgsrc":"005" },' +
+            '{ "name":"噴火龍" , "imgsrc":"006" } ]}';
+
+        // 透過 JSON.parse() 方法，將JSON字串轉換成 物件
+        var obj = JSON.parse(list);
+        // console.log(obj);
+        // console.log(obj.pokemon);
+        // console.log(obj.pokemon[0]);
+        // console.log(obj.pokemon[0].name);
+        // console.log(obj.pokemon[0].imgsrc);
+
+
+        // 搜尋按鈕點下的時候，進行資料搜尋，並且將符合的資料帶入到畫面上
+        $("button").click(function () {
+            // 清空查詢結果的畫面
+            $(".card-columns").empty();
+
+            // 結果的字串
+            var result = '';
+            var temp = $("input").prop("value");
+            console.log(temp);
+
+            // 跑 for 迴圈 逐一讀出 obj 裡面的 name 和 imgsrc
+            for (var i = 0; i < obj.pokemon.length; i++) {
+
+                console.log(obj.pokemon[i].name);
+                console.log(obj.pokemon[i].imgsrc);
+
+                // 判斷 神奇寶貝 是不是可以加入字串中
+                // 網頁上面的查詢文字 ==>  $().prop("value")
+                //  indexOf()
+                var pokemonName = String(obj.pokemon[i].name);
+
+                //  妙蛙種子.indexOf(妙) ====>  0
+                //  小火龍.indexOf(妙)   ====> -1
+
+                if (pokemonName.indexOf(temp) > -1) {
+                    // 直接把六張卡片都帶出來
+                    result += `
+                    <div class="card">
+                        <img class="card-img-top" src="image/Pokemon/${obj.pokemon[i].imgsrc}.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">${obj.pokemon[i].name}</h5>
+                            <p class="card-text">這是一些關於${obj.pokemon[i].name}的描述.</p>
+                        </div>
+                    </div>
+                        `;
+                }
+            }
+
+            // 把結果 放到畫面上
+            $(".card-columns").append(result);
+        });
+
+        // 清空畫面 $(所選取的元素).empty();
+
+        // // 方法A：用迴圈 + if 判斷
+
+
+        // // 方法B：用 jQuery 提供的 grep 方法
+        // var findList = $.grep(obj.pokemon, function (item, index) {
+        //     return String(obj.pokemon[index].name).indexOf(keyword) > -1;
+        // });
+
+        // for (let i = 0; i < findList.length; i++) {
+        //     console.log(findList[i].name);
+        //     addCard += `<div class="card">
+        //         <img class="card-img-top" src="image/Pokemon/${findList[i].imgsrc}.png" alt="Card image cap">
+        //         <div class="card-body">
+        //             <h5 class="card-title">${findList[i].name}</h5>
+        //             <p class="card-text">一些${findList[i].name}的說明</p>
+        //             <a href="#" class="btn btn-primary">詳細介紹</a>
+        //         </div>
+        //     </div>`;
+        // }
+
+
+        // 最後將資料放到畫面上
+    </script>
+</body>
+
+</html>

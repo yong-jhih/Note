@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <!-- 1. 關於錢符號$，記得jQuery要引用完畢後，才可以使用$ （所以要放在使用$符號以前） -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+    <p>使用的方法：$("選擇網頁上的元素").函式(function(){要執行的項目})</p>
+    <p>使用的方法：$("選擇網頁上的元素").css("屬性(property)","值(value)") </p>
+    <p>使用的方法：$("選擇網頁上的元素").attr("屬性(attribute)","值(value)") </p>
+
+    <!-- 2.觀察一下，p1會變成紅色還是黃色 -->
+    <script>
+        $("#p1").css("color", "red");
+    </script>
+
+
+    <!-- 3. 把這一段放開，p1會變成什麼顏色，為什麼 -->
+    <script>
+        $(document).ready(function() {
+            $("#p1").css("color", "blue");
+        });
+    </script>
+
+    <p id="p1" class="test">這裡是第一行</p>
+    <p id="p2" class="test">這裡是第二行</p>
+    <p id="p3" class="test">這裡是第三行</p>
+    <span class="test"></span>
+
+    <script>
+        $("#p1").css("color", "yellow");
+    </script>
+
+</body>
+
+</html>

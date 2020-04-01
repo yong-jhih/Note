@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>變數的宣告和生命週期</title>
+    <script>
+        // 1. 在這裡宣告一個變數 x 設定初始值 為 999
+        var x = 999;
+    </script>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_whereto.asp" target="_blank">JavaScript撰寫的地方和位置</a></p>
+
+
+    <!-- 3. 在這裡增加一顆按鈕<button>，綁定onclick事件 -->
+    <button onclick="getX()">取得x</button>
+
+    <!-- 7. 在這裡增加兩顆按鈕，並各自綁定事件，對應處理的function為 set() 和 get() -->
+    <button onclick="set()">設定y</button>
+    <button onclick="get()">取得y</button>
+
+    <script>
+        // 2. 在這裡寫下 console.log(x); 網頁執行後，在console觀察一下 (chrome > 右鍵 > 檢查 > console頁籤)
+        console.log('apple');
+
+        // 4. 撰寫一個function，在function裡面宣告一個變數 x 設定初始值 為 1，並log下來
+        function getX() {
+            var x = 1; // 5. 至瀏覽器觀察，log的紀錄是什麼?
+            console.log(x);
+        }
+        // 6. 如果需要取用到外層的x，需要一點關鍵字 ==> window
+        console.log(window.x);
+    </script>
+
+    <script>
+        // 8. function set() 設置一個變數y，但沒有var關鍵字，給予初始值 2 後log出來查看
+        function set() {
+            console.log("=== set() ===");
+            y = 2;
+            console.log(y);
+            // 9. 在步驟8的同一個function裡面 設置另外一個變數z，並給予初始值 3 且log出來查看
+            var z = 3;
+            console.log(z);
+        }
+
+        // 10. function get() 將變數 y 和 變數 z log出來查看
+        function get() {
+            console.log("=== set() ===");
+            console.log(y);
+            console.log(z);
+        }
+    </script>
+
+    <script>
+        // 11. 把底下的註解拿開，觀察結果
+        //     這是ES6在2015年定出來的新標準之一，請參考網路相關的補充資料
+        // var 與 ES6 let const 差異：https://ithelp.ithome.com.tw/articles/10209121
+        // [筆記] JavaScript ES6 中的模版字符串（template literals）和標籤模版（tagged template）：https://pjchender.blogspot.com/2017/01/javascript-es6-template-literalstagged.html
+
+        // if (true) {
+        //     var testVar = "a"
+        //     let testLet = "b";
+        //     const testConst = "c";
+        // }
+        // console.log(`testVar: ${testVar}`);
+        // console.log(`testLet: ${testLet}`);
+        // console.log(`testConst: ${testConst}`);
+    </script>
+</body>
+
+</html>

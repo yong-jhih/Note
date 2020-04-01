@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // 1. 用 JavaScript 改變body背景底色
+        // 2. 用 jQuery 改變body背景底色
+        // 3. 隨機產生背景底色
+        // 4. 點選按鈕產生背景底色
+        // 5. 進階挑戰一下，加入 setInterval，每一秒鐘改變一次底色
+
+        function changeColor() {
+            $("body").css("background-color", "rgb(255,0,0)");
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            var temp = "rgb(" + r + "," + g + "," + b + ")"; // "rgb(255,0,0)"
+            $("body").css("background-color", temp);
+            console.log(temp);
+        }
+
+        setInterval(changeColor, 1000);
+    </script>
+</body>
+
+</html>

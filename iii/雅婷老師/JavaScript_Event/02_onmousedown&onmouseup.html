@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #C2EBFF;
+            box-shadow: -2px -2px 12px #888888 inset;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. 幫元素綁上 onmousedown 和 onmouseup 事件 -->
+    <div id="div1" onmousedown="divMouseDown()" onmouseup="divMouseUp()"></div>
+
+    <script>
+        // 2. 撰寫 function divMouseDown()，將 div1 的 boxShadow 設定為 "2px 2px 12px #888888"
+        function divMouseDown() {
+            var myDiv = document.getElementById("div1");
+            myDiv.style.boxShadow = "2px 2px 12px #888888";
+        }
+
+        // 3. 撰寫 function divMouseUp() ，將 div1 的 boxShadow 設定為 "-2px -2px 12px #888888 inset"
+        function divMouseUp() {
+            var myDiv = document.getElementById("div1");
+            myDiv.style.boxShadow = "-2px -2px 12px #888888 inset";
+        }
+
+    </script>
+</body>
+
+</html>

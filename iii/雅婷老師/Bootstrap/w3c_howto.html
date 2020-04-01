@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>W3Schools How To</title>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+        }
+
+        #London {
+            background-color: red;
+        }
+
+        #Paris {
+            background-color: green;
+        }
+
+        #Tokyo {
+            background-color: blue;
+        }
+
+        #Oslo {
+            background-color: orange;
+        }
+
+        img{
+            width: 90%;
+            height: 400px;
+            object-fit:cover;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>底下範例來自w3c，圖片選自： <a href="https://www.pexels.com/">https://www.pexels.com/</a> </h3>
+    <p><a href="https://www.w3schools.com/howto/" target="_blank">W3Schools How To</a></p>
+    <p><a href="https://www.w3schools.com/howto/howto_js_tab_header.asp"> How TO - Tab Headers </a></p>
+
+
+    <p>Click on the buttons inside the tabbed menu:</p>
+
+    <div id="London" class="tabcontent">
+        <h1>London</h1>
+        <p>London is the capital city of England.</p>
+        <img src="london.jpeg" alt="">
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <h1>Paris</h1>
+        <p>Paris is the capital of France.</p>
+        <img src="paris.jpg" alt="">
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h1>Tokyo</h1>
+        <p>Tokyo is the capital of Japan.</p>
+        <img src="tokyo.jpeg" alt="">
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+        <h1>Oslo</h1>
+        <p>Oslo is the capital of Norway.</p>
+        <img src="oslo.jpeg" alt="">
+    </div>
+
+    <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
+    <button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
+    <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
+    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+
+    <script>
+        function openCity(cityName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(cityName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+
+    <!--  = 引用 w3c How TO - Tab Headers 範例 觀看 & 練習 = -->
+
+    <!-- 1. 先試試看在各個頁籤加入一大張 該城市特色的圖片巴 -->
+
+    <!-- 2. 為什麼 London 是預設的頁面? -->
+
+    <!-- 3. 為什麼網頁上有這麼多元素，但都看不見? -->
+
+    <!-- 4. 畫面上的 tab 其實是? -->
+
+    <!-- 5. tab 切換的時候，畫面上有那些變化? 對照到程式碼如何執行? -->
+
+</body>
+
+</html>

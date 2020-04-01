@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // [ {key1:value1, key2:value2,...},{},{} ] ==> JSON
+        // var drinkList = 'tea,25,milktea,50';
+
+        var drinkList = [{
+            "drinkName": "tea",
+            "price": "25"
+        }, {
+            "drinkName": "milktea",
+            "price": "50"
+        }];
+
+        // JSON.stringify() ==> 壓成字串
+        var temp = JSON.stringify(drinkList);
+        // console.log(temp);
+
+        var obj = JSON.parse(temp);
+        console.log(obj);
+        console.log(obj[1].drinkName);  //{}
+        console.log(obj[1].price);  //{}
+    </script>
+</body>
+
+</html>

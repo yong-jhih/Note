@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FlowControl</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/jsref/jsref_dowhile.asp" target="_blank">do while</a></p>
+    <pre>
+        do {code block to be executed}
+        while (condition);
+    </pre>
+
+    <button onclick="sum()">統計飲料金額</button>
+    <p id="demo"></p>
+
+    <!-- 先執行一次，再依據執行的結果判斷要不要啟動迴圈 -->
+    <script>
+        var cnt = -1;
+        var tot = 0;
+
+        function sum() {
+            do {
+                //透過prompt讓使用者輸入金額
+                var amt = parseInt(prompt('金額', ''));
+
+                //總金額
+                tot = tot + amt;
+
+                //總杯數
+                cnt = cnt + 1;
+
+                //若輸入0表示不再輸入，進行畫面顯示結算金額
+            } while (amt != 0)
+            document.getElementById('demo').innerHTML = '總金額' + tot + "元" + '<br>' + '總杯數' + cnt + "杯";
+        }
+    </script>
+
+</body>
+
+</html>

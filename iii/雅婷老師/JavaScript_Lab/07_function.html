@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">function</a></p>
+    <p>將功能獨立出來，提高程式的可用性</p>
+    <hr>
+    <br>
+    <p><input type="text" id="num">杯數</p>
+    <p><input type="text" id="money">金額</p>
+    <button onclick="fun3()">計算</button>
+    <hr>
+    <p id="ans">打折後金額</p>
+
+    <script type="text/javascript">
+        // 一般我們使用方式，定義一個有名稱的函式
+        function fun1(param1, param2) {
+            console.log('param1');
+            console.log('param2');
+        }
+        fun1('apple', 'kiwi');
+
+        // 另外一種function宣告的方式，但要注意，宣告前呼叫程式會死掉
+        var fun2 = function (param3) {
+            console.log(param3);
+        }
+        fun2('banana');
+
+        // function可以有多個參數傳入，也可以有回傳值
+        // 10杯以上打95折
+        // 20杯以上打9折
+
+        var tot;
+
+        function fun3(qty, tot) {
+            qty = parseInt(document.getElementById("num").value);
+            tot = parseInt(document.getElementById("money").value);
+            console.log(qty);
+            console.log(tot);
+            if (qty >= 10 && qty < 20) {
+                tot = tot * 0.95;
+            } else if (qty >= 20) {
+                tot = tot * 0.9;
+            } else {
+                tot = tot * 1;
+            }
+            document.getElementById("ans").innerText = tot;
+        }
+    </script>
+</body>
+
+</html>

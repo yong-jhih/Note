@@ -1,0 +1,83 @@
+Azure Speech/Language Labs
+
+
+
+
+--------------------------------------------------------------------------------
+
+語音服務文件
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/speech-service/
+
+
+使用語音 SDK 在瀏覽器中以 JavaScript 辨識語音
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/speech-service/quickstart-js-browser
+<Question> 似乎聽不懂中文，你能修正這個問題嗎?
+
+
+使用 Node.js 將文字轉換為語音
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/speech-service/quickstart-nodejs-text-to-speech
+<Question> 如果要講中文，請問該如何修正呢?
+
+
+
+
+--------------------------------------------------------------------------------
+
+【人工智慧線 05】語意理解快速上手
+https://www.youtube.com/watch?v=CqBJZdD_Gwc
+
+
+LUIS 入口網站
+https://www.luis.ai/
+
+
+在 LUIS 入口網站中建立新的應用程式
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/luis/get-started-portal-build-app
+
+
+建置 LUIS 應用程式來判斷使用者的用意
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/luis/luis-quickstart-intents-only
+
+
+使用預先建置的模型識別一般使用者資料
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/luis/luis-tutorial-prebuilt-intents-entities
+
+
+從使用者的語句中取得情感分析
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/luis/luis-quickstart-intent-and-sentiment-analysis
+
+
+從語句取得格式正確的資料
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/luis/luis-quickstart-intents-regex-entity
+
+
+使用簡單實體和片語清單來擷取名稱
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/luis/luis-quickstart-primary-and-secondary-data
+
+
+
+
+--------------------------------------------------------------------------------
+
+QnA Maker 入口網站
+https://www.qnamaker.ai/
+
+
+建立使用 QnA Maker API 服務入口網站的知識庫
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/qnamaker/how-to/create-knowledge-base
+
+
+使用 C# 從知識庫取得答案
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/qnamaker/quickstarts/get-answer-from-knowledge-base-csharp
+
+
+使用 Azure Bot 服務 v3 建立 QnA Bot
+https://docs.microsoft.com/zh-tw/azure/cognitive-services/qnamaker/tutorials/create-qna-bot
+
+
+整合 Line 與 Azure Bot Service
+Line Developer Console
+https://developers.line.me/console/register/messaging-api/provider/
+
+
+

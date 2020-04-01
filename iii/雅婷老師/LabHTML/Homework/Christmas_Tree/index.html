@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>輸入聖誕樹的高度，然後用＊組合出來</title>
+</head>
+
+<body>
+
+    <label for="inputStr">輸入聖誕樹的高度</label>
+    <input type="text" name="" id="inputStr">
+    <button onclick="show()">確認</button>
+    <p id="demo">christmas tree</p>
+
+    <script>
+        // ※ 注意要用全形的＊和全形的空白 ※
+        // 分解動作
+        // 1. 觀察列和星星數量的變化: 星星數量 = 最終列 + 最終列 - 1
+        //    1＝>1、2=>3、3=>5、4=>7、5=>9
+        // 2. 觀察列和空白數量的變化: 假設以四列舉例
+        //    第一列：1=>3、5=>7
+        //    第二列：1=>2、6=>7
+        //    第三列：1=>1、7=>7
+        //    第四列：
+        // 3. 觀察星星中間位置: 中間位置 = 最終列
+        function show() {
+            var i, j, result = "";
+            var num = document.getElementById('inputStr').value;
+            console.log(num);
+            for (i = 0; i < num; i++) {
+                for (j = 0; j < num - i - 1; j++)
+                    result += "&emsp;";
+                for (j = 0; j < i * 2 + 1; j++)
+                    result += "＊";
+                for (j = 0; j < num - i - 1; j++)
+                    result += "&emsp;";
+                result += "<br>";
+            }
+            document.getElementById('demo').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

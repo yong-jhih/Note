@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>D3 Lab</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <style>
+            body {
+                background-color: darkorange;
+                font-size: 1.25em;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Paragraph A</p>
+        <p>Paragraph B</p>
+        <p>Paragraph C</p>
+        <p>Paragraph D</p>
+        <p>Paragraph E</p>
+
+
+        <script>
+        (function(d3) {
+            d3.selectAll("p").style("color", "white");
+            d3.select("body").style("background-color", "gray");
+
+            d3.selectAll("p").remove();
+            
+            var p = d3.selectAll("p")
+                .data([4, 8, 15, 16, 23, 42])
+                .enter().append("p").text(function(d) { return d; })
+                .text(function(d) { 
+                    return d; 
+                })
+                .style("color", function(d, i) {
+                    return i % 2 ? "white" : "DarkSlateGray";
+                })
+                .style("font-size", function(d) { 
+                    return d * 2 + "px"; 
+                });
+
+
+            d3.select("body")
+                .style("background-color", "darkorange")
+                .transition()
+                .delay(5000)
+                .duration(3000)
+                .style("background-color", "black");
+
+        })(window.d3);
+        </script>
+        
+    </body>
+</html>

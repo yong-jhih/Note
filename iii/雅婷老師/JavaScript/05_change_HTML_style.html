@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change HTML Styles (CSS)</title>
+</head>
+
+<body>
+    <p id="memo">點選圖片後，放大圖片和文字</p>
+    <img id="imgOP" onclick="changeImage()" src="../../LabHTML/HTML5_Tags/img/op_01.jpg" ;>
+
+    <script>
+        function changeImage() {
+             var elm = document.getElementById('imgOP');
+            // 1. 網頁的 圖片的 樣式的 寬度 改變
+            elm.style.width = "300px";
+
+            // 2. 網頁的 圖片的 樣式的 高度 改變
+           elm.style.height = "300px";
+
+            // 3. 網頁的 memo的 樣式的 字型 改變
+             document.getElementById('memo').style.fontSize = "20px";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>css selector</title>
+    <style type="text/css">
+        /*基本類型:標籤、#id、.class*/
+        body {
+            background-color: yellow;
+        }
+
+        /*(,) 屬於div標籤和span標籤，背景顏色都是白 */
+        div,
+        span {
+            background-color: white;
+        }
+
+        /* 底下為複合類型 */
+        /*(>) 如果span標籤的上一層是div (或者說div標籤底下一層就是span標籤)，文字顏色改為藍色*/
+        /*    注意香吉士+喬巴+騙人布的差異 */
+        div>span {
+            color: blue;
+        }
+
+        /*( ) div標籤"裡面所有"的span標籤，字型改為 font-family: fantasy; */
+        /*    香吉士+喬巴都套用到了 */
+        div span {
+            font-family: fantasy;
+        }
+
+        /*(+) div標籤"之後的第一個"span標籤，font-size: 3rem; (在同一層)*/
+        /*    布魯克 */
+        div+span {
+            font-size: 3rem;
+        }
+
+        /*(~) div標籤"之後的"span標籤，文字顏色改為紅色 (在同一層)*/
+        /*    布魯克+娜美 */
+        div~span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="https://www.w3schools.com/css/css_syntax.asp" target="_blank">關於選擇器的補充資料</a></p>
+
+    <span>第一個標籤 - 魯夫 - A</span>
+
+    <div>
+        <span>第二個標籤 - 香吉士 - B - 在 div底下的span</span>
+        <p>
+            <span>第三個標籤 - 喬巴 - C - 是span，但上層是 p</span>
+        </p>
+    </div>
+
+    <span>第四個標籤 - 布魯克 - D </span><br>
+    <span>第五個標籤 - 娜美 - E </span>
+
+    <div>
+        <span>第六個標籤 - 騙人布 - F </span>
+    </div>
+
+</body>
+
+</html>

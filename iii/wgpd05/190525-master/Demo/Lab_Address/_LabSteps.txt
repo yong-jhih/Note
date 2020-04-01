@@ -1,0 +1,115 @@
+﻿Lab: 實作地址輸入自動完成功能
+
+
+
+
+0.	請以 HTML Editor 開啟 Lab_Address_0.html 並且瀏覽網頁的內容架構。
+
+<Note> 請找出下列元件: CountiesInputText、AreasInputText、RoadNamesInputText
+
+
+
+
+1.	套用必要的函式館與樣式檔
+
+
+1.1	請確認 js 資料夾有下列檔案:
+	- twAddress.js
+	- jquery.auto-complete.css
+	- jquery.auto-complete.min.js
+
+	<Note> 文字輸入方塊的自動完成功能，源自:
+	https://github.com/Pixabay/jQuery-autoComplete
+
+	<Note> twAddress.js 為台灣地區的地址資料檢索元件
+
+
+1.2	在 Lab_Address_0.html 的 <head> 區塊加入下列三行:
+	
+	<script src="js/twAddress.js"></script>
+	<link rel="stylesheet" href="js/jquery.auto-complete.css" />
+	<script src="js/jquery.auto-complete.min.js"></script>
+
+
+
+
+2.	撰寫程式填入各縣市資料
+
+
+2.1	找到 // Lab Code here，完成後，在瀏覽器測試，順利的話，各縣市名稱已代入下拉式選項。
+
+		function fillCityList() {
+			$("#CountiesInputText").html("");
+			var cityList = twAddress.getCityArray();
+			for ( var city in cityList) {
+				var sOption = '<option value="' + cityList[city] + '">'
+						+ cityList[city] + '</option>';
+				$("#CountiesInputText").append(sOption);
+			}
+			$("#CountiesInputText").selectmenu("refresh");
+		}
+		fillCityList();
+
+
+
+
+3.	使用者選擇某一個縣市時，將行政區域填入右邊的下拉式選項
+
+
+3.1	針對 CountiesInputText 寫作 change 事件處理函式:
+
+		$("#CountiesInputText").change(function() {
+			var sCityName = $("#CountiesInputText option:selected").val();
+			var areaList = twAddress.getAreaArray(sCityName);
+			$("#AreasInputText option").remove();
+			for (var area in areaList) {
+				var o = $("<option />",
+						{ value: areaList[area], text: areaList[area]});
+				o.appendTo("#AreasInputText");
+			}
+			$('#AreasInputText').selectmenu("refresh");
+		});
+
+
+3.2	存檔並在瀏覽器測試，順利的話，改變縣市選項後，該縣市的行政區域會填入右邊的下拉式選項。
+
+
+3.3	請比較 2.1 與 3.1 的程式寫法。
+
+
+3.4	繼續寫程式以模擬觸發 CountiesInputText 的 change 事件:
+	$("#CountiesInputText").trigger("change");
+
+
+
+
+4.	套用 AutoComplete 功能並且寫作過濾函式:
+
+
+4.1	針對 RoadNamesInputText 文字輸入方塊，套用 AutoComplete 功能:
+
+		$('#RoadNamesInputText').autoComplete({
+		    minChars: 1,
+		    source: function(term, suggest){
+		    	var sCityName = $("#CountiesInputText option:selected").text();
+		    	var sAreaName = $("#AreasInputText option:selected").text();
+		        var choices = twAddress.getRoadArray(
+		        		sCityName, 
+		        		sAreaName);
+		        var matches = [];
+		        for (var i = 0; i < choices.length; i++) {
+		            if (choices[i].indexOf(term) >= 0 || term.indexOf("?") >= 0 ) 
+		            	matches.push(choices[i]);
+		        }
+		        suggest(matches);
+		    }
+		});	
+
+
+4.2	存檔並在瀏覽器測試，RoadNamesInputText 輸入部份路名或問號，會出現提示文字以協助輸入。
+
+
+4.3	請查下列文件，對照 4.1 的程式寫法:	
+	https://goodies.pixabay.com/jquery/auto-complete/demo.html
+
+

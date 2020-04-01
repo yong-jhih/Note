@@ -1,0 +1,22 @@
+
+
+※ 請新增一個 FirstPage.html 檔案，然後在檔案開頭輸入!，在滑鼠游標緊貼著!的情況下，按一下Tab
+
+
+<!-- <html lang 資料-->
+<!-- https://www.w3schools.com/tags/ref_language_codes.asp -->
+
+<!-- html5 資料 -->
+<!-- http://www.w3schools.com/html/html_intro.asp -->
+
+<!-- meta 資料 -->
+<!-- https://www.w3schools.com/tags/tag_meta.asp -->
+
+<!-- 針對 mata tag "keywords"，我們聽聽google的開發人員怎麼說-->
+<!-- https://webmasters.googleblog.com/2009/09/google-does-not-use-keywords-meta-tag.html -->
+    
+<!-- 中文版的網站管理員說明：https://www.google.com/intl/zh-TW_tw/webmasters/#?modal_active=none -->
+<!-- 在看看這一份資料(網頁開啟後搜尋文字：『建立可準確傳達內容的獨特網頁標題 』)：https://support.google.com/webmasters/answer/7451184?hl=zh-Hant -->
+
+<!-- 關於網頁前面的小圖示 -->
+<!-- https://www.w3schools.com/tags/att_link_sizes.asp -->

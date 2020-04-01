@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+</head>
+
+<body>
+    <!-- 輸出畫面請參考圖片 -->
+    <h3>測試綁定 <i style="color: blue">onkeypress</i> 事件</h3>
+    <h4>適合用在偵測 <ins>文字方框輸入</ins> 的時候 (請測試 2 還有 @ 的輸入)
+    </h4>
+    <!-- onkeypress -->
+    <input type="text" onkeypress="okp(event)">
+    <p>這裡會顯示keyCode：<span id="kpk"></span></p>
+    <p>這裡會顯示charCode：<span id="kpc"></span></p>
+
+    <script>
+        function okp(e) {
+            console.log('onkeypress');
+            document.getElementById('kpk').innerHTML = e.keyCode ;
+            document.getElementById('kpc').innerHTML = e.charCode;
+        }
+    </script>
+
+    <!-- 會需要的關鍵字：event.keyCode、event.charCode -->
+    <hr>
+    <h3>測試綁定 <i style="color: blue">onkeydown</i> 事件</h3>
+    <h4>適合用在偵測 <ins>鍵盤組合鍵</ins> 的時候 (請測試 alt ctrl)
+    </h4>
+    <!-- onkeydown -->
+    <input type="text" onkeydown="okd(event)">
+    <p>這裡會顯示keyCode：<span id="kdk"></span></p>
+    <p>這裡會顯示charCode：<span id="kdc"></span></p>
+
+    <script>
+        function okd(obje) {
+            console.log('onkeydown');
+            document.getElementById('kdk').innerHTML = obje.keyCode ;
+            document.getElementById('kdc').innerHTML = obje.charCode;
+        }
+    </script>
+    <hr>
+
+    <h5>charCode 代表著是一個 char（字元）的 code；
+    </h5>
+    <h5>keyCode 就是代表一個 key（按鍵）的 code
+    </h5>
+
+</body>
+
+</html>

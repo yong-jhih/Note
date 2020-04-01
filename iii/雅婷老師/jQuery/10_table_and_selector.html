@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的使用和css選擇器補充</title>
+
+    <!-- 1. 使用jQuery前，記得要先引用進來 -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+        // 2. 選擇 body 附加(append) 1 個 table 元素
+        $("body").append("<table></table>");
+
+        // 3. 選擇 table 附加(append) 6 個 tr 元素
+        for (var i = 0; i < 6; i++) {
+            $("table").append("<tr></tr>");
+        }
+
+        // 4. 選擇 tr 元素，每一列 (each) 都加入 7 個 td 元素 【 each 若傳入 index，可獲得當前巡覽的位置】
+        //    透過 append() 方法，幫每一列都加入 10 個 td，且 id 命名為 row+第幾列+col+第幾欄，例如 row0col0 為 表格左上角的第一個位置
+        // $("tr").append("<td></td>");
+        $("tr").each(function (index) {
+            for (var i = 0; i < 7; i++) {
+                // "<td id='row0col0'></td>"
+                $(this).append("<td id='row" + index + "col" + i + "'>" + index + i + "</td>");
+            }
+        });
+
+        // 5. 選擇 table 設定樣式 (css) 文字置中 text-align: center
+        $("table").css("text-align", "center");
+
+        // 6. 選擇第一列作為標題列，在第一列中找到每一個 td
+        //    搭配weekList陣列 ,修改文字(text)為星期
+        var weekList = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+        $("tr:first-child").find("td").each(function (index) {
+            $(this).text(weekList[index]);
+        });
+
+        // 7. 取得2019/5/1的時間日期物件
+        var d = new Date("2019/5/1");
+
+        // 8. 查看5月份的最後一天是幾號 (先將月份+1→設定日期為1號→再將日期-1)
+        d.setMonth(d.getMonth() + 1);
+        d.setDate(1);
+        d.setDate(d.getDate() - 1);
+        var lastDate = d.getDate();
+
+        // 9. 重新設定時間日期物件為1號，並記錄是星期幾
+        d.setDate(1);
+        var firstDay = d.getDay();
+
+        console.log(lastDate); //31
+        console.log(firstDay); //3
+
+        // 10. 新增一個變數，紀錄日期
+        var dayCnt = 1;
+        // 11. 從第二列開始，設定日期
+
+        // 12. 需要判斷：第一天要從哪個位置開始放? → 第一列的某個指定位置
+        $("tr:not(:first-child)").each(function (rIndex) {
+            $(this).find("td").each(function (cIndex) {
+                //判斷
+                if (rIndex == 0 && cIndex < firstDay) {
+                    $(this).text("");
+                } else if (dayCnt <= lastDate) {
+                    $(this).text((d.getMonth() + 1) + "/" + dayCnt);
+                    dayCnt = dayCnt + 1;
+                } else {
+                    $(this).text("");
+                }
+            })
+        })
+
+        // 13. 把星期六和星期天的 背景底色 設定為 pink
+        $("td:first-child,td:last-child").css("background-color", "pink");
+
+        // 14. 第二列開始，每隔兩列 (2n+2) 把 文字顏色 改為 yellowgreen
+    </script>
+
+</body>
+
+</html>

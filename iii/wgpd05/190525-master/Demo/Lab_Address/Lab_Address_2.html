@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js/jquery.mobile-1.3.2.min.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.mobile-1.3.2.min.js"></script>
+<script src="js/twAddress.js"></script>
+<link rel="stylesheet" href="js/jquery.auto-complete.css" />
+<script src="js/jquery.auto-complete.min.js"></script>
+
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header" data-position="fixed">
+			<a href="../index.html" data-role="button" data-icon="home">Home</a>
+			<h1>停電查詢</h1>
+			<a href="#aboutPage" data-role="button" data-icon="info"
+				data-iconpos="notext"></a>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="../pushsetting/pushsetting.html" data-icon="star">推播設定</a></li>
+					<li><a href="../photovoltaic/photovoltaic.html"
+						data-icon="star">太陽光電</a></li>
+					<li><a href="../paymentreminder/paymentreminder.html"
+						data-icon="star">繳費提醒</a></li>
+					<li><a href="../energyawakening/energyawakening.html"
+						data-icon="star">能源新知</a></li>
+					<li><a href="../newsletters/newsletters.html" data-icon="star">訊息快報</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="false">
+					<h2>地址查詢</h2>
+					<div>
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<select name="CountiesInputText" id="CountiesInputText"
+									data-native-menu="false">
+									<option value="台北市">台北市</option>
+								</select>
+							</div>
+							<div class="ui-block-b">
+								<select name="AreasInputText" id="AreasInputText"
+									data-native-menu="false">
+									<option value="大安區">大安區</option>
+								</select>
+							</div>
+						</div>
+						<div>
+							<input type="text" name="RoadNamesInputText"
+								id="RoadNamesInputText" value="" placeholder="請輸入路名" />
+						</div>
+
+
+						<div class="ui-grid-b">
+							<div class="ui-block-a" style="width: 100px">
+								<input type="text" name="LaneNamesInputText"
+									id="LaneNamesInputText" value="" placeholder="巷" />
+							</div>
+							<div class="ui-block-b" style="width: 20px">
+								<p>巷</p>
+							</div>
+							<div class="ui-block-b" style="width: 100px">
+								<input type="text" name="AlleyNamesInputText"
+									id="AlleyNamesInputText" value="" placeholder="弄" />
+							</div>
+							<div class="ui-block-b" style="width: 20px">
+								<p>弄</p>
+							</div>
+							<div class="ui-block-b" style="width: 100px">
+								<input type="text" name="NumberNamesInputText"
+									id="NumberNamesInputText" value="" placeholder="號" />
+							</div>
+							<div class="ui-block-b" style="width: 20px">
+								<p>號</p>
+							</div>
+						</div>
+
+
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<input type="button" value="OK" onclick="MakeRequest();" />
+							</div>
+							<div class="ui-block-b">
+								<input type="reset" name="btnCancel" value="Cancel" />
+							</div>
+						</div>
+
+						<div id="debug"></div>
+
+					</div>
+					<!-- collapsible body -->
+				</div>
+				<!-- end of collapsible -->
+			</div>
+			<div data-role="collapsible">
+				<h2>請輸入電號</h2>
+
+				<div data-role="fieldcontain">
+					<label for="ElectricNoText">請輸入電號:</label> <input type="text"
+						name="ElectricNoText" id="ElectricNoText" value=""
+						placeholder="請輸入電號" />
+				</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<input type="button" name="btnOK" value="OK" />
+					</div>
+					<div class="ui-block-b">
+						<input type="reset" name="btnCancel11" value="Cancel" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h2>
+			台北北區營業處隊 <a href="#aboutPage" data-role="button" data-icon="info">關於我們</a>
+		</h2>
+	</div>
+
+
+	<script>
+	
+	$(document).ready(function () {
+		
+		// Lab Code here
+		
+		function fillCityList() {
+			$("#CountiesInputText").html("");
+			var cityList = twAddress.getCityArray();
+			for ( var city in cityList) {
+				var sOption = '<option value="' + cityList[city] + '">'
+						+ cityList[city] + '</option>';
+				$("#CountiesInputText").append(sOption);
+			}
+			$("#CountiesInputText").selectmenu("refresh");
+		}
+		fillCityList();
+
+		
+		
+		
+		
+	});  // end of ready
+		
+		
+	</script>
+
+</body>
+</html>

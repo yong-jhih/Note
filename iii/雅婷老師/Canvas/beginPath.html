@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+
+    <style>
+        #myCanvas {
+            border: 2px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p><a href="https://www.w3schools.com/graphics/canvas_intro.asp" target="_blank">w3c canvas</a></p>
+    <p><a href="https://www.w3schools.com/graphics/canvas_reference.asp" target="_blank">canvas methods</a></p>
+    <p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial" target="_blank"> mozilla 補充資料 </a>
+    </p>
+    <p><a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes"
+            target="_blank">繪製圖形的方法</a></p>
+
+    <!-- 畫布 -->
+    <canvas id="myCanvas" width="500px" height="300px"></canvas>
+
+    <script>
+        // 取得 & 設定畫布
+        var ctx = document.getElementById('myCanvas').getContext('2d');
+
+        // 1. 觀察底下在畫面左邊的正方形，顏色是否如同設定
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, 100, 100);
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(0, 100, 100, 100);
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(0, 200, 100, 100);
+
+
+        // 2. 畫面左邊的正方形為什麼都是藍色的?
+        //    beginPath()
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.rect(400, 0, 100, 100);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "green";
+        ctx.rect(400, 100, 100, 100);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "blue"; 
+        ctx.rect(400, 200, 100, 100);
+        ctx.fill();
+    </script>
+</body>
+
+</html>

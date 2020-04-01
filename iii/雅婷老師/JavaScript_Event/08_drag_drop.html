@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        #div1 {
+            width: 350px;
+            height: 350px;
+            padding: 50px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p><a href="https://lotabout.me/2018/HTML-5-Drag-and-Drop/" target="_blank">補充資料(簡體中文，請參考事件圖)</a></p>
+    <p><a href="https://pjchender.blogspot.com/2017/08/html5-drag-and-drop-api.html"
+            target="_blank">補充資料(繁體中文，請參考各式應用)</a></p>
+
+    <!-- 2. 設定事件 ondragover & ondrop -->
+    <div id="div1" ondragover="allowDrag(event)" ondrop="drop(event)"></div>
+
+    <!-- 1. 先設定元素可以被拖動 draggable="true"，在設定事件 ondragstart -->
+    <img id="imgop" src="img/capoo.gif" draggable="true" ondragstart="drag(event,'imgop')">
+
+    <script>
+        // 3. 拖動元素 event.dataTransfer.setData("","");
+        function drag(e, imgID) {
+            // e.dataTransfer.setData("text", imgID);
+            e.dataTransfer.setData("text", e.target.id);
+        }
+
+        // 4. 拖動過程中 event.preventDefault();
+        function allowDrag(ev) {
+            ev.preventDefault();
+        }
+
+        // 5. 滑鼠放開 
+        function drop(evt) {
+
+            evt.preventDefault();
+
+            var imgID = evt.dataTransfer.getData("text");
+
+            evt.target.appendChild(document.getElementById(imgID));
+            //    event.preventDefault();
+            //    event.dataTransfer.getData();
+            //    event.target.appendChild();
+        }
+    </script>
+</body>
+
+</html>

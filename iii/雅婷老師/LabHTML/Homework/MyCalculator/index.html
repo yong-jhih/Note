@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        table,
+        tr,
+        td {
+            border: 2px solid gray;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        div {
+            width: 135px;
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <table>
+
+            <tr>
+                <td colspan="4" id="operation" style="height: 20px"></td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td><button onclick="operatorClick('+')" name="operator" value="+">＋</button></td>
+                <td><button onclick="operatorClick('-')" name="operator" value="-">－</button></td>
+                <td><button onclick="operatorClick('*')" name="operator" value="*">Ｘ</button></td>
+                <td><button onclick="operatorClick('/')" name="operator" value="/">／</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="numClick('7')">７</button></td>
+                <td><button onclick="numClick('8')">８</button></td>
+                <td><button onclick="numClick('9')">９</button></td>
+                <td><button onclick="numClick('0')">０</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="numClick('4')">４</button></td>
+                <td><button onclick="numClick('5')">５</button></td>
+                <td><button onclick="numClick('6')">６</button></td>
+                <td><button onclick="ansClick(this)">＝</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="numClick('1')">１</button></td>
+                <td><button onclick="numClick('2')">２</button></td>
+                <td><button onclick="numClick('3')">３</button></td>
+                <td><button onclick="clearAll(this)">Ｃ</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var temp;
+        var firstNum = "";
+        var num;
+        var op;
+        var str;
+
+        //數值輸入
+        function numClick(num) {
+            document.getElementById('operation').innerHTML =
+                document.getElementById('operation').innerHTML + num;
+        }
+
+        //運算子輸入
+        function operatorClick(op) {
+            firstNum = document.getElementById('operation').innerHTML; //暫存欄位數值
+            document.getElementById('operation').innerHTML = ""; //清空欄位
+            str = op; //儲存點選運算子
+        }
+
+        //等於
+        function ansClick(equa) {
+            if (str == '+') {
+                temp = parseInt(firstNum) + parseInt(document.getElementById('operation').innerHTML);
+                document.getElementById('operation').innerHTML = temp;
+            } else if (str == '-') {
+                temp = parseInt(firstNum) - parseInt(document.getElementById('operation').innerHTML);
+                document.getElementById('operation').innerHTML = temp;
+            } else if (str == '*') {
+                temp = parseInt(firstNum) * parseInt(document.getElementById('operation').innerHTML);
+                document.getElementById('operation').innerHTML = temp;
+            } else if (str == '/') {
+                temp = parseInt(firstNum) / parseInt(document.getElementById('operation').innerHTML);
+                document.getElementById('operation').innerHTML = temp;
+            } else {
+                alert('error');
+            }
+
+        }
+
+        function clearAll() {
+            document.getElementById('operation').innerHTML = "";
+            firstNum = "";
+            temp = "";
+            str = "";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap</title>
+
+    <!-- Bootstrap 所需 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <!-- 使用先前設計的表單，進行樣式套用 -->
+
+    <div class="container">
+        <h2>通勤工具使用調查：使用bootstrap進行樣式變更</h2>
+        <h4><a href="https://getbootstrap.com/docs/4.3/components/forms/"
+                target="_blank">https://getbootstrap.com/docs/4.3/components/forms/</a></h4>
+        <h4 style="margin-bottom: 50px;"><a href="https://getbootstrap.com/docs/4.3/components/buttons/"
+                target="_blank">https://getbootstrap.com/docs/4.3/components/buttons/</a>
+        </h4>
+
+        <!-- 1. 在表單上面掛 onsubmit 事件 -->
+        <form>
+
+            <!-- 2. 練習套用 .form-group & .form-control -->
+            <div class="form-group">
+                <label for="userName">姓名：</label>
+                <input class="form-control" type="text" id="userName" name="userName">
+            </div>
+
+            <!-- 3. 將欄位說明和輸入欄位的放在同一列 -->
+            <!-- 將 電話 文字說明靠右? -->
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-right" for="phone">電話：</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="tel" id="phone" required>
+                </div>
+            </div>
+
+            <div>
+                <label for="">年紀：</label>
+                <input type="radio" name="age" value="g2030"> 20 - 30
+                <input type="radio" name="age" value="g3040"> 30 - 40
+                <input type="radio" name="age" value="g4050"> 40 - 50
+                <input type="radio" name="age" value="g50"> 50以上
+
+            </div>
+
+            <div>
+                <label for="">職業：</label>
+                <input type="radio" name="job" value="student"> 學生
+                <input type="radio" name="job" value="teacher"> 教師
+                <input type="radio" name="job" value="other"> 其他
+            </div>
+
+            <div>
+                <label for="">交通工具：</label>
+                <input type="checkbox" name="vehicle" id="bike" value="bike"> <label for="bike">腳踏車</label>
+                <input type="checkbox" name="vehicle" id="motorcycle" value="motorcycle"> <label
+                    for="motorcycle">機車</label>
+                <input type="checkbox" name="vehicle" id="boat" value="boat"> <label for="boat">船</label>
+                <input type="checkbox" name="vehicle" id="other" value="other"> <label for="other">其他</label>
+            </div>
+
+            <!-- 4. <input type="submit">-->
+            <!--    將這顆按鈕套用 bootstrap 的 button 相關樣式  -->
+            <!--    form 表單上面的 onsubmit() 會先執行，還是 input onclick() 會先執行?  -->
+            <!--    幾種在網頁上的按鈕差異 -->
+
+            <input type="submit" onclick="fun1()" class="btn btn-info btn-lg">
+
+        </form>
+    </div>
+
+
+    <!-- Bootstrap 所需 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+
+<script src="50_form.js"></script>
+
+</body>
+
+</html>
