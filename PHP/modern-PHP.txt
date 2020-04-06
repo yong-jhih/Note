@@ -25,3 +25,27 @@ https://github.com/symfony/HttpFoundation/Response.php
 子命名空間
 <?php
     namespace Test\son ;
+
+使用命名空間和默認別名
+<?php
+    use Symfony\Component\HttpFoundation\Response;
+    $response = new Response('Oops',400);
+    $response->send();
+
+使用命名空間並自訂別名
+<?php
+    use Symfony\Component\HttpFoundation\Response as Res;
+    $r = new Res('Oops',400);
+    $r->send();
+
+使用命名空間並導入函數
+<?php
+    use func namespace\functionName;
+    functionName();
+
+使用命名空間並導入常數
+<?php
+    use constant Namespace\CONST_NAME;
+    echo CONST_NAME;
+
+P17 26/232
