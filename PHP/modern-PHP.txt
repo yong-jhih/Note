@@ -48,4 +48,3 @@ https://github.com/symfony/HttpFoundation/Response.php
     use constant Namespace\CONST_NAME;
     echo CONST_NAME;
 
-P17 26/232
