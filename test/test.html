@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>123</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        var content="";
+        function test(){
+            $.ajax({
+                method:"GET",
+                dataType:"json",
+                url:"https://rate.bot.com.tw/Content/fonts/fontawesome-webfont.woff2?v=4.6.1",
+                success:function(response){
+                    alert("link success");
+                    content = response[0];
+                },
+                error:function(){
+                    alert("error");
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="test()">123</button>
+    <iframe src="https://tw.yahoo.com/" width="500" height="500" frameborder="2px" scrolling="50"></iframe>
+    <a target="_parent" href="https://www.w3schools.com/tags/att_form_target.asp">123</a>
+    <form>
+        <select size="4" disabled>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <select size="1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br>
+        <input type="text" style="height: 50px ;margin-bottom: 5px;text-align:left;">
+        <br>
+        <textarea rows="10" cols="50">At w3schools.com you will learn how to make a website.</textarea>
+        <input type="reset" value="預設值">
+    </form>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <table>
+        <ul>input type
+            <li>text:文本輸入框 maxlength最大長度、onlyready只讀、 disabled禁止、 placeholder</li>
+            <li>pasword:密碼遮掩框</li>
+            <li>radio:單選按鈕，checked默認選擇</li>
+            <li>checkbox:多選框</li>
+            <li>submit:收集表單域的name數據，提交到伺服器上</li>
+            <li>clos=""</li>
+            <li>rows=""</li>
+        </ul>
+        <ul>select
+            <li>selected="selected":</li>
+            <li>size=""</li>
+            <li>disabled</li>
+        </ul>
+        <ul>textarea
+            <li>clos=""</li>
+            <li>rows=""</li>
+            <li>readonly</li>
+            <li>disabled</li>
+        </ul>
+        <ul>
+            <li>:</li>
+            <li>:</li>
+            <li>:</li>
+            <li>:</li>
+            <li>:</li>
+        </ul>
+        <ul>
+            <li>:</li>
+            <li>:</li>
+            <li>:</li>
+            <li>:</li>
+            <li>:</li>
+        </ul>
+    </table>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
