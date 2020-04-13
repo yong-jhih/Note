@@ -25,8 +25,7 @@ for($i=0;$i<count($rate_data);$i++){
 
     // 取得貨幣種類
     $get_currency[$i] = explode('<div class="visible-phone print_hide">',$rate_data[$i]);
-    array_splice($get_currency[$i],0,1);
-    $currency[$i] = trim(substr($get_currency[$i][0],0,68)) ;
+    $currency[$i] = trim(substr($get_currency[$i][1],0,68)) ;
     
     // 取得匯率
     $get_rate[$i]['cash_buy'] = explode('</td>',explode('<td data-table="本行現金買入" class="rate-content-cash text-right print_hide">',$rate_data[$i])[1])[0];
