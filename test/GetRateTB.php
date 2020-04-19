@@ -3,7 +3,7 @@
 $link = mysqli_connect('localhost','root','','guestbook');
 mysqli_query($link, "SET NAMES utf8");
 
-// 建立連線取得網頁資料
+// 設定連線
 $curl = curl_init();
 $options = array(
     CURLOPT_URL =>"https://rate.bot.com.tw/xrt?Lang=zh-TW",
@@ -13,46 +13,47 @@ $options = array(
     CURLOPT_TIMEOUT => 60
 );
 curl_setopt_array($curl,$options);
-$result = curl_exec($curl);
 
 do{
-    // 取得資料時間
-    $get_data_time = explode('<span class="time">',$result);
-    array_splice($get_data_time,0,1);
-    $get_data_time = substr(implode($get_data_time),0,16);
-    echo "台灣銀行牌告匯率取得時間 ".$get_data_time."<hr>" ;
-
-    // 取得匯率
-    $currency = array();
-    $rate_data = explode("<tr>",$result);
-    array_splice($rate_data,0,3);
-
-    for($i=0;$i<count($rate_data);$i++){
-
-        // 取得貨幣種類
-        $get_currency[$i] = explode('<div class="visible-phone print_hide">',$rate_data[$i]);
-        $currency[$i] = (String)trim(substr($get_currency[$i][1],0,68)) ;
+    $result = curl_exec($curl);
+    if(isset($result) && $result!=''){
+        // 取得資料時間
+        $get_data_time = explode('<span class="time">',$result);
+        array_splice($get_data_time,0,1);
+        $get_data_time = substr(implode($get_data_time),0,16);
+        echo "台灣銀行牌告匯率取得時間 ".$get_data_time."<hr>" ;
 
         // 取得匯率
-        $cash_buy[$i] = (Float)explode('</td>',explode('<td data-table="本行現金買入" class="rate-content-cash text-right print_hide">',$rate_data[$i])[1])[0];
-        $cash_sale[$i] = (Float)explode('</td>',explode('<td data-table="本行現金賣出" class="rate-content-cash text-right print_hide">',$rate_data[$i])[1])[0];
-        $bank_buy[$i] = (Float)explode('</td>',explode('<td data-table="本行即期買入" class="rate-content-sight text-right print_hide" data-hide="phone">',$rate_data[$i])[1])[0];
-        $bank_sale[$i] = (Float)explode('</td>',explode('<td data-table="本行即期賣出" class="rate-content-sight text-right print_hide" data-hide="phone">',$rate_data[$i])[1])[0];
+        $currency = array();
+        $rate_data = explode("<tr>",$result);
+        array_splice($rate_data,0,3);
 
-        echo $currency[$i]."<br>";
-        echo "<li> 本行現金買入: ".$cash_buy[$i] ."</li>";
-        echo "<li> 本行現金賣出: ".$cash_sale[$i]."</li>";
-        echo "<li> 本行即期買入: ".$bank_buy[$i] ."</li>";
-        echo "<li> 本行即期賣出: ".$bank_sale[$i]."</li>";
-        echo "<hr>";
+        for($i=0;$i<count($rate_data);$i++){
 
-        // 有資料才寫入
-        if($currency[$i]!='' || $cash_buy[$i]!='' || $cash_sale[$i]!='' || $bank_buy[$i]!='' || $bank_sale[$i]!=''){
+            // 取得貨幣種類
+            $get_currency[$i] = explode('<div class="visible-phone print_hide">',$rate_data[$i]);
+            $currency[$i] = (String)trim(substr($get_currency[$i][1],0,68)) ;
+
+            // 取得匯率
+            $cash_buy[$i] = (Float)explode('</td>',explode('<td data-table="本行現金買入" class="rate-content-cash text-right print_hide">',$rate_data[$i])[1])[0];
+            $cash_sale[$i] = (Float)explode('</td>',explode('<td data-table="本行現金賣出" class="rate-content-cash text-right print_hide">',$rate_data[$i])[1])[0];
+            $bank_buy[$i] = (Float)explode('</td>',explode('<td data-table="本行即期買入" class="rate-content-sight text-right print_hide" data-hide="phone">',$rate_data[$i])[1])[0];
+            $bank_sale[$i] = (Float)explode('</td>',explode('<td data-table="本行即期賣出" class="rate-content-sight text-right print_hide" data-hide="phone">',$rate_data[$i])[1])[0];
+
+            echo $currency[$i]."<br>";
+            echo "<li> 本行現金買入: ".$cash_buy[$i] ."</li>";
+            echo "<li> 本行現金賣出: ".$cash_sale[$i]."</li>";
+            echo "<li> 本行即期買入: ".$bank_buy[$i] ."</li>";
+            echo "<li> 本行即期賣出: ".$bank_sale[$i]."</li>";
+            echo "<hr>";
+
             $sql = "INSERT INTO `raterecords` ( `Time` , `Currency` , `Cash_Buy` , `Cash_Sale` , `Bank_Buy` , `Bank_Sale` ) VALUES ('$get_data_time','$currency[$i]','$cash_buy[$i]','$cash_sale[$i]','$bank_buy[$i]','$bank_sale[$i]')" ;
-            $data = mysqli_query($link,$sql);
+            $data = mysqli_query($link,$sql); 
         }
+    }else{
+        sleep(10);
     }
-    sleep(300);
+    
 }while(!isset($result) || $result=='');
 
 curl_close($curl);
