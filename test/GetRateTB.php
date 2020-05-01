@@ -56,6 +56,69 @@ do{
     
 }while(!isset($result) || $result=='');
 
+// 讀取繪製圖表用資料
+$chart = array();
+$end2 = "" ;
+$sql = "SELECT * FROM `raterecords` WHERE Currency LIKE '%USD%' ORDER BY UpdateTime DESC";
+$data = mysqli_query($link,$sql);
+for($j=0;$j<$data->num_rows;$j++){
+    $end[$j] = mysqli_fetch_assoc($data);
+    $end2 .= 
+    "[".
+        // $end[$j]['Time'].",".
+        $j.",".
+        $end[$j]['Cash_Buy'].",".
+        $end[$j]['Cash_Sale'].",".
+        $end[$j]['Bank_Buy'].",".
+        $end[$j]['Bank_Sale'].
+    "]" ;
+    if($j<$data->num_rows-1){
+        $end2 .= "," ;
+    }
+}
+// echo json_encode($end);
+// echo "<pre>",print_r($end),"</pre>" ;
 curl_close($curl);
 mysqli_close($link);
 ?>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Time', 'CASH-BUY', 'CASH-SALE' , 'BANK-BUY' , 'BANK-SALE'],
+          <?php
+            echo $end2 ;
+          ?>
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+                var options_fullStacked = {
+          isStacked: 'relative',
+          height: 300,
+          legend: {position: 'top', maxLines: 3},
+          vAxis: {
+            minValue: 0,
+            ticks: [0, .3, .6, .9, 1]
+          }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  </body>
+</html>
