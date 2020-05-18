@@ -1,0 +1,92 @@
+dpkg 套件管理工具
+dpkg --help     
+dpkg -I name
+dpkg -I | less
+dpkg -L name
+dpkg -S file_name
+dpkg -i name
+dpkg -r name
+dpkg -x name .deb target_dir
+dpkg -i --force-overwrite-i name
+dpkg -i --force-all name
+dpkg -r --purge --force-deps name
+dpkg --get-selection
+dpkg --pending --remove
+
+shutdown -r now  重新啟動本機
+sudo shutdown -r now 重新啟動本機(使用系統管理員權限)
+sudo member_name 切換使用者
+
+history  查詢歷史指令(1000筆)
+history | grep XXX  查詢含有XXX的歷史指令
+!id     執行歷史指令編號id的項目
+ctrl+R 搜尋指令
+
+useradd
+userdel
+usermod
+passwd
+groupadd
+groupmod
+groupdel
+
+apt 高階包裝工具
+apt-cache search 套件                   搜尋套件
+apt-cache show 套件                     顯示套件詳細資訊
+apt-get install 套件                    安裝套件
+apt-get remove 套件                     移除套件
+apt-get update 套件                     更新套件
+
+man 指令名稱                            查詢指令詳細內容
+指令名稱 --help                         查詢指令簡易說明
+
+cd                                     切換目錄
+cd ~                                   切換至使用者家目錄
+pwd                                    確認當前目錄
+pwd -L                                 確認當前目錄(預設值同上)
+pwd -P                                 確認當前軟連結目錄()
+
+ls                                     顯示當前目錄內檔案
+ls -R 資料夾名稱                        列出當前目錄下包含子目錄的所有檔案
+ls -l                                  逐行顯示當前目錄內檔案及其他資訊
+ls -la                                 逐行顯示當前目錄內檔案及其他資訊(包含隱藏檔)
+ls -lh                                 逐行顯示當前目錄內檔案及其他資訊(改變容量單位bytes為K)
+ls -ld                                 只顯示當前目錄內資料夾
+ls -ld *x*                             只顯示當前目錄內資料夾名稱包含x(*萬用字元 模糊比對用)
+
+x*                                     列出開頭為x的所有檔案或資料夾            可列出 xml.xdg
+*x                                     列出結尾為x的所有檔案或資料夾            可列出 firefox
+x??                                    列出開頭為x且長度為3的所有檔案或資料夾    可列出 xml.xdg
+
+mkdir 路徑 目錄名稱                     在路徑建立資料夾(未輸入路徑即為當前資料夾,如父目錄不存在則失敗)
+mkdir -p 路徑 目錄名稱                  在路徑建立資料夾(連同不存在之父目錄一起建立)
+
+cp 來源檔案 目的路徑                    複製檔案至目的路徑
+cp -v 來源檔案 目的路徑                 複製檔案至目的路徑並顯示過程
+cp -r 來源檔案 目的路徑                 複製資料夾至目的路徑
+
+rmdir 目錄名稱                         僅能刪除空白目錄
+rm 檔案名稱                            僅能刪除檔案
+rm -r 目錄名稱                         刪除目錄(包含子目錄及檔案)
+rm -f                                 強制刪除檔案或目錄
+rm -d                                 直接刪除目錄而不刪除目錄內檔案,可能需要fsck指令進行修復
+rm -i                                 再刪除檔案或目錄前會先詢問使用者
+rm -v                                 顯示完整過程
+rm --help
+rm --version
+
+mv 檔案或資料夾 路徑                    搬移檔案或資料夾至路徑並更改檔名)
+
+壓縮/解壓縮/打包
+tar 參數 備份檔案檔名 備份檔案來源       標準語法備份檔案
+tar 參數 還原檔案檔名 參數              標準語法還原檔案
+tar -c                                建立新的備份檔
+tar -f                                指定檔案名稱與路徑
+tar -r                                新增檔案至備份檔案結尾
+tar --delete                          將.tar中的某個檔案刪除
+tar -t                                列出備份檔內檔案清單
+tar -u                                僅置換檔案更新部分
+tar -v                                顯示指定執行過程
+tar -z                                透過gzip處理備份檔案
+tar -x                                還原備份檔
+tar -C                                指定還原路徑
