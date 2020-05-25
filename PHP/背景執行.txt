@@ -1,0 +1,14 @@
+php 把程式丟到背景執行.
+此方法一般可以用來縮圖或是發信.
+
+程式碼
+ignore_user_abort(); // run script in background 在背景跑.
+set_time_limit(0); // run script forever 程式執行時間不做限制.
+$interval=60*15; // do every 15 minutes... 15分鐘
+do{
+// add the script that has to be ran every 15 minutes here 每15分鐘執行一次.
+sleep($interval); // wait 15 minutes 等待15分鐘
+}while(true);
+
+
+
