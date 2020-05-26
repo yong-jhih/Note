@@ -1,0 +1,15 @@
+hash_algos — 返回已注册的哈希算法列表
+hash_copy — 拷贝哈希运算上下文
+hash_equals — 可防止时序攻击的字符串比较
+hash_file — 使用给定文件的内容生成哈希值
+hash_final — 结束增量哈希，并且返回摘要结果
+hash_hkdf — Generate a HKDF key derivation of a supplied key input
+hash_hmac_algos — Return a list of registered hashing algorithms suitable for hash_hmac
+hash_hmac_file — 使用 HMAC 方法和给定文件的内容生成带密钥的哈希值
+hash_hmac — 使用 HMAC 方法生成带有密钥的哈希值
+hash_init — 初始化增量哈希运算上下文
+hash_pbkdf2 — 生成所提供密码的 PBKDF2 密钥导出
+hash_update_file — 从文件向活跃的哈希运算上下文中填充数据
+hash_update_stream — 从打开的流向活跃的哈希运算上下文中填充数据
+hash_update — 向活跃的哈希运算上下文中填充数据
+hash — 生成哈希值 （消息摘要）
