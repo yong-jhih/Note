@@ -1,0 +1,44 @@
+=======================================================================
+基本流程
+
+1. 安裝appache套件
+    apt-get install apache2
+
+2. 安裝MySQL資料庫套件
+    apt-get install mysql-server
+
+3. 測試資料庫(初始建立密碼為'')
+    mysql -u root -p
+    show databases;
+    exit
+
+4. 安裝PHP程式執行環境
+    apt-get install php7.4-cli
+
+5. 安裝PHP與MySQL資料庫擴充元件
+    apt-get install php7.4-mysql
+
+6. 安裝Apache伺服器與PHP執行環境擴充元件
+    apt-get install libapache2-mod-php7.4
+
+7. 重新啟動apache伺服器
+    /etc/init.d/apache2 restart
+
+8. 測試網站伺服器是否正常運作(Apache伺服器預設跟目錄為/var/www/html)
+    ip address(取得ip)
+    開啟網頁瀏覽器輸入網址 http://...ip.../(預設開啟index.html)
+
+========================================================================
+*修改Apache伺服器預設目錄
+    sudo gedit /etc/apache2/sites-enabled/000-default.conf
+    在文件中找到 DocumentRoot 修改後面你要放置網頁檔案的目錄 修改完後重啟伺服器
+    sudo /etc/init.d/apache2 restart
+
+*
+
+========================================================================
+ps:
+    若權限不足請使用sudo指令或切換使用者
+    apt-cache search 套件(搜尋相關套件)
+    apt-cache show 套件(顯示套件詳細資訊)
+    apt-get update 套件(更新套件)
