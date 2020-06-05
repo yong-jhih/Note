@@ -11,7 +11,7 @@
     string 字串(數字\漢字\等等)
     integer 整數(1、2、3、4、5、0、-1、-2、等等)
     double 浮點數（小數點）
-    array 數組
+    array 陣列
     object 對象
 
 可以用的方法有
@@ -29,7 +29,8 @@ settype($mix,$typename):設定該變數型別("boolean" or "bool","integer" or "
     + 加法運算 - 減法運算
     * 乘法運算 / 除法運算
     % 取余數 ++ 累加
-    -- 累減1 . 把字串相加
+    -- 累減1 
+    . 把字串相加
 
 設定運算
     = 把右邊的值代入左邊
@@ -39,7 +40,7 @@ settype($mix,$typename):設定該變數型別("boolean" or "bool","integer" or "
     /= 把左邊的值除以右邊
     .= 把右邊的字串加到左邊
 
-位員運算
+位元運算
     & 且
     | 或
     ^ 互斥(xor)
@@ -106,41 +107,42 @@ EOT;
 
 6.判斷文件是否存在並且輸出內容
 <?php
-$FileName="File.TXT";
-if (File_Exists($FileName)){
-Echo "<xmp>".File_Get_Contents($FileName)."</xmp>";
-}else
-{
-Echo"no";
-}
+    $FileName="File.TXT";
+    if (File_Exists($FileName)){
+        Echo "<xmp>".File_Get_Contents($FileName)."</xmp>";
+    }else{
+        Echo"no";
+    }
 ?>
 
 7.卸載變量unset;
 unset($var);
 unset($var,$var1);
-8.is_int;
-檢測變量是否是整數;
-9.is_null;
-檢測變量是否為 NULL ;
-10.is_string
-檢測變量是否是字符串
-11.is_real;
-is_float() 的別名
-12.isset
-檢測變量是否設置
-13.is_bool
-檢測變量是否是布爾型
-14.is_array
-檢測變量是否是數組
-15.is_object
-檢測變量是否是一個對象
+
+8.is_int; 檢測變量是否是整數;
+
+9.is_null; 檢測變量是否為 NULL ;
+
+10.is_string 檢測變量是否是字符串
+
+11.is_real() ; is_float() ; is_double() 檢測變量是否為浮點數
+
+12.isset 檢測變量是否設置
+
+13.is_bool 檢測變量是否是布爾型
+
+14.is_array 檢測變量是否是數組
+
+15.is_object 檢測變量是否是一個對象
+
 16.SubStr.
 SUBSTR(String,Start,SelectNum)
-echo substr(‘abcdef‘, 1); // bcdef
-echo substr(‘abcdef‘, 1, 3); // bcd
-echo substr(‘abcdef‘, 0, 4); // abcd
-echo substr(‘abcdef‘, 0, 8); // abcdef
-echo substr(‘abcdef‘, -1, 1); // f
-17.Nb2br
-echo nl2br("foo isn‘t\n bar");
-把轉義的換行變成 HTML的<BR />
+    echo substr(‘abcdef‘, 1); // bcdef
+    echo substr(‘abcdef‘, 1, 3); // bcd
+    echo substr(‘abcdef‘, 0, 4); // abcd
+    echo substr(‘abcdef‘, 0, 8); // abcdef
+    echo substr(‘abcdef‘, -1, 1); // f
+
+17.Nl2br
+    echo nl2br("foo isn‘t\n bar");
+    把轉義的換行變成 HTML的<br>

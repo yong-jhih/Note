@@ -1,31 +1,29 @@
-isset
-is_string
-is_int = is_integer
-is_float
-is_bool
-is_array
-is_object
-is_null
-is_nan
-is_numeric
-is_countable
-is_uploaded_file
-is_file
-is_callable
-is_resource
-is_iterable
-is_scalar
-is_tainted
-is_subclass_of
-is_soap_fault
-is_dir
-is_real
-is_readable
-is_executable
-is_long
-is_double
-is_link
-is_writeable
-is_finite
-is_writable
-is_a
+isset(): 判斷變數是否存在 且 不是null
+is_string(): 判斷變數是否為字串
+is_int() = is_integer() = is_long(): 判斷變數是否整數
+is_float() = is_real() = is_double(): 判斷變數是否為浮點數
+is_bool(): 判斷變數是否布林值         
+is_array(): 判斷變數是否陣列           
+is_object(): 判斷變數是否物件           
+is_null(): 判斷變數是否null           
+is_nan(): 判斷變數是否合法数值        
+is_numeric(): 判斷變數是否数字或数字字符串
+is_countable(): Verify that the contents of a variable is an array or an object implementing Countable
+is_uploaded_file():         判斷變數是否               
+is_file():                  判斷變數是否               
+is_callable ( callable $name [, bool $syntax_only = false [, string &$callable_name ]] ) : bool
+is_resource(): 检测变量是否为资源类型
+is_iterable(): Verify that the contents of a variable is accepted by the iterable pseudo-type, i.e. that it is either an array or an object implementing Traversable
+is_scalar(): 检测变量是否是一个純量( integer、float、string 或 boolean的变量，而非 array、object 和 resource )
+is_tainted():               判斷變數是否               
+is_subclass_of ( object $object , string $class_name ): 如果对象 object 所属类是类 class_name 的子类，则返回 TRUE，否则返回 FALSE。
+is_dir(): 判断给定文件名是否是一个目录
+is_readable(): 判断给定文件名是否存在并且可读
+is_executable(): 判断给定文件名是否可执行
+is_link(): 判斷文件存在并且是一个符号连接
+is_finite(): 判斷變數是否有限值
+is_infinite(): 判斷變數是否無限值
+is_writable(): 判斷檔案是否可寫入
+is_a(): 判斷變數是否 属于该类或该类是此对象的父类
+
+is_soap_fault():            判斷變數是否               

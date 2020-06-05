@@ -1,5 +1,7 @@
 <?php
-
+echo nl2br("foo isn‘t\n bar");
+echo "foo isn‘t\n bar";
+exit;
 // $a="F";
 // $b="c";
 

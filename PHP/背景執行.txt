@@ -9,6 +9,3 @@ do{
 // add the script that has to be ran every 15 minutes here 每15分鐘執行一次.
 sleep($interval); // wait 15 minutes 等待15分鐘
 }while(true);
-
-
-
