@@ -1,0 +1,24 @@
+css selector
+    #id
+    .class
+    htmltag
+
+#div1{
+    border:1px solid black;
+}
+
+.gray{
+    background-color:gray;
+}
+
+h1{
+    color:red;
+}
+
+===========================================================
+$() = jQuery() : 用法相同,後者常用於與其他語言混用的文檔中,避免混淆.
+
+概念則相近於css選擇器
+$("$id")
+$(".class")
+$("h1")
