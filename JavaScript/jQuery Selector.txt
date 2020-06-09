@@ -1,137 +1,117 @@
-css selector
-#id
-.class
-htmltag
-
-#div1{
-    border:1px solid black;
-}
-
-.gray{
-    background-color:gray;
-}
-
-h1{
-    color:red;
-}
-
-li:first{
-    size:14px;
-}
-
-input[name='newsletter'] {
-
-}
-
-#container a{
-
-}
-
-div > p{
-
-}
-
-===========================================================
+==================================================================
 $() = jQuery() : 用法相同,後者常用於與其他語言混用的文檔中,避免混淆.
 
-jQuery selector
-$("$id")
-$(".class")
-$("h1")
-$("li:first")
-$("input[class='class1']")
-$("#container a")
-${"div > p"}
+CSS selector / jQuery selector
 
-$("button").click(function(){});
-$("p").hide;
-$("#myTop")css({"background-color":"blue"});
+    #id
+    $("$id")
+
+    .class
+    $(".class")
+
+    htmltag
+    $("h1")
+
+    li:first{
+    $("li:first")
+
+    input[name='newsletter']
+    $("input[class='class1']")
+
+    #container a
+    $("#container a")
+
+    div > p
+    ${"div > p"}
+
+    $("button").click(function(){});
+    $("p").hide;
+    $("#myTop")css({"background-color":"blue"});
+
+==================================================================
 
 階層屬性有以下四種：
-物件中的某一種物件(空白)：$(‘#div1 p’).addClass(‘d1′);
-物件中的所有物件(*)：$(‘#div1 *’).addClass("d1);
-之後符合條件的第一個(+)：$(‘#div1 + p’).addClass(‘d1′);
-之後符合的所有(~)：$(‘#div1 ~ p’).addClass(‘d1′);
+    物件中的某一種物件(空白)：$(‘#div1 p’).addClass(‘d1′);
+    物件中的所有物件(*)：$(‘#div1 *’).addClass("d1);
+    之後符合條件的第一個(+)：$(‘#div1 + p’).addClass(‘d1′);
+    之後符合的所有(~)：$(‘#div1 ~ p’).addClass(‘d1′);
 
 子元素選擇器
-$("ul li:nth-child(2)"); //第 2 個節點
-$("ul li:nth-child(odd)"); //所有奇數子節點
-$("ul li:nth-child(3n + 1)"); //1, 4, 7 … 個節點
-$("div span:first-child") //所有的div元素的第一個子節點
-$("div span:last-child") //所有的div元素的最後一個節點
-$("div button:only-child") //所有只有一個 button 子節點的 div​​​​​​​​​​​​​​​​​​
+    $("ul li:nth-child(2)"); //第 2 個節點
+    $("ul li:nth-child(odd)"); //所有奇數子節點
+    $("ul li:nth-child(3n + 1)"); //1, 4, 7 … 個節點
+    $("div span:first-child") //所有的div元素的第一個子節點
+    $("div span:last-child") //所有的div元素的最後一個節點
+    $("div button:only-child") //所有只有一個 button 子節點的 div​​​​​​​​​​​​​​​​​​
 
 屬性過濾選擇器
-$("div[id]"); //選擇所有含有id屬性的div元素
-$("input[name='Jack']"); //選擇所有的name屬性等於’Jack’的input元素
-$("input[name!='Jack']"); //選擇所有的name屬性不等於’Jack’的input元素
-$("input[name^='J']"); //選擇所有的name屬性以’J'開頭的input元素
-$("input[name$='K']"); //選擇所有的name屬性以’k'結尾的input元素
-$("input[name*='ck']"); //選擇所有的name屬性包含’ck’的input元素
-$("input[id][name$='man']"); //可以使用多個屬性進行聯合選擇，該選擇器是得到所有的含有id屬性並且那麼屬性以man結尾的元素​​​​​​​​​​​​​​​​​​​​​​​​​​
+    $("div[id]"); //選擇所有含有id屬性的div元素
+    $("input[name='Jack']"); //選擇所有的name屬性等於’Jack’的input元素
+    $("input[name!='Jack']"); //選擇所有的name屬性不等於’Jack’的input元素
+    $("input[name^='J']"); //選擇所有的name屬性以’J'開頭的input元素
+    $("input[name$='K']"); //選擇所有的name屬性以’k'結尾的input元素
+    $("input[name*='ck']"); //選擇所有的name屬性包含’ck’的input元素
+    $("input[id][name$='man']"); //可以使用多個屬性進行聯合選擇，該選擇器是得到所有的含有id屬性並且那麼屬性以man結尾的元素​​​​​​​​​​​​​​​​​​​​​​​​​​
 
 jQuery 自訂選擇器(Custom Selectors)
-:even：找出結果集中其偶數的 elements (2,4,6,8…)
-: odd： 找出結果集為奇數(單數)的 elements (1,3,5,7…)
-:eq(N), :nth(N)：找出選擇結果集 index 為 N 的 elements
-:gt(N)：找出結果集中索引大於 N 的 elements
-:lt(N)：找出結果集中索引小於 N 的 elements
-:first：找出結果集中的第一個 element (相當於 eq(0) 或者 nth(0))
-:last：選擇結果集中的最後一個 element
-:parent：在結果集中選擇 elements，它必須具有子 elements(包括文本節點)(跟 :empty 相反)
-:contains(‘test’)：選擇結果集中包含有指定文本的 elements
-:has(selector)：找出結果集中至少出現一次某 selector 的元素
-:not(selector)：反選取指定的 selector
+    :even：找出結果集中其偶數的 elements (2,4,6,8…)
+    : odd： 找出結果集為奇數(單數)的 elements (1,3,5,7…)
+    :eq(N), :nth(N)：找出選擇結果集 index 為 N 的 elements
+    :gt(N)：找出結果集中索引大於 N 的 elements
+    :lt(N)：找出結果集中索引小於 N 的 elements
+    :first：找出結果集中的第一個 element (相當於 eq(0) 或者 nth(0))
+    :last：選擇結果集中的最後一個 element
+    :parent：在結果集中選擇 elements，它必須具有子 elements(包括文本節點)(跟 :empty 相反)
+    :contains(‘test’)：選擇結果集中包含有指定文本的 elements
+    :has(selector)：找出結果集中至少出現一次某 selector 的元素
+    :not(selector)：反選取指定的 selector
 
 可視 (visibility) 選擇器
-:visible 選擇所有可見(visible)的 elements
-display 屬性的值等於 visible、block、inline
-visibility 屬性的值等於 visible
-:hidden 選擇所有隱藏(visible)的 elements
-display 屬性的值等於 none
-visibility 屬性的值等於 hidden
+    :visible 選擇所有可見(visible)的 elements
+    display 屬性的值等於 visible、block、inline
+    visibility 屬性的值等於 visible
+    :hidden 選擇所有隱藏(visible)的 elements
+    display 屬性的值等於 none
+    visibility 屬性的值等於 hidden
 
 表單選擇器(Form Selectors)
-:input 選擇所有表單 elements(input, select, textarea, button)
-:text 選擇所有 (type="text").
-:password 選擇所有 (type="password").
-:radio 選擇所有 (type="radio").
-:checkbox 選擇所有 (type="checkbox").
-:submit 選擇所有 (type="submit").
-:image 選擇所有 (type="image").
-:reset 選擇所有 (type="reset").
-:button 選擇所有按鈕 (type="button").
-:file 選擇所有 <input type="file">.
-:hidden 選擇所有隱藏的表單元素
+    :input 選擇所有表單 elements(input, select, textarea, button)
+    :text 選擇所有 (type="text").
+    :password 選擇所有 (type="password").
+    :radio 選擇所有 (type="radio").
+    :checkbox 選擇所有 (type="checkbox").
+    :submit 選擇所有 (type="submit").
+    :image 選擇所有 (type="image").
+    :reset 選擇所有 (type="reset").
+    :button 選擇所有按鈕 (type="button").
+    :file 選擇所有 <input type="file">.
+    :hidden 選擇所有隱藏的表單元素
 
 表單狀態選擇器 (Form Selectors Filter)
-$("input:enabled"); //選擇所有的可操作的表單元素
-$("input:disabled"); //選擇所有的不可操作的表單元素
-$("input:checked"); //選擇所有的被checked的表單元素
-$("input#test:checked"); //選擇所有的被checked的 input id=test 表單元素
-$("select option:selected"); //選擇所有的select 的子元素中被selected的元素​​​​​​​​​
+    $("input:enabled"); //選擇所有的可操作的表單元素
+    $("input:disabled"); //選擇所有的不可操作的表單元素
+    $("input:checked"); //選擇所有的被checked的表單元素
+    $("input#test:checked"); //選擇所有的被checked的 input id=test 表單元素
+    $("select option:selected"); //選擇所有的select 的子元素中被selected的元素​​​​​​​​​
 
-選擇器效能 (Performance) 議題
-
+選擇器效能(Performance) 議題
 在特殊的環境中 (Ex. 大型系統，手機 App 等)情況，效能會變成一個很重要的議題，所以平常寫 jQuery Selector 把握幾個重點，就可以大幅加速網頁的運作效率，如下：
 
-【減少不必要的選擇器】
-例如對於 #id2 #id1 或 tag#id1 還不如直接寫 #id1 就好。因為文件中的 id 是唯一的，前面的父元素 #id2 沒有任何必要性。
+    【減少不必要的選擇器】
+    例如對於 #id2 #id1 或 tag#id1 還不如直接寫 #id1 就好。因為文件中的 id 是唯一的，前面的父元素 #id2 沒有任何必要性。
 
-【多用 ID 選擇 (#id) 器來取代其他選擇器】
-因為 id 選擇器可以直接呼叫 Javascript 的 getElementById() 直接定位找出該 HTML 元素，效率最高。
+    【多用 ID 選擇 (#id) 器來取代其他選擇器】
+    因為 id 選擇器可以直接呼叫 Javascript 的 getElementById() 直接定位找出該 HTML 元素，效率最高。
 
-【盡量少用 Class 選擇器】
-class 選擇器必須解析整份文件，效能很差。但可以配合 tag, id 等組合的選擇器，將範圍縮小後，便能更有效率的使用 class 選擇器
+    【盡量少用 Class 選擇器】
+    class 選擇器必須解析整份文件，效能很差。但可以配合 tag, id 等組合的選擇器，將範圍縮小後，便能更有效率的使用 class 選擇器
 
-【使用 parent>child 取代 parent child】
-前者是父子關係。而後者是所有後代的關係，會遞迴處理子節點和子節點所有的子節點，和其後的所有子節點。
+    【使用 parent>child 取代 parent child】
+    前者是父子關係。而後者是所有後代的關係，會遞迴處理子節點和子節點所有的子節點，和其後的所有子節點。
 
-【將選取出來的元素快取到記憶體中】
-如果元素會重複使用到，而且選取出來的結果不會產生變化時，盡量將已經選取出來的元素儲存到變數中，避免每次使用時都必須再選取一次、再重新解析一次文件。
-ps. 最常用的應該是：$this = $(this);
+    【將選取出來的元素快取到記憶體中】
+    如果元素會重複使用到，而且選取出來的結果不會產生變化時，盡量將已經選取出來的元素儲存到變數中，避免每次使用時都必須再選取一次、再重新解析一次文件。
+    ps. 最常用的應該是：$this = $(this);
 
-【盡量使用 Javascript 原生選取方法】
-如果你只需要選取 #id1，不需要進行複雜的 jQuery selector 選取模式，盡量使用 JS 原生方法，例如 getElementById() 和 getElementByTagName() 取代 jQuery ，例如想要取用 id=element1 這個 div，可以使用以下語法：
-
-
+    【盡量使用 Javascript 原生選取方法】
+    如果你只需要選取 #id1，不需要進行複雜的 jQuery selector 選取模式，盡量使用 JS 原生方法，例如 getElementById() 和 getElementByTagName() 取代 jQuery ，例如想要取用 id=element1 這個  div，可以使用以下語法：
