@@ -1,4 +1,5 @@
-The file_get_contents() reads a file into a string.
+<!-- 
+The file_get_contents() reads a file into a "string".
     This function is the preferred way to read the contents of a file into a string.
     It will use memory mapping techniques, if this is supported by the server, to enhance performance.  --w3schools
 
@@ -11,7 +12,7 @@ Syntax
     max_length:Optional. Specifies the maximum length of data read. Default is read to EOF
 
 
-The file() reads a file into an array.
+The file() reads a file into an "array".
     Each array element contains a line from the file, with the newline character still attached.    --w3schools
 
 Syntax
@@ -21,7 +22,7 @@ Syntax
         FILE_USE_INCLUDE_PATH - Search for the file in the include_path (in php.ini)
         FILE_IGNORE_NEW_LINES - Skip the newline at the end of each array element
         FILE_SKIP_EMPTY_LINES - Skip empty lines in the file
-    context:Optional. Specifies the context of the file handle. Context is a set of options that can modify the behavior of a stream. Can be skipped by using NULL.
+    context:Optional. Specifies the context of the file handle. Context is a set of options that can modify the behavior of a stream. Can be skipped by using NULL. -->
 
 <?php
 function safe($data){

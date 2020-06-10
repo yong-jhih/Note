@@ -41,7 +41,6 @@
         }
         $rand = array($num1,$num2,$num3);
         sort($rand);
-        // echo "<pre>",print_r($rand),"</pre>";
         echo implode($rand);
     ?>
     <table>

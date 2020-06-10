@@ -23,12 +23,10 @@ CSS selector / jQuery selector
 
     div > p
     ${"div > p"}
-
-    $("button").click(function(){});
-    $("p").hide;
-    $("#myTop")css({"background-color":"blue"});
-
 ==================================================================
+$("button").click(function(){});
+$("p").hide;
+$("#myTop")css({"background-color":"blue"});
 
 階層屬性有以下四種：
     物件中的某一種物件(空白)：$(‘#div1 p’).addClass(‘d1′);
