@@ -1,18 +1,4 @@
-dpkg 套件管理工具
-dpkg --help     
-dpkg -I name
-dpkg -I | less
-dpkg -L name
-dpkg -S file_name
-dpkg -i name
-dpkg -r name
-dpkg -x name .deb target_dir
-dpkg -i --force-overwrite-i name
-dpkg -i --force-all name
-dpkg -r --purge --force-deps name
-dpkg --get-selection
-dpkg --pending --remove
-
+shutdown         關機
 shutdown -r now  重新啟動本機
 sudo shutdown -r now 重新啟動本機(使用系統管理員權限)
 sudo member_name 切換使用者
@@ -29,13 +15,6 @@ passwd
 groupadd
 groupmod
 groupdel
-
-apt 高階包裝工具
-apt-cache search 套件                   搜尋套件
-apt-cache show 套件                     顯示套件詳細資訊
-apt-get install 套件                    安裝套件
-apt-get remove 套件                     移除套件
-apt-get update 套件                     更新套件
 
 man 指令名稱                            查詢指令詳細內容
 指令名稱 --help                         查詢指令簡易說明
@@ -204,23 +183,3 @@ s                  一般使用者執行該檔案時 會以檔案擁有者身分
 ===============
 
 檔案或資料夾擁有者的變更 chown
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

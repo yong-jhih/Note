@@ -1,0 +1,59 @@
+===================================================================================
+apt 高階包裝工具
+apt-cache search 套件                   搜尋套件
+apt-cache show 套件                     顯示套件詳細資訊
+apt-get install 套件                    安裝套件
+apt-get remove 套件                     移除套件
+apt-get update 套件                     更新套件
+===================================================================================
+apt-get 是一个下载安装软件包的简单命令行接口。最常用的命令是update(更新)和install(安装)。
+用法： apt-get [选项] 命令
+常用选项：
+    -h 本帮助文件。
+    -q 输出到日志 - 无进展指示
+    -qq 不输出信息，错误除外
+    -d 仅下载 - 不安装或解压归档文件
+    -s 不实际安装。模拟执行命令
+    -y 假定对所有的询问选是，不提示
+    -f 尝试修正系统依赖损坏处
+    -m 如果归档无法定位，尝试继续
+    -u 同时显示更新软件包的列表
+    -b 获取源码包后编译
+    -V 显示详细的版本号
+    -c=? 阅读此配置文件
+    -o=? 设置自定的配置选项，如 -o dir::cache=/tmp
+
+常用命令：
+    1）apt-get update 更新源
+    【aptitude update】
+    2）apt-get dist-upgrade 升级系统到相应的发行版(根据 source.list 的配置)
+    【aptitude dist-upgrade】
+    3）apt-get upgrade 更新所有已经安装的软件包
+    【aptitude upgrade】
+    4）apt-get install package_name 安装软件包(加上 --reinstall重新安装)
+    apt-get install package_name=version 安装指定版本的软件包
+    【aptitude install package_name】
+    5）apt-get remove package_name 卸载一个已安装的软件包（保留配置文件）
+    【aptitude remove package_name】
+    6）apt-get purge package_name 移除软件包（删除配置信息）
+    或apt-get --purge remove packagename
+    【aptitude purge package_name】
+    7）apt-get check 检查是否有损坏的依赖
+    8）apt-get autoclean
+    删除你已经删掉的软件（定期运行这个命令来清除那些已经卸载的软件包的.deb文件。通过这种方式，您可以释放大量的磁盘空间。如果您的需求十分迫切，可以使用apt-get
+    clean以释放更多空间。这个命令会将已安装软件包裹的.deb文件一并删除。大多数情况下您不会再用到这些.debs文件，因此如果您为磁盘空间不足
+    而感到焦头烂额，这个办法也许值得一试）
+    【aptitude autoclean】
+    9）apt-get clean 把安装的软件的备份也删除，不过这样不会影响软件的使用
+    【aptitude clean】
+===================================================================================
+apt-cache - query the APT cach.
+    apt-cache performs a variety of operations on APT's package cache. apt-cache does not manipulate the state of the system but does provide operations to search and  generate interesting output from the package metadata.
+
+    1）apt-cache depends packagename 了解使用依赖
+    2）apt-cache rdepends packagename 是查看该包被哪些包依赖
+    3）apt-cache search packagename 搜索包
+    【aptitude search packagename】
+    4）apt-cache show packagename 获取包的相关信息，如说明、大小、版本等
+    【aptitude show packagename】
+    5）apt-cache showpkg packagename 显示软件包的大致信息

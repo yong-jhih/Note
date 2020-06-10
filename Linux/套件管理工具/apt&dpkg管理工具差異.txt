@@ -1,0 +1,41 @@
+一般來說linux系統主要分為兩大類：
+    1.RedHat系列：RedHat,Centos,Fedora等；
+    2.Debian系列：Debian,Ubuntu等；
+
+RedHat系列：
+    常見的安裝包格式rpm包，安裝rpm包的命令是“rpm -引數”
+    包管理工具yum
+    支援tar包
+
+Debian系列
+    常見的安裝包格式deb包，安裝deb包的命令是“dpkg -引數”
+    包管理工具apt-get
+    支援tar包
+
+tar只是一種壓縮檔案格式，它是把檔案壓縮打包而已
+rpm相當於windows中的安裝檔案，它會自動處理軟體包之間的依賴關係。
+rpm一般都是預先編譯好的檔案，它可能已經繫結到某種cpu或者發行版上面。
+
+那麼dpkg和apt的區別是什麼呢？？？？
+    dpkg只是用來安裝本地軟體包(deb包)，但不解決模組的依賴關係。
+    apt-get是從網路伺服器安裝軟體包的，它會解決依賴關係。
+
+而且dpkg繞過apt包管理資料庫對軟體包進行操作，所以你用dpkg安裝過的軟體包用apt可以再安裝一遍，系統不知道之前安裝過了，將會覆蓋之前dpkg的安裝。
+sudo apt-get install ***之後，包的臨時儲存路徑是 /var/cache/apt/archives。
+
+安裝軟體包
+    dpkg -i package.deb     //安裝本地軟體包，不解決依賴關係
+    apt-get install package  //線上安裝軟體包
+
+移除軟體包
+    dpkg -r package       //刪除軟體包
+    apt-get remove package  //同上
+    dpkg -p package            //刪除軟體包及配置檔案
+    apt-get remove package --purge  //同上
+
+軟體安裝後相關檔案位置
+    1.下載的軟體包存放位置 /var/cache/apt/archives
+    2.安裝後軟體預設位置 /usr/share
+    3.可執行檔案位置 /usr/bin
+    4.配置檔案位置 /etc
+    5.lib檔案位置 /usr/lib

@@ -1,0 +1,34 @@
+===================================================================================
+dpkg是Debian底層的套件管理程式，其上還有強大的apt，在其上更有非常強大的aptitude管理系統。
+Debian系列的linux，如Ubuntu, B2D, LinuxMint等，都是使用dpkg作為底層的套件管理程式。
+===================================================================================
+dpkg能用來查詢、安裝以及設定deb檔；如同rpm，dpkg亦使用dpkg資料庫紀錄每個套件安裝、設定、移除等詳細資訊。
+一個標準的deb檔命名方式如下：
+    Filename_version-release_arch.deb
+    例如madedit_0.2.9-1_amd64.deb，madedit就是套件名稱，0.2.9為版本號，1為釋出番號，amd64則表示x86_64位元的平台。
+
+安裝一個deb的流程大致如下：
+    解開control file
+    從dpkgdb檢查系統是否已安裝此套件且版本相同；如果有，則執行prerm script，再執行preinst script。
+    備份舊的binaries，解開新的bineries並複製到設計好的位置。
+    從dpkgdb檢查系統是否已安裝此套件但版本不同；如果有，則執行postrm script。
+    備份舊的config檔，解開新的config檔並複製到設計好的位置。
+    執行postinst script。
+    dpkg有兩個姊妹：dpkg-deb以及dpkg-query。不過dpkg的action以及options能涵蓋大部分這兩個指令的功能，因此僅提dpkg常用的功能。
+===================================================================================
+用法： dpkg [选项] 命令
+
+dpkg --help
+dpkg -I name
+dpkg -I | less
+dpkg -L name
+dpkg -S file_name
+dpkg -i name
+dpkg -r name
+dpkg -x name .deb target_dir
+dpkg -i --force-overwrite-i name
+dpkg -i --force-all name
+dpkg -r --purge --force-deps name
+dpkg --get-selection
+dpkg --pending --remove
+===================================================================================
