@@ -1,6 +1,6 @@
 <?php
 // 資料庫連線
-$link = mysqli_connect('localhost','root','','guestbook');
+$link = mysqli_connect('localhost','root','','ratetb');
 mysqli_query($link, "SET NAMES utf8");
 
 // 設定連線
@@ -47,7 +47,7 @@ do{
             echo "<li> 本行即期賣出: ".$bank_sale[$i]."</li>";
             echo "<hr>";
 
-            $sql = "INSERT INTO `raterecords` ( `Time` , `Currency` , `Cash_Buy` , `Cash_Sale` , `Bank_Buy` , `Bank_Sale` ) VALUES ('$get_data_time','$currency[$i]','$cash_buy[$i]','$cash_sale[$i]','$bank_buy[$i]','$bank_sale[$i]')" ;
+            $sql = "INSERT INTO `rate` ( `Time` , `Currency` , `Cash_Buy` , `Cash_Sale` , `Bank_Buy` , `Bank_Sale` ) VALUES ('$get_data_time','$currency[$i]','$cash_buy[$i]','$cash_sale[$i]','$bank_buy[$i]','$bank_sale[$i]')" ;
             $data = mysqli_query($link,$sql); 
         }
     }else{
@@ -59,7 +59,7 @@ do{
 // 讀取繪製圖表用資料
 $chart = array();
 $end2 = "" ;
-$sql = "SELECT * FROM `raterecords` WHERE Currency LIKE '%USD%' ORDER BY UpdateTime DESC";
+$sql = "SELECT * FROM `rate` WHERE Currency LIKE '%USD%' ORDER BY UpdateTime DESC";
 $data = mysqli_query($link,$sql);
 for($j=0;$j<$data->num_rows;$j++){
     $end[$j] = mysqli_fetch_assoc($data);
