@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>fade()改變物件的opacity(透明)/transparency(不透明)性質</h3>
+    <p>$(selector).fadeIn(speed,callback):可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。</p>
+    <p>$(selector).fadeOut(speed,callback):可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。</p>
+    <p>$(selector).fadeTo(speed,opacity,callback):渐变为给定的不透明度（值介于 0 与 1 之间）</p>
+    <p>$(selector).fadeToggle(speed,callback):在 fadeIn() 与 fadeOut() 方法之间进行切换。</p>
+    <hr>
+    <img src="1.png">
+    <br>
+    <span>
+        <p>$("img").fadeOut();  :  </p>
+        <button onclick="fadeOut(1000)">fadeOut(1000)</button>
+        <button onclick="fadeOut(2000)">fadeOut(2000)</button>
+        <button onclick="fadeOut(3000)">fadeOut(3000)</button>
+    <hr>
+        <p>$("img").fadeIn();  :  </p>
+        <button onclick="fadeIn(1000)">fadeIn(1000)</button>
+        <button onclick="fadeIn(2000)">fadeIn(2000)</button>
+        <button onclick="fadeIn(3000)">fadeIn(3000)</button>
+    <hr>
+        <p>$("img").fadeTo();  :  </p>
+        <button onclick="fadeTo(2000,1)">fadeTo(2000,1)</button>
+        <button onclick="fadeTo(2000,0.5)">fadeTo(2000,0.5)</button>
+        <button onclick="fadeTo(2000,0)">fadeTo(2000,0)</button>
+    <hr>
+        <p>$("img").fadeToggle();  :  </p>
+        <button onclick="fadeToggle(1000)">fadeToggle(1000)</button>
+        <button onclick="fadeToggle(2000)">fadeToggle(2000)</button>
+        <button onclick="fadeToggle(3000)">fadeToggle(3000)</button>
+    </span>
+    <script>
+        function fadeIn(time){
+            $("img").fadeIn(time);
+        }
+        function fadeOut(time){
+            $("img").fadeOut(time);
+        }
+        function fadeTo(time,opacity){
+            $("img").fadeTo(time,opacity);
+        }
+        function fadeToggle(time){
+            $("img").fadeToggle(time);
+        }
+    </script>
+</body>
+</html>

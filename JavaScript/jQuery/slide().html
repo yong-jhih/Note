@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>slide()改變物件的height屬性</h3>
+    <img src="1.png">
+    <br>
+    <span>
+        <p>$("img").slideUP();  :  由大降至0 然後隱藏該元素</p>
+        <button onclick="slideUp(1000)">slideUp1000</button>
+        <button onclick="slideUp(2000)">slideUp2000</button>
+        <button onclick="slideUp(3000)">slideUp3000</button>
+    <hr>
+    <p>$("img").slideDown();  :  由0 恢復到原本css樣式中設定的大小</p>
+        <button onclick="slideDown(1000)">slideDown1000</button>
+        <button onclick="slideDown(2000)">slideDown2000</button>
+        <button onclick="slideDown(3000)">slideDown3000</button>
+    <hr>
+        <p>$("img").slideToggle();  :  如果目前是划上 則效果為滑下 反之</p>
+        <button onclick="slideToggle(1000)">slideToggle1000</button>
+        <button onclick="slideToggle(2000)">slideToggle2000</button>
+        <button onclick="slideToggle(3000)">slideToggle3000</button>
+    </span>
+    <script>
+        function slideUp(time){
+            $("img").slideUp(time);
+        }
+        function slideDown(time){
+            $("img").slideDown(time);
+        }
+        function slideToggle(time){
+            $("img").slideToggle(time);
+        }
+    </script>
+</body>
+</html>
