@@ -1,0 +1,160 @@
+Category: Deprecated
+Also in: Deprecated > Deprecated 1.8 | Traversing > Miscellaneous Traversing | Removed
+.andSelf()
+Add the previous set of elements on the stack to the current set.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.bind()
+Attach a handler to an event for the elements.
+
+Also in: Deprecated > Deprecated 1.10 | Internals | Properties > Properties of jQuery Object Instances | Removed
+.context
+The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document.
+
+Also in: Deferred Object | Deprecated > Deprecated 1.7 | Removed
+deferred.isRejected()
+Determine whether a Deferred object has been rejected.
+
+Also in: Deferred Object | Deprecated > Deprecated 1.7 | Removed
+deferred.isResolved()
+Determine whether a Deferred object has been resolved.
+
+Also in: Deferred Object | Deprecated > Deprecated 1.8
+deferred.pipe()
+Utility method to filter and/or chain Deferreds.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.delegate()
+Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements.
+
+Also in: Deprecated > Deprecated 1.7 | Events > Event Handler Attachment | Removed
+.die()
+Remove event handlers previously attached using .live() from the elements.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:eq() Selector
+Select the element at index n within the matched set.
+
+Also in: Events > Browser Events | Deprecated > Deprecated 1.8 | Removed
+.error()
+Bind an event handler to the “error” JavaScript event.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:even Selector
+Selects even elements, zero-indexed. See also :odd.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:first Selector
+Selects the first matched DOM element.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:gt() Selector
+Select all elements at an index greater than index within the matched set.
+
+Also in: Deprecated > Deprecated 1.3 | Removed | Utilities
+jQuery.boxModel
+States if the current page, in the user’s browser, is being rendered using the W3C CSS Box Model.
+
+Also in: Deprecated > Deprecated 1.3 | Properties > Properties of the Global jQuery Object | Removed | Utilities
+jQuery.browser
+Contains flags for the useragent, read from navigator.userAgent. This property was removed in jQuery 1.9 and is available only through the jQuery.migrate plugin. Please try to use feature detection instead.
+
+Also in: Effects > Custom | Deprecated > Deprecated 3.0 | Properties > Properties of the Global jQuery Object
+jQuery.fx.interval
+The rate (in milliseconds) at which animations fire.
+
+Also in: Core | Deprecated > Deprecated 3.2 | Events > Document Loading | Properties > Properties of the Global jQuery Object
+jQuery.holdReady()
+Holds or releases the execution of jQuery’s ready event.
+
+Also in: Deprecated > Deprecated 3.2 | Utilities
+jQuery.isArray()
+Determine whether the argument is an array.
+
+Also in: Deprecated > Deprecated 3.3 | Utilities
+jQuery.isFunction()
+Determines if its argument is callable as a function.
+
+Also in: Deprecated > Deprecated 3.3 | Utilities
+jQuery.isNumeric()
+Determines whether its argument represents a JavaScript number.
+
+Also in: Deprecated > Deprecated 3.3 | Utilities
+jQuery.isWindow()
+Determine whether the argument is a window.
+
+Also in: Deprecated > Deprecated 3.3 | Utilities
+jQuery.now()
+Return a number representing the current time.
+
+Also in: Deprecated > Deprecated 3.0 | Utilities
+jQuery.parseJSON()
+Takes a well-formed JSON string and returns the resulting JavaScript value.
+
+Also in: Deprecated > Deprecated 3.3 | Events > Event Handler Attachment | Utilities
+jQuery.proxy()
+Takes a function and returns a new one that will always have a particular context.
+
+Also in: Core | Deprecated > Deprecated 1.7 | Removed
+jQuery.sub()
+Creates a new copy of jQuery whose properties and methods can be modified without affecting the original jQuery object.
+
+Also in: Deprecated > Deprecated 1.9 | Properties > Properties of the Global jQuery Object | Utilities
+jQuery.support
+A collection of properties that represent the presence of different browser features or bugs. Intended for jQuery’s internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance. For your own project’s feature-detection needs, we strongly recommend the use of an external library such as Modernizr instead of dependency on properties in jQuery.support.
+
+Also in: Deprecated > Deprecated 3.5 | Utilities
+jQuery.trim()
+Remove the whitespace from the beginning and end of a string.
+
+Also in: Deprecated > Deprecated 3.3 | Utilities
+jQuery.type()
+Determine the internal JavaScript [[Class]] of an object.
+
+Also in: Deprecated > Deprecated 3.0 | Utilities
+jQuery.unique()
+Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:last Selector
+Selects the last matched element.
+
+Also in: Deprecated > Deprecated 1.7 | Events > Event Handler Attachment | Removed
+.live()
+Attach an event handler for all elements which match the current selector, now and in the future.
+
+Also in: Deprecated > Deprecated 1.8 | Events > Document Loading | Removed
+.load()
+Bind an event handler to the “load” JavaScript event.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:lt() Selector
+Select all elements at an index less than index within the matched set.
+
+Also in: Selectors > Basic Filter | Deprecated > Deprecated 3.4 | Selectors > jQuery Extensions
+:odd Selector
+Selects odd elements, zero-indexed. See also :even.
+
+Also in: Deprecated > Deprecated 1.7 | Internals | Properties > Properties of jQuery Object Instances | Removed
+.selector
+A selector representing selector passed to jQuery(), if any, when creating the original set.
+
+Also in: Deprecated > Deprecated 1.8 | Miscellaneous > DOM Element Methods | Removed
+.size()
+Return the number of elements in the jQuery object.
+
+Also in: Deprecated > Deprecated 1.8 | Events > Mouse Events | Removed
+.toggle()
+Bind two or more handlers to the matched elements, to be executed on alternate clicks.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.unbind()
+Remove a previously-attached event handler from the elements.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.undelegate()
+Remove a handler from the event for all elements which match the current selector, based upon a specific set of root elements.
+
+Also in: Deprecated > Deprecated 1.8 | Events > Document Loading | Removed
+.unload()
+Bind an event handler to the “unload” JavaScript event.

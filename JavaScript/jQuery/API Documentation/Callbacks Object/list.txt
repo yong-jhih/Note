@@ -1,0 +1,38 @@
+Category: Callbacks Object
+The jQuery.Callbacks() function, introduced in version 1.7, returns a multi-purpose object that provides a powerful way to manage callback lists. It supports adding, removing, firing, and disabling callbacks.
+
+callbacks.add()
+Add a callback or a collection of callbacks to a callback list.
+
+callbacks.disable()
+Disable a callback list from doing anything more.
+
+callbacks.disabled()
+Determine if the callbacks list has been disabled.
+
+callbacks.empty()
+Remove all of the callbacks from a list.
+
+callbacks.fire()
+Call all of the callbacks with the given arguments.
+
+callbacks.fired()
+Determine if the callbacks have already been called at least once.
+
+callbacks.fireWith()
+Call all callbacks in a list with the given context and arguments.
+
+callbacks.has()
+Determine whether or not the list has any callbacks attached. If a callback is provided as an argument, determine whether it is in a list.
+
+callbacks.lock()
+Lock a callback list in its current state.
+
+callbacks.locked()
+Determine if the callbacks list has been locked.
+
+callbacks.remove()
+Remove a callback or a collection of callbacks from a callback list.
+
+jQuery.Callbacks()
+A multi-purpose callbacks list object that provides a powerful way to manage callback lists.

@@ -1,0 +1,20 @@
+Category: Internals
+Although this category is referred to as 'internal', any methods documented within the API site should be considered public and may be freely used.
+
+Also in: Deprecated > Deprecated 1.10 | Properties > Properties of jQuery Object Instances | Removed
+.context
+The DOM node context originally passed to jQuery(); if none was passed then context will likely be the document.
+
+Also in: Properties > Properties of jQuery Object Instances
+.jquery
+A string containing the jQuery version number.
+
+jQuery.error()
+Takes a string and throws an exception containing it.
+
+.pushStack()
+Add a collection of DOM elements onto the jQuery stack.
+
+Also in: Deprecated > Deprecated 1.7 | Properties > Properties of jQuery Object Instances | Removed
+.selector
+A selector representing selector passed to jQuery(), if any, when creating the original set.

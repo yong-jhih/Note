@@ -1,0 +1,72 @@
+Category: CSS
+These methods get and set CSS-related properties of elements.
+
+Also in: Attributes | Manipulation > Class Attribute
+.addClass()
+Adds the specified class(es) to each element in the set of matched elements.
+
+Also in: Manipulation > Style Properties
+.css()
+Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+
+Also in: Attributes | Manipulation > Class Attribute
+.hasClass()
+Determine whether any of the matched elements are assigned the given class.
+
+Also in: Dimensions | Manipulation > Style Properties
+.height()
+Get the current computed height for the first element in the set of matched elements or set the height of every matched element.
+
+Also in: Dimensions | Manipulation > Style Properties
+.innerHeight()
+Get the current computed inner height (including padding but not border) for the first element in the set of matched elements or set the inner height of every matched element.
+
+Also in: Dimensions | Manipulation > Style Properties
+.innerWidth()
+Get the current computed inner width (including padding but not border) for the first element in the set of matched elements or set the inner width of every matched element.
+
+jQuery.cssHooks
+Hook directly into jQuery to override how particular CSS properties are retrieved or set, normalize CSS property naming, or create custom properties.
+
+Also in: Manipulation > Style Properties
+jQuery.cssNumber
+An object containing all CSS properties that may be used without a unit. The .css() method uses this object to see if it may append px to unitless values.
+
+jQuery.escapeSelector()
+Escapes any character that has a special meaning in a CSS selector.
+
+Also in: Offset | Manipulation > Style Properties
+.offset()
+Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document.
+
+Also in: Dimensions | Manipulation > Style Properties
+.outerHeight()
+Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer height of every matched element.
+
+Also in: Dimensions | Manipulation > Style Properties
+.outerWidth()
+Get the current computed outer width (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer width of every matched element.
+
+Also in: Offset | Manipulation > Style Properties
+.position()
+Get the current coordinates of the first element in the set of matched elements, relative to the offset parent.
+
+Also in: Attributes | Manipulation > Class Attribute
+.removeClass()
+Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+
+Also in: Offset | Manipulation > Style Properties
+.scrollLeft()
+Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.
+
+Also in: Offset | Manipulation > Style Properties
+.scrollTop()
+Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.
+
+Also in: Attributes | Manipulation > Class Attribute
+.toggleClass()
+Add or remove one or more classes from each element in the set of matched elements, depending on either the class’s presence or the value of the state argument.
+
+Also in: Dimensions | Manipulation > Style Properties
+.width()
+Get the current computed width for the first element in the set of matched elements or set the width of every matched element.

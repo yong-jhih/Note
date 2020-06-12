@@ -1,0 +1,20 @@
+Category: Offset
+Also in: CSS | Manipulation > Style Properties
+.offset()
+Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document.
+
+Also in: Traversing > Tree Traversal
+.offsetParent()
+Get the closest ancestor element that is positioned.
+
+Also in: CSS | Manipulation > Style Properties
+.position()
+Get the current coordinates of the first element in the set of matched elements, relative to the offset parent.
+
+Also in: CSS | Manipulation > Style Properties
+.scrollLeft()
+Get the current horizontal position of the scroll bar for the first element in the set of matched elements or set the horizontal position of the scroll bar for every matched element.
+
+Also in: CSS | Manipulation > Style Properties
+.scrollTop()
+Get the current vertical position of the scroll bar for the first element in the set of matched elements or set the vertical position of the scroll bar for every matched element.

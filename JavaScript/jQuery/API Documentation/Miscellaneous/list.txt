@@ -1,0 +1,36 @@
+Category: Miscellaneous
+Also in: Data | Miscellaneous > Data Storage
+.data()
+Store arbitrary data associated with the matched elements or return the value at the named data store for the first element in the set of matched elements.
+
+Also in: Miscellaneous > Collection Manipulation | Traversing
+.each()
+Iterate over a jQuery object, executing a function for each matched element.
+
+Also in: Miscellaneous > DOM Element Methods
+.get()
+Retrieve the DOM elements matched by the jQuery object.
+
+Also in: Miscellaneous > DOM Element Methods
+.index()
+Search for a given element from among the matched elements.
+
+Also in: Core | Miscellaneous > Setup Methods
+jQuery.noConflict()
+Relinquish jQuery’s control of the $ variable.
+
+Also in: Miscellaneous > Collection Manipulation | Forms | Ajax > Helper Functions
+jQuery.param()
+Create a serialized representation of an array, a plain object, or a jQuery object suitable for use in a URL query string or Ajax request. In case a jQuery object is passed, it should contain input elements with name/value properties.
+
+Also in: Data | Miscellaneous > Data Storage
+.removeData()
+Remove a previously-stored piece of data.
+
+Also in: Deprecated > Deprecated 1.8 | Miscellaneous > DOM Element Methods | Removed
+.size()
+Return the number of elements in the jQuery object.
+
+Also in: Miscellaneous > DOM Element Methods
+.toArray()
+Retrieve all the elements contained in the jQuery set, as an array.

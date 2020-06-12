@@ -1,0 +1,124 @@
+Category: Traversing
+Also in: Traversing > Miscellaneous Traversing
+.add()
+Create a new jQuery object with elements added to the set of matched elements.
+
+Also in: Traversing > Miscellaneous Traversing
+.addBack()
+Add the previous set of elements on the stack to the current set, optionally filtered by a selector.
+
+Also in: Deprecated > Deprecated 1.8 | Traversing > Miscellaneous Traversing | Removed
+.andSelf()
+Add the previous set of elements on the stack to the current set.
+
+Also in: Traversing > Tree Traversal
+.children()
+Get the children of each element in the set of matched elements, optionally filtered by a selector.
+
+Also in: Traversing > Tree Traversal
+.closest()
+For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
+
+Also in: Traversing > Miscellaneous Traversing
+.contents()
+Get the children of each element in the set of matched elements, including text and comment nodes.
+
+Also in: Miscellaneous > Collection Manipulation
+.each()
+Iterate over a jQuery object, executing a function for each matched element.
+
+Also in: Traversing > Miscellaneous Traversing
+.end()
+End the most recent filtering operation in the current chain and return the set of matched elements to its previous state.
+
+Also in: Traversing > Filtering
+.eq()
+Reduce the set of matched elements to the one at the specified index.
+
+Also in: Traversing > Filtering
+.even()
+Reduce the set of matched elements to the even ones in the set, numbered from zero.
+
+Also in: Traversing > Filtering
+.filter()
+Reduce the set of matched elements to those that match the selector or pass the function’s test.
+
+Also in: Traversing > Tree Traversal
+.find()
+Get the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element.
+
+Also in: Traversing > Filtering
+.first()
+Reduce the set of matched elements to the first in the set.
+
+Also in: Traversing > Filtering
+.has()
+Reduce the set of matched elements to those that have a descendant that matches the selector or DOM element.
+
+Also in: Traversing > Filtering
+.is()
+Check the current matched set of elements against a selector, element, or jQuery object and return true if at least one of these elements matches the given arguments.
+
+Also in: Traversing > Filtering
+.last()
+Reduce the set of matched elements to the final one in the set.
+
+Also in: Traversing > Filtering
+.map()
+Pass each element in the current matched set through a function, producing a new jQuery object containing the return values.
+
+Also in: Traversing > Tree Traversal
+.next()
+Get the immediately following sibling of each element in the set of matched elements. If a selector is provided, it retrieves the next sibling only if it matches that selector.
+
+Also in: Traversing > Tree Traversal
+.nextAll()
+Get all following siblings of each element in the set of matched elements, optionally filtered by a selector.
+
+Also in: Traversing > Tree Traversal
+.nextUntil()
+Get all following siblings of each element up to but not including the element matched by the selector, DOM node, or jQuery object passed.
+
+Also in: Traversing > Filtering | Traversing > Miscellaneous Traversing
+.not()
+Remove elements from the set of matched elements.
+
+Also in: Traversing > Filtering
+.odd()
+Reduce the set of matched elements to the odd ones in the set, numbered from zero.
+
+Also in: Offset | Traversing > Tree Traversal
+.offsetParent()
+Get the closest ancestor element that is positioned.
+
+Also in: Traversing > Tree Traversal
+.parent()
+Get the parent of each element in the current set of matched elements, optionally filtered by a selector.
+
+Also in: Traversing > Tree Traversal
+.parents()
+Get the ancestors of each element in the current set of matched elements, optionally filtered by a selector.
+
+Also in: Traversing > Tree Traversal
+.parentsUntil()
+Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector, DOM node, or jQuery object.
+
+Also in: Traversing > Tree Traversal
+.prev()
+Get the immediately preceding sibling of each element in the set of matched elements. If a selector is provided, it retrieves the previous sibling only if it matches that selector.
+
+Also in: Traversing > Tree Traversal
+.prevAll()
+Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector.
+
+Also in: Traversing > Tree Traversal
+.prevUntil()
+Get all preceding siblings of each element up to but not including the element matched by the selector, DOM node, or jQuery object.
+
+Also in: Traversing > Tree Traversal
+.siblings()
+Get the siblings of each element in the set of matched elements, optionally filtered by a selector.
+
+Also in: Traversing > Filtering
+.slice()
+Reduce the set of matched elements to a subset specified by a range of indices.

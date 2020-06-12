@@ -1,0 +1,131 @@
+Category: Utilities
+Also in: Effects > Custom | Data
+.clearQueue()
+Remove from the queue all items that have not yet been run.
+
+Also in: Effects > Custom | Data
+.dequeue()
+Execute the next function on the queue for the matched elements.
+
+Also in: Deprecated > Deprecated 1.3 | Removed
+jQuery.boxModel
+States if the current page, in the user’s browser, is being rendered using the W3C CSS Box Model.
+
+Also in: Deprecated > Deprecated 1.3 | Properties > Properties of the Global jQuery Object | Removed
+jQuery.browser
+Contains flags for the useragent, read from navigator.userAgent. This property was removed in jQuery 1.9 and is available only through the jQuery.migrate plugin. Please try to use feature detection instead.
+
+jQuery.contains()
+Check to see if a DOM element is a descendant of another DOM element.
+
+Also in: Data
+jQuery.data()
+Store arbitrary data associated with the specified element and/or return the value that was set.
+
+Also in: Data
+jQuery.dequeue()
+Execute the next function on the queue for the matched element.
+
+jQuery.each()
+A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function’s arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.
+
+jQuery.extend()
+Merge the contents of two or more objects together into the first object.
+
+jQuery.fn.extend()
+Merge the contents of an object onto the jQuery prototype to provide new jQuery instance methods.
+
+jQuery.globalEval()
+Execute some JavaScript code globally.
+
+jQuery.grep()
+Finds the elements of an array which satisfy a filter function. The original array is not affected.
+
+jQuery.inArray()
+Search for a specified value within an array and return its index (or -1 if not found).
+
+Also in: Deprecated > Deprecated 3.2
+jQuery.isArray()
+Determine whether the argument is an array.
+
+jQuery.isEmptyObject()
+Check to see if an object is empty (contains no enumerable properties).
+
+Also in: Deprecated > Deprecated 3.3
+jQuery.isFunction()
+Determines if its argument is callable as a function.
+
+Also in: Deprecated > Deprecated 3.3
+jQuery.isNumeric()
+Determines whether its argument represents a JavaScript number.
+
+jQuery.isPlainObject()
+Check to see if an object is a plain object (created using “{}” or “new Object”).
+
+Also in: Deprecated > Deprecated 3.3
+jQuery.isWindow()
+Determine whether the argument is a window.
+
+jQuery.isXMLDoc()
+Check to see if a DOM node is within an XML document (or is an XML document).
+
+jQuery.makeArray()
+Convert an array-like object into a true JavaScript array.
+
+jQuery.map()
+Translate all items in an array or object to new array of items.
+
+jQuery.merge()
+Merge the contents of two arrays together into the first array.
+
+jQuery.noop()
+An empty function.
+
+Also in: Deprecated > Deprecated 3.3
+jQuery.now()
+Return a number representing the current time.
+
+jQuery.parseHTML()
+Parses a string into an array of DOM nodes.
+
+Also in: Deprecated > Deprecated 3.0
+jQuery.parseJSON()
+Takes a well-formed JSON string and returns the resulting JavaScript value.
+
+jQuery.parseXML()
+Parses a string into an XML document.
+
+Also in: Deprecated > Deprecated 3.3 | Events > Event Handler Attachment
+jQuery.proxy()
+Takes a function and returns a new one that will always have a particular context.
+
+Also in: Data
+jQuery.queue()
+Show or manipulate the queue of functions to be executed on the matched element.
+
+Also in: Data
+jQuery.removeData()
+Remove a previously-stored piece of data.
+
+Also in: Deprecated > Deprecated 1.9 | Properties > Properties of the Global jQuery Object
+jQuery.support
+A collection of properties that represent the presence of different browser features or bugs. Intended for jQuery’s internal use; specific properties may be removed when they are no longer needed internally to improve page startup performance. For your own project’s feature-detection needs, we strongly recommend the use of an external library such as Modernizr instead of dependency on properties in jQuery.support.
+
+Also in: Deprecated > Deprecated 3.5
+jQuery.trim()
+Remove the whitespace from the beginning and end of a string.
+
+Also in: Deprecated > Deprecated 3.3
+jQuery.type()
+Determine the internal JavaScript [[Class]] of an object.
+
+Also in: Deprecated > Deprecated 3.0
+jQuery.unique()
+Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers.
+
+jQuery.uniqueSort()
+Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers.
+
+Also in: Effects > Custom | Data
+.queue()
+Show or manipulate the queue of functions to be executed on the matched elements.

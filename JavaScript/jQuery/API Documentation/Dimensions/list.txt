@@ -1,0 +1,26 @@
+Category: Dimensions
+These methods are used to get and set the CSS dimensions for the various properties.
+
+Also in: CSS | Manipulation > Style Properties
+.height()
+Get the current computed height for the first element in the set of matched elements or set the height of every matched element.
+
+Also in: CSS | Manipulation > Style Properties
+.innerHeight()
+Get the current computed inner height (including padding but not border) for the first element in the set of matched elements or set the inner height of every matched element.
+
+Also in: CSS | Manipulation > Style Properties
+.innerWidth()
+Get the current computed inner width (including padding but not border) for the first element in the set of matched elements or set the inner width of every matched element.
+
+Also in: CSS | Manipulation > Style Properties
+.outerHeight()
+Get the current computed outer height (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer height of every matched element.
+
+Also in: CSS | Manipulation > Style Properties
+.outerWidth()
+Get the current computed outer width (including padding, border, and optionally margin) for the first element in the set of matched elements or set the outer width of every matched element.
+
+Also in: CSS | Manipulation > Style Properties
+.width()
+Get the current computed width for the first element in the set of matched elements or set the width of every matched element.

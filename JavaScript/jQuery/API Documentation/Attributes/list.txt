@@ -1,0 +1,42 @@
+Category: Attributes
+These methods get and set DOM attributes of elements.
+
+Also in: Manipulation > Class Attribute | CSS
+.addClass()
+Adds the specified class(es) to each element in the set of matched elements.
+
+Also in: Manipulation > General Attributes
+.attr()
+Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.
+
+Also in: Manipulation > Class Attribute | CSS
+.hasClass()
+Determine whether any of the matched elements are assigned the given class.
+
+Also in: Manipulation > DOM Insertion, Inside
+.html()
+Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+
+Also in: Manipulation > General Attributes
+.prop()
+Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.
+
+Also in: Manipulation > General Attributes
+.removeAttr()
+Remove an attribute from each element in the set of matched elements.
+
+Also in: Manipulation > Class Attribute | CSS
+.removeClass()
+Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+
+Also in: Manipulation > General Attributes
+.removeProp()
+Remove a property for the set of matched elements.
+
+Also in: Manipulation > Class Attribute | CSS
+.toggleClass()
+Add or remove one or more classes from each element in the set of matched elements, depending on either the class’s presence or the value of the state argument.
+
+Also in: Forms | Manipulation > General Attributes
+.val()
+Get the current value of the first element in the set of matched elements or set the value of every matched element.

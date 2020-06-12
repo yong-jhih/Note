@@ -1,0 +1,246 @@
+Category: Events
+These methods are used to register behaviors to take effect when the user interacts with the browser, and to further manipulate those registered behaviors.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.bind()
+Attach a handler to an event for the elements.
+
+Also in: Events > Form Events | Forms
+.blur()
+Bind an event handler to the “blur” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events | Forms
+.change()
+Bind an event handler to the “change” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.click()
+Bind an event handler to the “click” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.contextmenu()
+Bind an event handler to the “contextmenu” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.dblclick()
+Bind an event handler to the “dblclick” JavaScript event, or trigger that event on an element.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.delegate()
+Attach a handler to one or more events for all elements that match the selector, now or in the future, based on a specific set of root elements.
+
+Also in: Deprecated > Deprecated 1.7 | Events > Event Handler Attachment | Removed
+.die()
+Remove event handlers previously attached using .live() from the elements.
+
+Also in: Events > Browser Events | Deprecated > Deprecated 1.8 | Removed
+.error()
+Bind an event handler to the “error” JavaScript event.
+
+Also in: Events > Event Object
+event.currentTarget
+The current DOM element within the event bubbling phase.
+
+Also in: Events > Event Object
+event.data
+An optional object of data passed to an event method when the current executing handler is bound.
+
+Also in: Events > Event Object
+event.delegateTarget
+The element where the currently-called jQuery event handler was attached.
+
+Also in: Events > Event Object
+event.isDefaultPrevented()
+Returns whether event.preventDefault() was ever called on this event object.
+
+Also in: Events > Event Object
+event.isImmediatePropagationStopped()
+Returns whether event.stopImmediatePropagation() was ever called on this event object.
+
+Also in: Events > Event Object
+event.isPropagationStopped()
+Returns whether event.stopPropagation() was ever called on this event object.
+
+Also in: Events > Event Object
+event.metaKey
+Indicates whether the META key was pressed when the event fired.
+
+Also in: Events > Event Object
+event.namespace
+The namespace specified when the event was triggered.
+
+Also in: Events > Event Object
+event.pageX
+The mouse position relative to the left edge of the document.
+
+Also in: Events > Event Object
+event.pageY
+The mouse position relative to the top edge of the document.
+
+Also in: Events > Event Object
+event.preventDefault()
+If this method is called, the default action of the event will not be triggered.
+
+Also in: Events > Event Object
+event.relatedTarget
+The other DOM element involved in the event, if any.
+
+Also in: Events > Event Object
+event.result
+The last value returned by an event handler that was triggered by this event, unless the value was undefined.
+
+Also in: Events > Event Object
+event.stopImmediatePropagation()
+Keeps the rest of the handlers from being executed and prevents the event from bubbling up the DOM tree.
+
+Also in: Events > Event Object
+event.stopPropagation()
+Prevents the event from bubbling up the DOM tree, preventing any parent handlers from being notified of the event.
+
+Also in: Events > Event Object
+event.target
+The DOM element that initiated the event.
+
+Also in: Events > Event Object
+event.timeStamp
+The difference in milliseconds between the time the browser created the event and January 1, 1970.
+
+Also in: Events > Event Object
+event.type
+Describes the nature of the event.
+
+Also in: Events > Event Object
+event.which
+For key or mouse events, this property indicates the specific key or button that was pressed.
+
+Also in: Events > Form Events | Forms
+.focus()
+Bind an event handler to the “focus” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events | Forms
+.focusin()
+Bind an event handler to the “focusin” event.
+
+Also in: Events > Form Events | Forms
+.focusout()
+Bind an event handler to the “focusout” JavaScript event.
+
+Also in: Events > Mouse Events
+.hover()
+Bind one or two handlers to the matched elements, to be executed when the mouse pointer enters and leaves the elements.
+
+Also in: Core | Deprecated > Deprecated 3.2 | Events > Document Loading | Properties > Properties of the Global jQuery Object
+jQuery.holdReady()
+Holds or releases the execution of jQuery’s ready event.
+
+Also in: Deprecated > Deprecated 3.3 | Events > Event Handler Attachment | Utilities
+jQuery.proxy()
+Takes a function and returns a new one that will always have a particular context.
+
+Also in: Core | Events > Document Loading | Properties > Properties of the Global jQuery Object
+jQuery.ready
+A Promise-like object (or “thenable”) that resolves when the document is ready.
+
+Also in: Events > Keyboard Events
+.keydown()
+Bind an event handler to the “keydown” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Keyboard Events
+.keypress()
+Bind an event handler to the “keypress” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Keyboard Events
+.keyup()
+Bind an event handler to the “keyup” JavaScript event, or trigger that event on an element.
+
+Also in: Deprecated > Deprecated 1.7 | Events > Event Handler Attachment | Removed
+.live()
+Attach an event handler for all elements which match the current selector, now and in the future.
+
+Also in: Deprecated > Deprecated 1.8 | Events > Document Loading | Removed
+.load()
+Bind an event handler to the “load” JavaScript event.
+
+Also in: Events > Mouse Events
+.mousedown()
+Bind an event handler to the “mousedown” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.mouseenter()
+Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element.
+
+Also in: Events > Mouse Events
+.mouseleave()
+Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element.
+
+Also in: Events > Mouse Events
+.mousemove()
+Bind an event handler to the “mousemove” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.mouseout()
+Bind an event handler to the “mouseout” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.mouseover()
+Bind an event handler to the “mouseover” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Mouse Events
+.mouseup()
+Bind an event handler to the “mouseup” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Event Handler Attachment
+.off()
+Remove an event handler.
+
+Also in: Events > Event Handler Attachment
+.on()
+Attach an event handler function for one or more events to the selected elements.
+
+Also in: Events > Event Handler Attachment
+.one()
+Attach a handler to an event for the elements. The handler is executed at most once per element per event type.
+
+Also in: Events > Document Loading
+.ready()
+Specify a function to execute when the DOM is fully loaded.
+
+Also in: Events > Browser Events
+.resize()
+Bind an event handler to the “resize” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Browser Events
+.scroll()
+Bind an event handler to the “scroll” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events | Forms
+.select()
+Bind an event handler to the “select” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events | Forms
+.submit()
+Bind an event handler to the “submit” JavaScript event, or trigger that event on an element.
+
+Also in: Deprecated > Deprecated 1.8 | Events > Mouse Events | Removed
+.toggle()
+Bind two or more handlers to the matched elements, to be executed on alternate clicks.
+
+Also in: Events > Event Handler Attachment
+.trigger()
+Execute all handlers and behaviors attached to the matched elements for the given event type.
+
+Also in: Events > Event Handler Attachment
+.triggerHandler()
+Execute all handlers attached to an element for an event.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.unbind()
+Remove a previously-attached event handler from the elements.
+
+Also in: Deprecated > Deprecated 3.0 | Events > Event Handler Attachment
+.undelegate()
+Remove a handler from the event for all elements which match the current selector, based upon a specific set of root elements.
+
+Also in: Deprecated > Deprecated 1.8 | Events > Document Loading | Removed
+.unload()
+Bind an event handler to the “unload” JavaScript event.

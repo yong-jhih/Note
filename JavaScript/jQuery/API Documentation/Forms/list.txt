@@ -1,0 +1,46 @@
+Category: Forms
+These methods and event handlers handle forms and their various elements.
+
+Also in: Events > Form Events
+.blur()
+Bind an event handler to the “blur” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events
+.change()
+Bind an event handler to the “change” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events
+.focus()
+Bind an event handler to the “focus” JavaScript event, or trigger that event on an element.
+
+Also in: Events > Form Events
+.focusin()
+Bind an event handler to the “focusin” event.
+
+Also in: Events > Form Events
+.focusout()
+Bind an event handler to the “focusout” JavaScript event.
+
+Also in: Miscellaneous > Collection Manipulation | Ajax > Helper Functions
+jQuery.param()
+Create a serialized representation of an array, a plain object, or a jQuery object suitable for use in a URL query string or Ajax request. In case a jQuery object is passed, it should contain input elements with name/value properties.
+
+Also in: Events > Form Events
+.select()
+Bind an event handler to the “select” JavaScript event, or trigger that event on an element.
+
+Also in: Ajax > Helper Functions
+.serialize()
+Encode a set of form elements as a string for submission.
+
+Also in: Ajax > Helper Functions
+.serializeArray()
+Encode a set of form elements as an array of names and values.
+
+Also in: Events > Form Events
+.submit()
+Bind an event handler to the “submit” JavaScript event, or trigger that event on an element.
+
+Also in: Attributes | Manipulation > General Attributes
+.val()
+Get the current value of the first element in the set of matched elements or set the value of every matched element.
