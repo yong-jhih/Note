@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addClass()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<style>
+    .red{
+        color:red;
+    }
+    .blue{
+        color:blue;
+    }
+</style>
+<body>
+    <h3>addClass() 方法向被选元素添加一个或多个类。该方法不会移除已存在的 class 属性，仅仅添加一个或多个 class 属性。</h3>
+    <p>$(selector).addClass(class1,class2...)</p>
+    <hr>
+    <h3>removeClass() 方法从被选元素移除一个或多个类。如果没有规定参数，则该方法将从被选元素中删除所有类。</h3>
+    <p>$(selector).removeClass(class1,class2...)</p>
+    <hr>
+    <p id="content">123456789</p>
+    <button onclick="changecolor('red')">red</button>
+    <button onclick="changecolor('blue')">blue</button>
+    <script>
+        function changecolor(color){
+            $('#content').removeClass("red blue").addClass(color);
+        }
+    </script>
+</body>
+</html>
