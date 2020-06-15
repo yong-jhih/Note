@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>text() 方法方法设置或返回被选元素的文本内容。</h3>
+    <p>$(selector).text()当该方法用于返回一个值时，它会返回所有匹配元素的组合的文本内容（会删除 HTML 标记）。</p>
+    <p>$(selector).text(content)当该方法用于设置值时，它会覆盖被选元素的所有内容。</p>
+    <hr>
+    <p id="text">123</p>
+    <hr>
+    <button onclick="changeText()">changeText</button>
+    <button onclick="alertText()">alertText</button>
+    <script>
+        function changeText(){
+            $("#text").text("HI!");
+        }
+        function alertText(){
+            alert($("#text").text());
+        }
+    </script>
+</body>
+</html>

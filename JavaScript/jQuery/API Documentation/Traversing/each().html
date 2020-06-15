@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>each() 方法规定为每个匹配元素规定运行的函数。返回 false 可用于及早停止循环。</h3>
+    <p>$(selector).each(function(index,element))</p>
+    <hr>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <hr>
+    <button onclick="alertEach()">alertEach</button>
+    <script>
+        function alertEach(){
+            $("li").each(function(){
+                alert($(this).text());
+            });
+        }
+    </script>
+</body>
+</html>
