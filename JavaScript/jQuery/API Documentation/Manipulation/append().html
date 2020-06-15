@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>append() 在選取的元素後插入要加入的字串</h3>
+    <p>$(selector).append(content,function(index,html))</p>
+    <p>content(必要):可能為HTML元素,jQuery对象,DOM元素</p>
+    <p>function(index,html)(可選):index-返回集合中元素的index位置。html-返回被选元素的当前HTML。</p>
+    <hr>
+    <p id="main">想不想在後面加點東西?</p>
+    <hr>
+    <input type="text" id="content"><button>輸入</button>
+    <script>
+        $("button").click(function(){
+            $("#main").append("<strong>"+document.getElementById("content").value+"<stong>")
+        });
+    </script>
+</body>
+</html>

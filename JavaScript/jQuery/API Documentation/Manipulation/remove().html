@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>remove() 删除被选元素（及其子元素）</h3>
+    <p>$(selector).remove()</p>
+    <hr>
+    <ol>main
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <hr>
+    <p>$("#btn").click(function(){$("li").remove();})</p>
+    <button id="btn">刪除</button>
+    <script>
+        $("#btn").click(function(){
+            $("li").remove();
+        })
+    </script>
+</body>
+</html>
