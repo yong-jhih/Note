@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>select():当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。</h3>
+    <p>$(selector).select()</p>
+    <p>function:可选。规定当发生 select 事件时运行的函数。</p>
+    <hr>
+    <p><input type="text" value="abc" id="Text"></p>
+    <textarea id="hi" cols="30" rows="10">hello</textarea>
+    <hr>
+    <script>
+        $("#Text").select(function(){
+            alert('You selected me!');
+        });
+        $("#hi").select(function(){
+            alert('You selected me!');
+        });
+    </script>
+</body>
+</html>

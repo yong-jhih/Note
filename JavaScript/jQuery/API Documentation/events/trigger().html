@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trigger()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>trigger()方法触发被选元素的指定事件类型。</h3>
+    <p>$(selector).trigger(event,[param1,param2,...])</p>
+    <p>event:必需。规定指定元素要触发的事件。可以使自定义事件（使用 bind() 函数来附加），或者任何标准事件。</p>
+    <p>[param1,param2,...]:可选。传递到事件处理程序的额外参数。</p>
+    <hr>
+    <p>$(selector).trigger(eventObj)</p>
+    <p>eventObj:必需。规定事件发生时运行的函数。</p>
+    <hr>
+    <input type="text" value="abc" />
+    <input type="button" id="bt" value="view" />
+    <hr>
+    <script>
+        $(document).ready(function(){
+            $("input:text").select(function(){
+                $(this).css("color","red");
+            });
+            $("#bt").click(function(){
+                $("input:text").trigger("select");
+            });
+        });
+    </script>
+</body>
+</html>
