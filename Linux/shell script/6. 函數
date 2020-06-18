@@ -46,7 +46,7 @@ function get_mean()
 
 get_mean 1 6 10 32
 
-執行後顯示：
+執行後顯示：the mean of 1 6 10 32 : 12
 
 注意：shell script中並不支援浮點數，故除法所算出的結果，會四捨五入成整數。
 
@@ -78,7 +78,7 @@ echo $t   #這程式碼只是把之前例子中，function裡的程式碼給拿�
 
 我們在命令列執行shell script程式時可以輸入參數，如：sh tt.sh 10 90 22 101 30
 
-執行結果顯示：
+執行結果顯示：the mean of 10 90 22 101 30 : 50
 
 
 

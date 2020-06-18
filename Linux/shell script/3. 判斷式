@@ -86,7 +86,7 @@ s1="sss   fff"
 
 test $s1 == "sss   fff" && echo "Y" || echo "N" #關於&&和||的用法，在(6)有說明
 
-執行結果顯示：
+執行結果顯示：tt.sh line 2 : test : too many arguments N
 
 出現了錯誤訊息，說test命令有太多參數。事實上，第二行的寫法等同於test sss fff == "sss   fff" && echo "Y" || echo "N"（因為字串s1直接被印出來了），於是Linux將sss和fff看成兩個不同的參數！造成了非預期的結果！
 
@@ -96,7 +96,7 @@ s1="sss   fff"
 
 test "$s1" == "sss   fff" && echo "Y" || echo "N"   #$s1改成了"$s1"
 
-執行結果顯示：
+執行結果顯示：Y
 
 ，這即是預期中的結果。
 
@@ -118,7 +118,7 @@ n2=15
 
 test $n1 -gt $n2 && echo "n1 is greater" || echo "n2 is greater"
 
-執行顯示：
+執行顯示：n1 is greater
 
  
 
@@ -134,7 +134,7 @@ s2="kkk"
 
 test "$s1" == "dkkk" -a "$s2" == "kkk" && echo "Y" || echo "N" 
 
-執行顯示：
+執行顯示：Y
 
  
 

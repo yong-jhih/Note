@@ -57,6 +57,9 @@ else
 fi
 
 執行後，n1輸入5，n2輸入10，顯示：
+    input n1:5
+    input n2:10
+    n2 is greater
 
 
 
@@ -118,7 +121,7 @@ case $reply in
 
 esac
 
-執行後輸入 yes，顯示結果如：
+執行後輸入 yes，顯示結果如：do you want to go swimming?yes or no?yes OK let's go!
 
 
 
