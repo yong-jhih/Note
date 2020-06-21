@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>detach() 方法移除被选元素，包括所有的文本和子节点。然后它会保留数据和事件。</h3>
+    <p>$(selector).detach()</p>
+    <hr>
+    <div style="width: 200px; height: 200px;">main
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+    <hr>
+    <button id="set">暫時拿掉/再建</button>
+    <script>
+        let isshow = true ;
+        let x ;
+        $("#set").click(function(){
+                isshow = !isshow;
+            if(!isshow){
+                x = $("li").detach();
+            }else{
+                $("ol").after(x);
+            }
+        })
+    </script>
+</body>
+</html>

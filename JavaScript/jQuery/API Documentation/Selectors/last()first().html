@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:last() & :first()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>last() 将匹配元素集合缩减为集合中的最后一个元素。</h3>
+    <p>$("selector").last()</p>
+    <p>$("selector:last")</p>
+    <hr>
+    <h3>first() 将匹配元素集合缩减为集合中的第一个元素。</h3>
+    <p>$("selector").first()</p>
+    <p>$("selector:first")</p>
+    <hr>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <hr>
+    <button id="first">first</button>
+    <button id="last">last</button>
+    <button id="first2">first2</button>
+    <button id="last2">last2</button>
+    <script>
+        $("#first").click(function(){
+            $("li").first().css("color","#ff0000");
+        })
+        $("#last").click(function(){
+            $("li").last().css("color","#ff0000");
+        })
+        $("#first2").click(function(){
+            $("li:first").css("color","#ff0000");
+        })
+        $("#last2").click(function(){
+            $("li:last").css("color","#ff0000");
+        })
+    </script>
+</body>
+</html>

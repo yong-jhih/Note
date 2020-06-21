@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>bind()方法为被选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数。</h3>
+    <p>$(selector).bind(event,data,function)</p>
+    <p>event:必需。规定添加到元素的一个或多个事件。</p>
+    <p>data:可选。规定传递到函数的额外数据。</p>
+    <p>function:必需。规定当事件发生时运行的函数。</p>
+    <hr>
+    <p>$(selector).bind({event:function, event:function, ...})</p>
+    <p>{event:function, event:function, ...}:必需。规定事件映射，其中包含一个或多个添加到元素的事件，以及当事件发生时运行的函数。</p>
+    <hr>
+    <h1>Hello World!</h1>
+    <button>turn</button>
+    <hr>
+    <script>
+        $("button").bind('click',function(){
+            $("h1").slideToggle(2000);
+        })
+    </script>
+</body>
+</html>

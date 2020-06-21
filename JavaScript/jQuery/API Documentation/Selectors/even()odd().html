@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:even & :odd</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>even:選取index為偶數值的元素（比如 2、4、6）。</h3>
+    <p>$("selector:even")</p>
+    <hr>
+    <h3>odd:選取index為奇數值的元素（比如 1、3、5）。</h3>
+    <p>$("selector:odd")</p>
+    <hr>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <hr>
+    <button id="odd2">odd2</button>
+    <button id="even2">even2</button>
+    <script>
+        $("#odd2").click(function(){
+            $("li:odd").css("color","#ff0000");
+        })
+        $("#even2").click(function(){
+            $("li:even").css("color","#ff0000");
+        })
+    </script>
+</body>
+</html>

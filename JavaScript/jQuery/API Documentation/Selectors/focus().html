@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:focus</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>:focus :选择当前获取焦点的元素。</h3>
+    <p>$("selector:focus")</p>
+    <hr>
+    <input type="text" id="content">
+    <hr>
+    <script>
+        $(document).ready(function(){
+            $("#content").focus();
+            $(":focus").css("width","600px");
+        })
+    </script>
+</body>
+</html>

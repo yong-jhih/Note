@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:eq & :gt & :lt</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>eq() 方法将匹配元素集缩减值指定 index 上的一个。</h3>
+    <p>$(":eq(index)")</p>
+    <p>index:必需。规定元素的 index 值。</p>
+    <hr>
+    <p>$("selector").eq(index)</p>
+    <p>index:必需。规定元素的 index 值。</p>
+    <hr>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <hr>
+    <button id="1">eq(0)</button>
+    <button id="2">eq(1)</button>
+    <script>
+        $("#1").click(function(){
+            $("li:eq(0)").css("color","#ff0000");
+        })
+
+        $("#2").click(function(){
+            $("li").eq(1).css("color","#ff0000");
+        })
+        
+        $("button").click(function(){
+            $(this).css("color","#ff0000");
+        })
+    </script>
+</body>
+</html>

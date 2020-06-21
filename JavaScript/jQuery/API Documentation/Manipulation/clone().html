@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clone()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>clone() 方法生成被选元素的副本，包含子节点、文本和属性。</h3>
+    <p>$(selector).clone(includeEvents)</p>
+    <p>includeEvents:可选。布尔值。规定是否复制元素的所有事件处理。默认地，副本中不包含事件处理器。</p>
+    <hr>
+    <h4><input type="text"></h4>
+    <button id="set">加一項</button>
+    <script>
+        let x ;
+        $("#set").click(function(){
+            x = $("h4:last").clone();
+            $("h4:last").append(x);
+        })
+    </script>
+</body>
+</html>

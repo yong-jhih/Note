@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:contains()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>:contains(text):尋找所指定的元素內文字，包含給定文本的元素</h3>
+    <p>$(":contains(text)")</p>
+    <p>text:字串。可包含於元素中或子元素中。</p>
+    <hr>
+    <h3>123</h3>
+    <p>123</p>
+    <h3>456</h3>
+    <p>456</p>
+    <h3>789</h3>
+    <p>789</p>
+    <hr>
+    <p>$("#find").click(function(){var ans = document.getElementById('content').value;$("p:contains("+ans+")").css("color","#ff0000");})</p>
+    <input type="text" id="content">
+    <button id="findp">findp</button>
+    <button id="findh3">findh3</button>
+    <script>
+        $("#findp").click(function(){
+            var ans = document.getElementById('content').value;
+            if(ans!=""){
+                $("p:contains("+ans+")").css("color","#ff0000");
+            }
+        })
+        $("#findh3").click(function(){
+            var ans = document.getElementById('content').value;
+            if(ans!=""){
+                $("h3:contains("+ans+")").css("color","#ff0000");
+            }
+        })
+    </script>
+</body>
+</html>

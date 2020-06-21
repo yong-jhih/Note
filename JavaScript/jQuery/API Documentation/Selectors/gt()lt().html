@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:gt & :lt</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>:gt 选择器选取 index 值高于指定数的元素。</h3>
+    <p>$(":gt(index)")</p>
+    <hr>
+    <h3>:lt 选择器选取带有小于指定 index 值的元素。</h3>
+    <p>$(":lt(index)")</p>
+    <hr>
+    <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <hr>
+    <input type="number" id="val">
+    <button id="1">gt(i)</button>
+    <button id="2">lt(i)</button>
+    <script>
+
+        $("#1").click(function(){
+            let x = document.getElementById('val').value ;
+            $("li:gt("+x+")").css("color","#ff0000");
+        })
+
+        $("#2").click(function(){
+            let x = document.getElementById('val').value ;
+            $("li:lt("+x+")").css("color","#ff0000");
+        })
+
+        $("button").click(function(){
+            $(this).css("color","#ff0000");
+        })
+    </script>
+</body>
+</html>

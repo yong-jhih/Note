@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>unbind() 方法移除被选元素的事件处理程序。</h3>
+    <p>$(selector).unbind(event,function)</p>
+    <p>event:可选。规定删除元素的一个或多个事件由空格分隔多个事件值。如果只规定了该参数，则会删除绑定到指定事件的所有函数。</p>
+    <p>function:可选。规定从元素的指定事件取消绑定的函数名。</p>
+    <hr>
+    <p>$(selector).unbind(eventObj)</p>
+    <p>eventObj:可选。规定要使用的事件对象。这个 eventObj 参数来自事件绑定函数。</p>
+    <hr>
+    <h1>Hello World!</h1>
+    <button id="turn">turn</button>
+    <button id="unload">unload</button>
+    <hr>
+    <script>
+        $("#turn").click(function(){
+            $("h1").slideToggle(2000);
+        })
+        $("#unload").click(function(){
+            $("#turn").unbind('click');
+        })
+    </script>
+</body>
+</html>

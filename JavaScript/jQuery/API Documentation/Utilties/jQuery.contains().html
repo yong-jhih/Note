@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.contains()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>$.contains() 方法用于判断指定元素内是否包含另一个元素。即判断另一个DOM元素是否是指定DOM元素的后代。</h3>
+    <p>$.contains( container, contained )</p>
+    <p>container:Element类型 指定可能包含其他元素的祖辈容器元素。</p>
+    <p>contained:Element类型 指定可能被其他元素包含的后代元素。</p>
+    <hr>
+    <p>$("#check").click(function(){alert($.contains( document.documentElement, document.body ));})</p>
+    <button id="checkoutTD">checkoutTD</button>
+    <hr>
+    <p>$("#checkoutTR").click(function(){alert($.contains( document.body, document.documentElement ));})</p>
+    <button id="checkoutTR">checkoutTR</button>
+    <script>
+        $("#checkoutTD").click(function(){
+            alert($.contains( document.documentElement, document.body ));
+        })
+        $("#checkoutTR").click(function(){
+            alert($.contains( document.body, document.documentElement ));
+        })
+    </script>
+</body>
+</html>

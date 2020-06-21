@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:not()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>:not() 选择器选取除了指定元素以外的所有元素。</h3>
+    <p>$(":not('selector')")</p>
+    <p>selector:必需。规定不选择的元素。该参数接受任何类型的选择器。</p>
+    <hr>
+    <p>$("selector").not("selector")</p>
+    <p>selector:必需。规定不选择的元素。该参数接受任何类型的选择器。</p>
+    <hr>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <hr>
+    <button id="odd">odd</button>
+    <button id="even">even</button>
+    <script>
+        $("#odd").click(function(){
+            $('li:not(":odd")').css('background-color', 'red');
+        })
+        $("#even").click(function(){
+            $('li').not(':even').css('background-color', 'red');
+        })
+    </script>
+</body>
+</html>

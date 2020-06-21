@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:header</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>:header  选择所有标题元素（h1 - h6）：</h3>
+    <p>$("selector:header")</p>
+    <hr>
+    <h1>123</h1>
+    <p>456</p>
+    <h6>789</h6>
+    <p>last!</p>
+    <hr>
+    <button id="head">head</button>
+    <button id="p">p</button>
+    <script>
+        $("#head").click(function(){
+            $(":header").css("background-color","#0000ff");
+        })
+
+        $("#p").click(function(){
+            $("p").css("background-color","#0000ff");
+        })
+    </script>
+</body>
+</html>

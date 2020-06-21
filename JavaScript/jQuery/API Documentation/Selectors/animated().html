@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:animated</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+    <style>
+        .red{
+            background-color: red;
+        }
+
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>:animated 选择所有正在执行动画效果的元素</h3>
+    <p>$("selector:animated")</p>
+    <hr>
+    <div style="width: 200px; height: 200px; border: 1px solid black;">
+        <div style="width: 200px; height: 200px;" class="red" id="pic"></div>
+    </div>
+    <hr>
+    <button id="ani">animated</button>
+    <button id="red">red</button>
+    <button id="green">green</button>
+    <script>
+        $("#ani").click(function(){
+            $("div:animated").removeClass().addClass('blue');
+        })
+
+        $("#red").click(function(){
+            $("#pic").removeClass().addClass('red');
+        })
+
+        $("#green").click(function(){
+            $("#pic").removeClass().addClass('green');
+        })
+
+        function animateIt() {
+            $("#pic").slideToggle("slow", animateIt);
+        }
+
+        $(document).ready(function(){
+            animateIt();
+        })
+
+    </script>
+</body>
+</html>
