@@ -1,0 +1,17 @@
+動態的變數名稱
+
+    $foo = "bar" ;
+    $$foo = "baz" ;
+
+    執行完畢
+    $bar == "baz"
+
+
+參考
+    $white = "snow";
+    $black =& $white;
+    unset($white);
+    print $black;
+
+    執行完畢
+    snow
