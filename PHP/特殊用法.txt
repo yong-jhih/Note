@@ -15,3 +15,15 @@
 
     執行完畢
     snow
+
+巢狀宣告
+    fnuction outer($a){
+        function inner($b){
+            echo $b ;
+        }
+        echo $a ;
+    }
+
+    outer('well');
+    inner('reader');
+    // 先呼叫外層函式 才可呼叫 內層函式
