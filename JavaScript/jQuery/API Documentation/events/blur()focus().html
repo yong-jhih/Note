@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blur()/focus()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>blur() 方法触发 blur 事件，或者如果设置了 function 参数，该函数也可规定当发生 blur 事件时执行的代码。</h3>
+    <p>$(selector).blur(function)</p>
+    <p>function:可选。规定当发生 focus 事件时运行的函数。</p>
+    <hr>
+    <h3>focus() 方法触发 focus 事件，或规定当发生 focus 事件时运行的函数。</h3>
+    <p>$(selector).focus(function)</p>
+    <p>function:可选。规定当发生 focus 事件时运行的函数。</p>
+    <hr>
+    <input type="text">
+    <hr>
+    <script>
+        $(document).ready(function(){
+            $("input").focus(function(){
+                $("input").css("background-color","#FFFFCC");
+            });
+            $("input").blur(function(){
+                $("input").css("background-color","#D6D6FF");
+            });
+        });
+    </script>
+</body>
+</html>
