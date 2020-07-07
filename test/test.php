@@ -3,6 +3,19 @@ $a = array ('array' => 6126,'isset' => 1345,'substr' => 845,'sprintf' => 737,'st
 );
 $b = "";
 foreach($a as $key => $val){
-   $b .= $key.",<br>" ;
+   $b .= $key.",";
 }
-echo $b;
+$b = substr($b,0,-1);
+$b = explode(",",$b);
+// echo "<pre>",print_r($b);
+
+$c=array(1,1,1,2,2,2,3,3,3,3,4,4,4,4,4);
+// $c = array_unique($c);
+// echo "<pre>",print_r(array_count_values($c));
+
+$array1 = array("color" => "black", 2, 4);
+$array2 = array("a", "b", "color" => "yellow", "name" => "han", 4);
+$result = array_merge($array1, $array2);
+// echo "<pre>",print_r($result);
+// echo "<hr>";
+// echo "<pre>",print_r(array_values($result));
