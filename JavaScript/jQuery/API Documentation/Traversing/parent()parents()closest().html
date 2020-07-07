@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parent() & parents() & closest()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>parent() 获得当前匹配元素集合中每个元素的父元素，使用选择器进行筛选是可选的。</h3>
+    <p>$(selector).parent(filter)</p>
+    <p>filter 可选。规定缩小搜索父元素范围的选择器表达式。</p>
+    <hr>
+    <h3>parents() 方法返回被选元素的所有祖先元素。</h3>
+    <p>$(selector).parents(filter)</p>
+    <p>filter 可选。规定缩小搜索祖先元素范围的选择器表达式。</p>
+    <hr>
+    <h3>closest() 方法获得匹配选择器的第一个祖先元素，从当前元素开始沿 DOM 树向上。</h3>
+    <p>.closest(selector)</p>
+    <p>selector	字符串值，包含匹配元素的选择器表达式。</p>
+    <hr>
+    <div class="selected">123
+        <div class="selected">
+            <div>
+                <h2>Hello Again</h2>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <button onclick="parent1()">parent</button>
+    <button onclick="parents()">parents</button>
+    <button onclick="closet()">closet</button>
+    <script>
+        function parent1(){
+            $("h2").parent(".selected").css("background", "yellow");
+        }
+        function parents(){
+            $("h2").parents(".selected").css("background", "yellow");
+        }
+        function closet(){
+            $("h2").closest(".selected").css("background", "yellow");
+        }
+    </script>
+</body>
+</html>

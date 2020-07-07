@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addBack()</title>
+    <script src="../../js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>addBack()函数用于将之前匹配的元素加入到当前匹配的元素中，并以新的jQuery对象的形式返回。</h3>
+    <p>jQueryObject.addBack([selector])</p>
+    <p>selector	可选/String类型指定的选择器字符串。</p>
+    <hr>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li class="third-item">list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <hr>
+    <button onclick="test()">123</button>
+    <script>
+        function test(){
+            $('li.third-item').nextAll().addBack().css('background-color', 'red');
+        }
+    </script>
+</body>
+</html>
