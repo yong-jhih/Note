@@ -24,15 +24,15 @@ ex 1+2*3/4-5=-3 (整數除法2*3/4=1)
 %f 浮點數
 $c 字元
 
-#include <>
+#include <stdio.h>
 main(){
     int a, b , c ;
     printf("Please enter first Number");
-    scanf( %d , &a );
+    scanf( "%d" , &a );
     printf("Please enter second Number");
-    scanf( %d , &b )
+    scanf( "%d" , &b )
     c = a + b ;
-    printf("Sum = %d ",c);
+    printf("Sum is %d. \n",c);
     return 0 ;
 }
 
