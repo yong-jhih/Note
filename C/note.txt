@@ -110,3 +110,37 @@ main(){
     return 0 ;
 }
 
+數字排序(大到小)(數值交換)
+#include <stdio.h>
+main(){
+    int a, b , c , tmp;
+    printf("Please enter 3 Numbers :");
+    scanf( "%d%d%d" , &a , &b , &c);
+    if(a>b && a>c && b>c){
+        //do nothing 順序不變
+    }
+    if(a<b || a<c){ // a不是最大值
+        tmp = a;
+        if(b>c){ // b最大
+            a = b;
+            if(c>tmp){
+                b = c;
+                c = tmp; // a最小
+            }
+            if(c<tmp){
+                b = tmp; // a為中位數
+            }
+        }
+        if(b<c){ // c最大
+            a = c;
+            if(b>tmp){
+              c = tmp; // a最小
+            }
+            if(b<tmp){
+                c = b;
+                b = tmp; // a為中位數
+            }
+        }
+    }
+    return 0 ;
+}
