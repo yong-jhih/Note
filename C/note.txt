@@ -73,3 +73,40 @@ a = 6
 7. ||
 8. =
 
+求三角形種類
+#include <stdio.h>
+main(){
+    int a, b , c ;
+    printf("Please enter 3 sides :");
+    scanf( "%d%d%d" , &a , &b , &c);
+    if(a+b>c || b+c>a || a+c>b){
+        if(a==b && b==c){
+            printf("Regular triangle\n");
+        }
+        if(a==b || b==c || a==c && !(a==b && b==c)){
+            printf("Isosceles triangle\n");
+        }
+        if(a*a+b*b==c*c || b*b+c*c==a*a || a*a+c*c==b*b){
+            printf("Rectangular Triangle\n");
+        }
+    }
+    return 0 ;
+}
+
+三數求中位數
+#include <stdio.h>
+main(){
+    int a, b , c , mid;
+    printf("Please enter 3 sides :");
+    scanf( "%d%d%d" , &a , &b , &c);
+    mid = a ;
+    if( (b-a)*(b-c)<0 ){
+        mid = b ;
+    }
+    if( (c-b)*(c-a)<0 ){
+        mid = c ;
+    }
+    printf("The median is %d. \n", mid );
+    return 0 ;
+}
+
