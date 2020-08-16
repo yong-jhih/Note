@@ -28,3 +28,7 @@ MVC六大執行步驟
 
 *Model檔案可以任意命名 他跟Controller或View沒有名稱上的連動限制
 
+using System.Data.Entity;
+如果要使用這個類別必須先安裝Entity Framework NuGet套件
+可至NuGet 輸入 install-Package EntityFramework
+
