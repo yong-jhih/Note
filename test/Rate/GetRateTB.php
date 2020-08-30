@@ -1,6 +1,6 @@
 <?php
 // 資料庫連線
-$link = mysqli_connect('localhost','root','','ratetb');
+$link = mysqli_connect('localhost','root','','guestbook');
 mysqli_query($link, "SET NAMES utf8");
 
 // 設定連線
