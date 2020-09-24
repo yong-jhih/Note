@@ -2,26 +2,42 @@ package main
 
 import (
 	"net/http"
+	"html/template"
+	"fmt"
+	"errors"
+	"bytes"
 )
-
-var count int
 func main() {
-	http.HandleFunc("/", index)
-	http.HandleFunc("/profile", profile)
-	http.HandleFunc("/about", about)
-	http.ListenAndServe(":9000", nil)
-}
-func index(w http.ResponseWriter, r *http.Request) {
-	message := "Request URL Path is " + r.URL.Path
-	w.Write([]byte(message))
+	http.HandleFunc("/",handler)
+	err := http.ListenAndServe(":9000", nil)
+    if err != nil {
+        fmt.Println("服务失败 /// ", err)
+    }
 }
 
-func profile(w http.ResponseWriter, r *http.Request) {
-	message := "Request URL Path is " + r.URL.Path
-	w.Write([]byte(message))
+func handler(w http.ResponseWriter, r *http.Request){
+	t, err := template.ParseFiles("index.html")
+    if err != nil {
+        fmt.Println(err)
+        return
+	}
+	err = WriteTemplateToHttpResponse(w, t)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
 }
 
-func about(w http.ResponseWriter, r *http.Request) {
-	message := "Request URL Path is " + r.URL.Path
-	w.Write([]byte(message))
+func WriteTemplateToHttpResponse(res http.ResponseWriter, t *template.Template) error {
+    if t == nil || res == nil {
+        return errors.New("WriteTemplateToHttpResponse: t must not be nil.")
+    }
+    var buf bytes.Buffer
+    err := t.Execute(&buf, nil)
+    if err != nil {
+        return err
+    }
+    res.Header().Set("Content-Type", "text/html; charset=utf-8")
+    _, err = res.Write(buf.Bytes())
+    return err
 }
