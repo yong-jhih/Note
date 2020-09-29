@@ -14,7 +14,7 @@ func main() {
     mux.PanicHandler = errorHandler
 
     server := http.Server{
-        Addr: "127.0.0.1:9000",
+        Addr: "127.0.0.1:8080",
         Handler: mux,
     }
 
