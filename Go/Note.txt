@@ -28,3 +28,15 @@ continue   for           import   return      var
 内建函数: make len cap new append copy close delete
           complex real imag
           panic recover
+
+型別初始值
+数值类型（包括complex64/128）为 0
+布尔类型为 false
+字符串为 ""（空字符串）
+以下几种类型为 nil：
+var a *int
+var a []int
+var a map[string] int
+var a chan int
+var a func(string) int
+var a error // error 是接口
