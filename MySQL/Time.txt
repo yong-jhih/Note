@@ -1,0 +1,58 @@
+ADDDATE()	相加日期
+ADDTIME()	相加時間
+CONVERT_TZ()	從一個時區轉換到另一個
+CURDATE()	返回當前日期
+CURRENT_DATE(), CURRENT_DATE	CURDATE()同義詞
+CURRENT_TIME(), CURRENT_TIME	CURTIME()同義詞
+CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP	NOW()同義詞
+CURTIME()	返回當前時間
+DATE_ADD()	相加兩個時間
+DATE_FORMAT()	格式化日期如指定格式
+DATE_SUB()	相減兩個日期
+DATE()	提取日期或日期時間表達式的日期部分
+DATEDIFF()	相減兩個日期
+DAY()	DAYOFMONTH()同義詞
+DAYNAME()	返回星期的名字
+DAYOFMONTH()	返回月份的第幾天 (1-31)
+DAYOFWEEK()	返回參數的星期索引
+DAYOFYEAR()	返回一年中的第幾天 (1-366)
+EXTRACT	提取的日期部分
+FROM_DAYS()	天數轉換為日期
+FROM_UNIXTIME()	格式日期作為UNIX時間戳
+HOUR()	提取小時
+LAST_DAY	返回參數的對應月份中的最後一天
+LOCALTIME(), LOCALTIME	NOW()同義詞
+LOCALTIMESTAMP, LOCALTIMESTAMP()	NOW()同義詞
+MAKEDATE()	創建從年度中年份和第幾天的日期
+MAKETIME	MAKETIME()
+MICROSECOND()	從參數中返回微秒
+MINUTE()	從參數返回分鐘
+MONTH()	返回日期的月份
+MONTHNAME()	返回當前月份的名稱
+NOW()	返回當前的日期和時間
+PERIOD_ADD()	添加一個時期到年月
+PERIOD_DIFF()	返回月期間之間數
+QUARTER()	從date參數返回季度
+SEC_TO_TIME()	轉換秒為 'HH:MM:SS' 格式
+SECOND()	返回秒 (0-59)
+STR_TO_DATE()	將字符串轉換為日期
+SUBDATE()	當三個參數時類似調用DATE_SUB()
+SUBTIME()	相減時間
+SYSDATE()	返回函數執行時的時間
+TIME_FORMAT()	格式化為時間
+TIME_TO_SEC()	返回參數轉換成秒
+TIME()	提取表達過去的時間部分
+TIMEDIFF()	相減時間
+TIMESTAMP()	帶一個參數，函數返回日期或日期時間表達式。有兩個參數，參數的總和
+TIMESTAMPADD()	增加datetime表達式的一個間隔
+TIMESTAMPDIFF()	從日期表達式減去時間間隔
+TO_DAYS()	返回日期參數轉換為天
+UNIX_TIMESTAMP()	返回一個UNIX時間戳
+UTC_DATE()	返回當前UTC日期
+UTC_TIME()	返回當前UTC時間
+UTC_TIMESTAMP()	返回當前UTC日期和時間
+WEEK()	返回周數
+WEEKDAY()	返回星期的索引
+WEEKOFYEAR()	返回日期的日曆周 (1-53)
+YEAR()	返回年份
+YEARWEEK()	返回年份和星期
