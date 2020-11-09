@@ -1,38 +1,41 @@
 package main
 
 import (
-    "github.com/julienschmidt/httprouter"
-    "html/template"
-    "net/http"
-    "fmt"
+	"html/template"
+	"log"
+
+	"github.com/gin-gonic/gin"
 )
 
+var html = template.Must(template.New("https").Parse(`
+<html>
+<head>
+  <title>Https Test</title>
+  <script src="/assets/app.js"></script>
+</head>
+<body>
+  <h1 style="color:red;">Welcome, Ginner!</h1>
+</body>
+</html>
+`))
+
 func main() {
-    mux := httprouter.New()
-    mux.GET("/", index)
-    mux.NotFound = http.HandlerFunc(notFound)
-    mux.PanicHandler = errorHandler
+	r := gin.Default()
+	r.Static("/assets", "./assets")
+	r.SetHTMLTemplate(html)
 
-    server := http.Server{
-        Addr: "127.0.0.1:9000",
-        Handler: mux,
-    }
+	r.GET("/", func(c *gin.Context) {
+		if pusher := c.Writer.Pusher(); pusher != nil {
+			// 使用 pusher.Push() 做服务器推送
+			if err := pusher.Push("/assets/app.js", nil); err != nil {
+				log.Printf("Failed to push: %v", err)
+			}
+		}
+		c.HTML(200, "https", gin.H{
+			"status": "success",
+		})
+	})
 
-    server.ListenAndServe()
-}
-
-func index(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
-    t := template.Must(template.ParseFiles("index.html"))
-
-    t.Execute(w, "Hello, Template")
-}
-
-func notFound(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusNotFound)
-	fmt.Fprintln(w, "Page Not Found")
-}
-
-func errorHandler(w http.ResponseWriter, r *http.Request, p interface{}) {
-	w.WriteHeader(http.StatusInternalServerError)
-	fmt.Fprintln(w, "Internal Server Error")
+	// 监听并在 https://127.0.0.1:8080 上启动服务
+	r.Run(":8080")
 }
