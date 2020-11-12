@@ -1,0 +1,22 @@
+ES6 - spread operator「...」
+「...」使用方法為...自訂名稱，它的用途是:
+1.把陣列/物件展開成個別元素
+2.或是用來複製一個陣列。
+
+有的時候，我們並沒有辦法得知接受到的參數有幾個、有哪些。這個東西就解決了這個問題。
+
+為什麼?
+
+因為當我們把...名稱放在函式定義參數時，表示「我們要複製一個array」，丟入的參數就會被變成一個array。而使用它時再加上...，就又可以把它展開。這樣做，我們就能在不知道參數數量的情況下，接到所有參數。
+
+const getAll=(...arg)=>{
+    console.log(arg)
+    console.log(...arg)
+}
+getAll("A","B",4,"我是C");
+getAll("B",4,"我是C");
+
+第一個console.log顯示我們把丟入的參數變成array。
+第二個console.log就是把這個array展開後印出。
+
+https://ithelp.ithome.com.tw/articles/10215265
