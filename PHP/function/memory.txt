@@ -1,0 +1,23 @@
+// 產生 Excel 提高處理時間與記憶體設定
+private function improveProcessSet()
+{
+    ini_set('max_execution_time', 6000);
+    ini_set('memory_limit', '512M');
+}
+
+常用的除錯檢測PHP程式碼效能的方法有：
+memory_get_usage 可以分析目前記憶體佔用空間。
+microtime        函式就可以分析程式執行時間。
+ini_set('display_errors', 1);
+error_reporting ( E_ALL );
+
+echo '開始記憶體：'.memory_get_usage(), ''; 
+$tmp = str_repeat('hello', 1000); 
+echo '執行後記憶體：'.memory_get_usage(), ''; 
+unset($tmp); 
+echo '回到正常記憶體：'.memory_get_usage(); 
+
+輸出結果：
+開始記憶體：147296
+執行後記憶體：152456
+回到正常記憶體：147296
