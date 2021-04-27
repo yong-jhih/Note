@@ -6,7 +6,7 @@
     $ vagrant box list
 
 3. 確認本機已安裝 Git
-4. 複製 Homestead 設定工具的方式，就是去 Laravel 官方的 Github 把儲存庫複製 (clone) 回來，根據官方的建議，會將 Homestead 放在家目錄(mac.Linux,Window系統自行轉換成C:\路徑)底下：
+4. 複製 Homestead 設定工具的方式，就是去 Laravel 官方的 Github 把儲存庫複製 (clone) 回來，根據官方的建議，會將 Homestead 放在家目錄(mac.Linux,Window系統自行轉換成C:\Users\{使用者})底下：
     $ cd ~
     $ git clone https://github.com/laravel/homestead.git Homestead
 
@@ -20,7 +20,7 @@
 7. 編輯homestead.yaml
     ip：可以設定虛擬機拿到的 IP 位址，預設是 192.168.10.10，若沒有特別需求不用更改。
 
-    memory、cpus：可以設定虛擬機佔用的資源，預設是 1 CPU、2GB 的記憶體，若沒有特別需求不用更改。
+    memory、cpus：可以設定虛擬機佔用的資源，預設是 2CPU、2GB 的記憶體，若沒有特別需求不用更改。
 
     provider：使用的虛擬技術，預設是virtualbox。
 
