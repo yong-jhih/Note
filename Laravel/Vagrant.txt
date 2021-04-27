@@ -1,0 +1,60 @@
+1. 確認本機已安裝 VirtualBox
+2. 確認本機已安裝 Vagrant
+    $ vagrant --version 
+    $ vagrant box add {Box名稱}{下載網址}
+    $ vagrant box add laravel/homestead (官方製作的Homestead虛擬機 僅執行一次)
+    $ vagrant box list
+
+3. 確認本機已安裝 Git
+4. 複製 Homestead 設定工具的方式，就是去 Laravel 官方的 Github 把儲存庫複製 (clone) 回來，根據官方的建議，會將 Homestead 放在家目錄(mac.Linux,Window系統自行轉換成C:\路徑)底下：
+    $ cd ~
+    $ git clone https://github.com/laravel/homestead.git Homestead
+
+5. 切換至homestead目錄 分支release
+    $ cd homestead
+    $ git checkout release
+
+6. 初始化homestead(產生Homestead.yaml)
+    $ bash init.sh (僅須執行一次,在homestead目錄下)
+
+7. 編輯homestead.yaml
+    ip：可以設定虛擬機拿到的 IP 位址，預設是 192.168.10.10，若沒有特別需求不用更改。
+
+    memory、cpus：可以設定虛擬機佔用的資源，預設是 1 CPU、2GB 的記憶體，若沒有特別需求不用更改。
+
+    provider：使用的虛擬技術，預設是virtualbox。
+
+    authorize、keys：設定登入虛擬機時使用的SSH金鑰，預設會使用自己家目錄底下的金鑰。若自己的家目錄底下沒有key的話，可以用 $ ssh-keygen -t rsa -b 4096 -C "{您的 Email}" 指令產生。
+
+    folders：設定掛載的虛擬目錄，預設是將家目錄底下的code資料夾掛載到虛擬機vagrant帳號家目錄底下的code資料夾。由於我們全新安裝還沒有這個資料夾，請執行 mkdir ~/code 指令建立。
+
+8. 啟動 Homestead
+    $ vagrant up
+    $ vagrant ssh
+
+9. homestead虛擬機建立Laravel
+    $ cd code
+    $ composer create-project laravel/laravel --prefer-dist
+
+10. 設定虛擬站台
+    修改Homestead.yaml
+        sites:
+        - map: homestead.local
+        to: /home/vagrant/code/laravel/public
+    在設定檔裡有一段 sites 的設定，這段設定可以將特定網址 map 到虛擬機裡的專案根目錄
+    (以 Laravel 專案來說，請將根目錄設定在 public)，而 Homestead 內建產生 Nginx 虛擬站台的指令樣板，可以幫忙產生對應的設定檔。
+    註：請注意路徑裡的大小寫
+
+11. 設定hosts
+    192.168.10.10 homestead.local
+
+12. 重啟虛擬機
+    $ vagrant reload --provision
+
+****************************************
+後續常用的指令就只剩以下幾個：
+啟動 Homestead：$ vagrant up
+進入 Homestead：$ vagrant ssh
+暫停 Homestead：$ vagrant suspend
+將 Homestead 關機：$ vagrant halt
+****************************************
