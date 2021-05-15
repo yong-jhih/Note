@@ -1,0 +1,23 @@
+1. 建立本地專案資料夾
+    $ mkdir Test
+    $ cd Test
+    $ git init
+    $ git add .
+    $ git commit -m "comment"
+
+2. 建立SSH KEY。查看使用者目錄下有沒有.ssh目錄，有的話看下裡面有沒有id_rsa和id_rsa.pub這兩個檔案，有就跳到下一步，沒有就通過下面命令建立
+    $ ssh-keygen -t rsa -C "youremail@example.com"
+
+3. 登入Github > Settings > SSH and GPG keys > New SSH key (title:隨便填 Key:複製id_rsa.pub內容)
+
+4. 在Github上建立一個Git倉庫 並複製 .git網址(關聯本地資料夾及遠端倉庫)
+    $ git remote add origin {.git網址}
+
+5. 推送本地資料
+    $ git push -u origin {branch_name}  (由於新建的遠端倉庫是空的，所以要加上-u這個引數)
+    $ git push origin {branch_name}     (第二次以後這樣即可)
+
+
+最速解(省略步驟1.2.4):
+    1. 在Github上建立一個Git倉庫並clone(遠端與本機直接關聯)
+    2. 更新本地資料並提交

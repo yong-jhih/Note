@@ -1,0 +1,5 @@
+npm -v 或 npm --version → 查看 npm 版本
+npm i [package] 或 npm install [package] → 安裝套件在專案下的 node_modules 目錄
+npm i [package] --save 或 npm install [package] --save → 安裝套件在專案下的 node_modules 目錄，並更新該套件資訊到 package.json
+npm un [package] 或 npm uninstall [package] → 移除某套件
+npm un [package] --save或 npm uninstall [package] --save → 移除某套件，並更新該套件資訊到 package.json

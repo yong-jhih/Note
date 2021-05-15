@@ -58,3 +58,4 @@
 暫停 Homestead：$ vagrant suspend
 將 Homestead 關機：$ vagrant halt
 ****************************************
+參考網址 https://ithelp.ithome.com.tw/articles/10193858
