@@ -3,8 +3,6 @@
 例如，让我们看看这段代码
 
 <?php
-//not that this is just example
-//do not use it like that in real environment because it security issue.
 $cond = $_REQUEST['cond'];
 if ($cond == "age"){
  $wherecond = " age > 18";

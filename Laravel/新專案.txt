@@ -1,0 +1,5 @@
+1. 全域安裝Laravel安裝器
+    composer global require laravel/installer
+    laravel new 專案名稱
+
+2. composer create-project laravel/laravel 專案名稱 --prefer-dist

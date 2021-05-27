@@ -1,9 +1,12 @@
-cd project
+1. 進到專案資料夾
+    $cd project
 
-composer install
-npm install
+2. 安裝composer套件.npm套件
+    $composer install
+    $npm install
 
-php artisan key:generate
+3. 重新生成ssh-key
+    $php artisan key:generate
 
 touch database/database.sqlite
 mysql> CREATE DATABASE your_database_name;
