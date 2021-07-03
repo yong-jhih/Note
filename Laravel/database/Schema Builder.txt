@@ -1,19 +1,14 @@
 常用的Schema方法
     建表
     Schema::create('表名',function(Blueprint $table){});
-
     針對指定的表進行維護
     Schema::table('表名',function(Blueprint $table){});
-
     重新命名資料表
     Schema::rename('原表名','新表名');
-
     刪除資料表
     Schema::drop('表名');
-
     存在時刪除
     Schema::dropIfExists('表名');
-
 
 常用的欄位方法
     increments('欄位名')
@@ -28,4 +23,24 @@
     text('欄位名')
     timestamp('欄位名')
     timestamps() 建立created_at及updated_at兩個Timestamp欄位
-    softDelete()
+    softDelete() 建立delete_at的Timestamp欄位
+
+欄位修飾方法
+    ->after('欄位名稱')
+    ->autoIncrement()
+    ->comment('備註內容')
+    ->default(預設值)
+    ->first()
+    ->nullable()
+    ->unsigned()
+    ->primary()
+    ->unique()
+    ->index()
+
+資料表維護方法
+dropColumn('欄位名');
+dropTimestamps();
+dropsoftdeletes();
+dropPrimary('欄位名');
+dropUnique('欄位名');
+dropIndex('欄位名');
