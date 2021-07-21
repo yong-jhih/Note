@@ -1,0 +1,70 @@
+常用的Schema方法
+    建表
+    Schema::create('表名',function(Blueprint $table){});
+    針對指定的表進行維護
+    Schema::table('表名',function(Blueprint $table){});
+    重新命名資料表
+    Schema::rename('原表名','新表名');
+    刪除資料表
+    Schema::drop('表名');
+    存在時刪除
+    Schema::dropIfExists('表名');
+
+常用的欄位方法
+    increments('欄位名')
+    boolean('欄位名')
+    char('欄位名',長度)
+    date('欄位名')
+    dateTime('欄位名')
+    double('欄位名',總位數,小數點位數)
+    float('欄位名')
+    integer('欄位名')
+    string('欄位名')
+    text('欄位名')
+    timestamp('欄位名')
+    timestamps() 建立created_at及updated_at兩個Timestamp欄位
+<<<<<<< HEAD:Laravel/Migration/Schema Builder.txt
+    softDelete() delete_at的Timestamp欄位
+
+欄位修飾法
+    ->after(欄位名稱) 將此欄位放在其他欄位之後
+    ->autoIncrement() 為此欄位加上自動增值功能
+    ->comment(備註內容) 設定欄位備註
+    ->default(預設值) 設定預設值
+    ->first() 將此欄位放在資料表第一欄
+    ->nullable() 允許null
+    ->unsigned() 僅能為正整數
+    ->primary() 主鍵
+    ->unique() 唯一鍵
+    ->index() 索引鍵
+
+資料表維護方法
+    dropColumn('欄位名') 刪除指定欄位
+    dropTimestamps() 刪除時間戳記欄位
+    dropsoftdeletes() 刪除軟刪除戳記欄位
+    dropPrimary('欄位名') 刪除指定欄位主鍵
+    dropUnique('欄位名') 刪除指定欄位唯一鍵
+    dropIndex('欄位名') 刪除指定欄位索引鍵
+=======
+    softDelete() 建立delete_at的Timestamp欄位
+
+欄位修飾方法
+    ->after('欄位名稱')
+    ->autoIncrement()
+    ->comment('備註內容')
+    ->default(預設值)
+    ->first()
+    ->nullable()
+    ->unsigned()
+    ->primary()
+    ->unique()
+    ->index()
+
+資料表維護方法
+dropColumn('欄位名');
+dropTimestamps();
+dropsoftdeletes();
+dropPrimary('欄位名');
+dropUnique('欄位名');
+dropIndex('欄位名');
+>>>>>>> cf87e3087b98c5f0b21646efd34fecac4810ae28:Laravel/database/Schema Builder.txt
