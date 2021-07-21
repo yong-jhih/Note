@@ -1,0 +1,48 @@
+#操作範例
+    <?php
+        namespace App\Http\Controllers;
+        use App\Flight;
+        use App\Http\Controllers\Controller;
+        use Illuminate\Http\Request;
+        class FlightController extends Controller
+        {
+            public function store(Request $request)
+            {
+                $flight = new Flight;
+                $flight->account = $request->account;
+                $flight->save();
+            }
+        }
+    ?>
+
+新增資料
+    $post = new App\Post;
+    $post->title='hello World';
+    $post-save();
+
+更新資料
+    $post = new App\Post::find(1);
+    $post->title='New hello World';
+    $post-save();
+
+批量新增
+    $post = new App\Post::create([
+        'title'=>'Hello World',
+        'content'=>'good news',
+        'author'=>'John',
+        'catalog'=>'happy'
+    ]);
+    or 
+    $post = App\Post::create($request->all());
+
+批量更新
+    $post = new App\Post::find(1);
+    $post->update([
+        'title'=>'All title has been updated'
+    ]);
+    or
+    App\Post::get()->update($request->all());
+
+ps:批量新增及更新街需要在Model中設定 $fillable 及 $guarded
+
+批量賦值

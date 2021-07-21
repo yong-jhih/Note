@@ -1,0 +1,62 @@
+#操作範例
+    <?php
+        namespace App\Http\Controllers;
+        use App\Flight;
+        use App\Http\Controllers\Controller;
+        use Illuminate\Http\Request;
+        class FlightController extends Controller
+        {
+            public function get(Request $request)
+            {
+                $flights = App\Flight::where('account', 'abcdef')
+                    ->orderBy('id', 'desc')
+                    ->take(10)
+                    ->get();
+                    ->first();
+            }
+        }
+    ?>
+
+Eloquent 查詢類方法
+    where()
+        App\Flight::where('account','abcdef')->get();
+        App\Score::where('math','>=','60')->get();
+    orderBy()
+        App\Score::orderBy('total','asc')->get();
+        App\Score::orderBy('total','desc')->get();
+
+Eloquent 撈取類方法
+    all()
+        App\Student::all();
+    get()
+        App\Student::where('name','like','%er%')->get();
+    ps:只要使用了查詢類方法就不能使用all()而要用get()
+
+    find() 用主鍵抓取特定資料
+        App\Student::find('2');
+        App\Student::find(['1','3','7']);
+    first() 只取第一筆資料
+        App\Score::orderBy('total','asc')->first();
+
+    findOrFail() 同find() 無資料時回傳錯誤例外
+    firstOrFail() 同first() 無資料時回傳錯誤例外
+
+Eloquent 繼承 Collection 的方法
+    avg()
+        App\Score::all()->avg('total');
+    count()
+        App\Score::where('math','>=','60')->get()->count();
+    max()
+        App\Score::all()->max('total');
+    min()
+        App\Score::all()->min('total');
+    random() 隨機抽一筆
+        App\User::get()->random();
+    sum()
+         App\Score::get()->sum('math');
+    take()
+        App\User::get()->take(3);    // 只抓取前三筆
+        App\User::get()->take(-3);   // 只抓取末三筆
+    toJson() 將資料轉為Json格式
+        App\Score::all()->toJson();
+    ps:如果有資料欄未被設定在 $hidden 裡或 設定 $visible 但沒將欄位設定其中 是不會輸出在Json陣列當中的

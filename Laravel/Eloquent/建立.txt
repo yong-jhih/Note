@@ -1,0 +1,62 @@
+$ php artisan make:model Model名稱 (建立Model檔)
+$ php artisan make:model Model名稱 -m (一併建立Migration檔)
+
+#Model 範例
+    <?php
+    namespace App;
+    use Illuminate\Database\Eloquent\Model;
+    class Flight extends Model
+    {
+        // 表預設為Model名的複數型態，你也可以在模型中自定義表名 $table
+        // protected $table = 'my_flights';
+
+        // Eloquent 預設每張表主鍵為 id，你也可以在模型中自定義主鍵 $primaryKey
+        // protected $primaryKey = 'flight_id';
+
+        // Eloquent 預設主鍵是自增的整型數據，如果你想要使用非自增或非数字類型主键，必須在模型中設置 $incrementing 屬性為 false：
+        // 如果主键不是整型，也要設置 $keyType 屬性為 string：
+        // public $incrementing = false;
+        // public $keyType = 'string';
+
+        // Eloquent 期望 created_at 和 updated_at 已經存在於表中，如果你不想要，在模型中設置 $timestamps 屬性為 false：
+        // public $timestamps = false;
+
+        // 定義 Eloquent 中的時間儲存格式，使用PHP的日期格式參數：
+        // protected $dateFormat = 'Y-m-d';
+
+        // 如果你需要自訂儲存時間戳的名稱，可以在模型中設置 CREATED_AT 和 UPDATED_AT 常量
+        // const CREATED_AT = 'creation_date';
+        // const UPDATED_AT = 'last_update';
+
+        // Eloquent 模型使用設置下的資料庫連接，如果你想要指定不同連接，可以通過設置 $connection
+        // protected $connection = 'connection-name';
+
+        // 如果你想要定義某些屬性的預設值，請設置 $attributes
+        // protected $attributes = [
+        //     'delayed' => false,
+        // ];
+    }
+    ?>
+
+# Migration範例
+    <?php
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
+    class CreateFlightsTable extends Migration
+    {
+        public function up()
+        {
+            Schema::create('flights', function (Blueprint $table) {
+                $table->id();
+                $table->string('account');
+                $table->timestamps();
+            });
+        }
+
+        public function down()
+        {
+            Schema::dropIfExists('flights');
+        }
+    }
+    ?>
