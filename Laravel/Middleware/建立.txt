@@ -1,0 +1,2 @@
+$ php artisan make:middleware 中介層名稱
+# app\Http\Middleware

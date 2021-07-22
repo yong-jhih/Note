@@ -43,6 +43,29 @@
     or
     App\Post::get()->update($request->all());
 
-ps:批量新增及更新街需要在Model中設定 $fillable 及 $guarded
+ps:批量新增及更新需要在Model中設定 $fillable(白名單) 及 $guarded(黑名單)
 
-批量賦值
+刪除資料(查找主鍵)
+    $post = new App\Post::find(1);
+    $post->delete();
+    or
+    App\Post::destory(1);
+    App\Post::destory(1,2,3);
+    App\Post::destory([1,2,3]);
+
+批量刪除(設定條件)
+    $post = App\Post::where('author','author_name')->delete();
+
+開啟軟刪除(非必要)
+    1. Migration 內加入 deleted_at 欄位
+        $table->softDeletes();
+
+    2. Model 內加入
+        namespace App;
+        use Illuminate\Database\Eloquent\Model;
+        use Illuminate\Database\Eloquent\SoftDeletes;
+        class Flight extends Model
+        {
+            use SoftDeletes
+            protected $date = ['deleted_at']
+        }

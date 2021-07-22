@@ -5,8 +5,13 @@ $ php artisan make:model Model名稱 -m (一併建立Migration檔)
     <?php
     namespace App;
     use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\SoftDeletes;
     class Flight extends Model
     {
+        // 開啟軟刪除需要的
+        // use SoftDeletes
+        // protected $date = ['deleted_at']
+
         // 表預設為Model名的複數型態，你也可以在模型中自定義表名 $table
         // protected $table = 'my_flights';
 
@@ -51,6 +56,7 @@ $ php artisan make:model Model名稱 -m (一併建立Migration檔)
                 $table->id();
                 $table->string('account');
                 $table->timestamps();
+                $table->softDeletes();
             });
         }
 
