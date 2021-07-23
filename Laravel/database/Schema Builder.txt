@@ -23,7 +23,6 @@
     text('欄位名')
     timestamp('欄位名')
     timestamps() 建立created_at及updated_at兩個Timestamp欄位
-<<<<<<< HEAD:Laravel/Migration/Schema Builder.txt
     softDelete() delete_at的Timestamp欄位
 
 欄位修飾法
@@ -45,26 +44,4 @@
     dropPrimary('欄位名') 刪除指定欄位主鍵
     dropUnique('欄位名') 刪除指定欄位唯一鍵
     dropIndex('欄位名') 刪除指定欄位索引鍵
-=======
     softDelete() 建立delete_at的Timestamp欄位
-
-欄位修飾方法
-    ->after('欄位名稱')
-    ->autoIncrement()
-    ->comment('備註內容')
-    ->default(預設值)
-    ->first()
-    ->nullable()
-    ->unsigned()
-    ->primary()
-    ->unique()
-    ->index()
-
-資料表維護方法
-dropColumn('欄位名');
-dropTimestamps();
-dropsoftdeletes();
-dropPrimary('欄位名');
-dropUnique('欄位名');
-dropIndex('欄位名');
->>>>>>> cf87e3087b98c5f0b21646efd34fecac4810ae28:Laravel/database/Schema Builder.txt
