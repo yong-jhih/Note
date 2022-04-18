@@ -35,36 +35,3 @@ Ctrl + Shift + F：在整个文件夹中查找内容
 第二种，ctrl + k ctrl + o：这种快捷键需要按下 ctrl 和 k，然后 ctrl 不放，松开 k 并按下 o，可以打开文件夹
 
 虽然按VS Code这样设计，可以使快捷键更加丰富，但是对于新手来说无疑是增加了快捷键的上手难度，我们可以根据自己的习惯，通过 ctrl + k ctrl + s 可以自定义快捷键，修改快捷键的设置。
-
-
-[link](https://www.csdn.net/)
-
-![Alt](%E4%B8%8B%E8%BC%89.jpg)
-
-
-
-```javascript
-<script>alert("123")</script>
-```
-- A
-- B
-- C
-  
-1. A
-2. B
-3. C
-4. D
-
-
-- 项目
-  - 项目
-    - 项目
-
-1. 项目1
-2. 项目2
-3. 项目3
-
-- [ ] 计划任务
-- [x] 完成任务
-
-- [x] ABXC
