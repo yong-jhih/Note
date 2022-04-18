@@ -34,8 +34,8 @@
 *斜體*
 ~~刪除線~~
 ```
-**粗體**<br>
-*斜體*<br>
+**粗體**  
+*斜體*  
 ~~刪除線~~
 <hr>
 
@@ -90,7 +90,7 @@
 [此篇原文出處](https://ithelp.ithome.com.tw/markdown)
 IT相關的問題，可至(https://ithelp.ithome.com.tw)發問
 ```
-[此篇原文出處](https://ithelp.ithome.com.tw/markdown)<br>
+[此篇原文出處](https://ithelp.ithome.com.tw/markdown)  
 IT相關的問題，可至(https://ithelp.ithome.com.tw)發問
 <hr>
 
@@ -98,7 +98,7 @@ IT相關的問題，可至(https://ithelp.ithome.com.tw)發問
 利用分割符號-和|建立表格
 ```
 姓名 | 住址
-------------- | -------------
+---- | ----
 李大華 | 桃園
 張小明 | 高雄
 ```
@@ -106,3 +106,10 @@ IT相關的問題，可至(https://ithelp.ithome.com.tw)發問
 ------------- | -------------
 李大華 | 桃園
 張小明 | 高雄
+
+## 圖片
+!+[img]+(file_path)加入一個圖片
+```
+![img]([test.jpg](https://7-sea.a-dau.idv.tw/wp-content/uploads/2017/11/taro.gif))
+```
+![img](https://7-sea.a-dau.idv.tw/wp-content/uploads/2017/11/taro.gif)
