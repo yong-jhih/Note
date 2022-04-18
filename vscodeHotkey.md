@@ -41,4 +41,30 @@ Ctrl + Shift + F：在整个文件夹中查找内容
 
 ![Alt](%E4%B8%8B%E8%BC%89.jpg)
 
-![Alt](%E4%B8%8B%E8%BC%89.jpg =50x50)
+
+
+```javascript
+<script>alert("123")</script>
+```
+- A
+- B
+- C
+  
+1. A
+2. B
+3. C
+4. D
+
+
+- 项目
+  - 项目
+    - 项目
+
+1. 项目1
+2. 项目2
+3. 项目3
+
+- [ ] 计划任务
+- [x] 完成任务
+
+- [x] ABXC
