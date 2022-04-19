@@ -112,4 +112,16 @@ IT相關的問題，可至(https://ithelp.ithome.com.tw)發問
 ```
 ![img]([test.jpg](https://7-sea.a-dau.idv.tw/wp-content/uploads/2017/11/taro.gif))
 ```
-![img](https://7-sea.a-dau.idv.tw/wp-content/uploads/2017/11/taro.gif)
+![img](https://7-sea.a-dau.idv.tw/wp-content/uploads/2017/11/taro.gif)  
+
+## 分隔線
+```
+***
+---
+___
+<hr>
+```
+***
+---
+___  
+<hr>
