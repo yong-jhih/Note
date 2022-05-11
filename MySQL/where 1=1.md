@@ -1,7 +1,7 @@
 1 = 1其中condition始终为true，因为always 1等于1，因此该语句将始终为true。虽然它有时没有任何意义。 但其他时候开发人员在动态生成where条件时使用它。
 
 例如，让我们看看这段代码
-
+```
 <?php
 $cond = $_REQUEST['cond'];
 if ($cond == "age"){
@@ -9,6 +9,7 @@ if ($cond == "age"){
 }         
 $query = "select * from some_table where $wherecond";
 ?>
+```
 所以在上面的例子中，如果$ _REQUEST ['cond']不是“age”，则查询将返回mysql错误，因为在where条件之后没有任何内容。
 
 查询将从some_table中选择*，其中是错误
