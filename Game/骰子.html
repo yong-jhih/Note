@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span>請輸入<input type="number" id="min" required>~<input type="number" id="max" required>正整數</span>
+        <button onclick="random()">產生隨機數</button>
+    </div>
+    <hr>
+    <input type="number" id="result" value="">
+    <script>
+        function random() {
+            document.getElementById('result').value='';
+            if (document.getElementById('min').value && document.getElementById('max').value) {
+                let min = document.getElementById('min').value;
+                let max = document.getElementById('max').value;
+                let random = Math.floor(Math.random()*(max-min+1))+Number(min);
+                document.getElementById('result').value=random;
+            } else {
+                alert('請填入正整數範圍');
+            }
+        }
+    </script>
+</body>
+
+</html>
