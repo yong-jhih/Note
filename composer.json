@@ -1,0 +1,11 @@
+{
+    "name": "user/note",
+    "autoload": {
+        "psr-4": {
+            "User\\Note\\": "src/"
+        }
+    },
+    "require": {
+        "leaf/leaf-php-pcntl": "^0.1.0"
+    }
+}

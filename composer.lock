@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6b2a0b828c076d927111382733ce858f",
+    "packages": [
+        {
+            "name": "leaf/leaf-php-pcntl",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hansedong/leaf-php-pcntl.git",
+                "reference": "a93b4458d7e9a20b7530fa9f6d2ee6dfcf33f0c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hansedong/leaf-php-pcntl/zipball/a93b4458d7e9a20b7530fa9f6d2ee6dfcf33f0c8",
+                "reference": "a93b4458d7e9a20b7530fa9f6d2ee6dfcf33f0c8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leaf\\Managers\\ProcessManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "hongshuai dong",
+                    "email": "663280439@qq.com",
+                    "homepage": "http://www.leafphp.com"
+                }
+            ],
+            "description": "A PHP process manager",
+            "homepage": "https://www.leafphp.com",
+            "keywords": [
+                "pcntl",
+                "php",
+                "php process manager",
+                "php process poll"
+            ],
+            "support": {
+                "issues": "https://github.com/hansedong/leaf-php-pcntl/issues",
+                "source": "https://github.com/hansedong/leaf-php-pcntl/tree/master"
+            },
+            "time": "2017-05-27T07:51:40+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
