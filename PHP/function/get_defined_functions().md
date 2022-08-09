@@ -1,3 +1,4 @@
+```
 <?php
     $my_val = 1;
     function my_func() { /* do something... */ }
@@ -32,3 +33,5 @@
      * 使用: get_defined_vars()
      */
     echo "<pre>get_defined_vars() = " . print_r(get_defined_vars(), TRUE). "</pre>";
+?>
+```
