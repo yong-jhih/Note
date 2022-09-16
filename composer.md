@@ -18,6 +18,6 @@ composer require "xxx/xxx:2.9.1"
 指令 | 功能
 ---- | ----
 composer install | 如有 composer.lock 文件，直接安装，否則從 composer.json 安装最新軟體包和依賴；
-composer update | 从 composer.json 安装最新軟體包和依賴；
-composer update vendor/package | 从 composer.json 或者對應包的配置，並更新到最新；
+composer update | 從 composer.json 安装最新軟體包和依賴；
+composer update vendor/package | 從 composer.json 或者對應包的配置，並更新到最新；
 composer require new/package | 添加安装 new/package, 可以指定版本，如： composer require new/package ~2.5.
