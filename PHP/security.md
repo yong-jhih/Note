@@ -1,9 +1,13 @@
-PHP7 入門研習
-5-3 過濾變數
+# PHP7 入門研習
+![img](https://cdn.pingwest.com/wp-content/uploads/2015/07/hacker-big.jpg)
+
+### 過濾變數
 零、體會一下被駭的感覺...
 請在帳號輸入框分別輸入底下內容試試（XSS攻擊）：
-<img src="http://cdn.pingwest.com/wp-content/uploads/2015/07/hacker-big.jpg">
+```
 <script>alert('XSS')</script>
+```
+
 一、外來變數
 用post方法傳過來的，我們用 $_POST['變數名稱'] 接收。
 用get方法傳過來的，我們用 $_GET['變數名稱'] 接收。
@@ -11,13 +15,9 @@ PHP7 入門研習
 二、過濾外來變數
 外來變數通常來自使用者輸入或者比較容易竄改，所以，一定要進行過濾。
 https://www.thenewslens.com/article/74761
-http://www.appledaily.com.tw/realtimenews/article/new/20151113/731514/
 用內建的 htmlspecialchars() 函數來過濾。
-
 直接用 htmlspecialchars($string) 的話，預設只轉化雙引號，不對單引號做轉義，所以，這樣用htmlspecialchars($string,ENT_QUOTES) 更好。
-
 另一個和 htmlspecialchars 很像的 htmlentities 函數並不適用中文，因為會連同中文字一起轉義。
-
 用 htmlentities 和 htmlspecialchars 只能防止XSS攻擊，不能防止SQL隱碼攻擊。
 
 $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
@@ -51,7 +51,8 @@ echo filter_var($num, FILTER_SANITIZE_NUMBER_INT) . "<br>";
 echo intval($num) . "<br>";
 用intval()會得到 123，但用filter_var() 會得到 123456
 
-=================================================================================================================================================================
+
+```
 
 function xss_clean($data){
 // Fix &entity＼n;
@@ -79,8 +80,10 @@ $data=preg_replace('#</*(?:applet|b(?:ase|gsound|link)|embed|frame(?:set)?|i(?:f
 return $data;
 }
 
-==================================================================================================================================================================
+```
 
+
+```
 <?php
 //php防注入和XSS攻擊通用過濾. 
 //by qq:831937
@@ -106,6 +109,4 @@ function SafeFilter(&$arr)
    }
 }
 ?>
-
-==============================================================================================================================================================================
-
+```

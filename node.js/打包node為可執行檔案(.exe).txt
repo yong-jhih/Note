@@ -1,6 +1,0 @@
-1. 安裝pkg套件
-    $npm install -g pkg
-
-2.編譯已完成node可執行程式
-    $pkg api.js           // 将 api.js 编译成 api.exe 可执行文件
-    $pkg -t win api.js    // 上面的命令会同时编译出 linux 、windows 、mac 版的 exe，加 -t win 就可以只编译 windows 下的
